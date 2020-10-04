@@ -3,3 +3,4 @@
 
 
 # Team Meetings:
+**Team Meeting 1(28/09/2020)**:(2:17-3:52);All group members present; Goals were figuring out what to ask the client, setting up the repo, determining when to work on the requirements, and which ones to start working on.
