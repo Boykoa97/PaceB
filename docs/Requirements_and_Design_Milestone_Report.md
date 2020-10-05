@@ -18,6 +18,12 @@ We have 3 target users:
 
 
 ## Tech Stack Options
+**Front End:**
+- React.js:
+- Vue.js:
+- Angular.js:
+
+**Back End:**
 
 
 ## Testing Procedure 
