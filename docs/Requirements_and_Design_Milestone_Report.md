@@ -65,16 +65,52 @@ Milestone 3 Goals:
    * After a mentor account is created, they should then be needed to be approved by the admin
    * Mentors should only have limited access if not approved by an admin, once they are, the webapp should then work like normal
    
-## Non-functional Requirements 
+## Non-functional Requirements
+* **Security** is one of the most important requirements, as we must be able to guarantee our client’s company and its users’ data are well protected against attacks.
+* **Usability** is important, as we want our client and its users to be able to navigate the web app quickly and easily.
+* **Reliability**, as lots of tests must be ran to minimize critical failures.
+* **Performance**, as the web app must be able to create user accounts, submit forms to appropriate companies, connecting mentors to mentees quickly and efficiently.
 
+## Constraints
+* **Cost** is a top constraint, as we may have to sacrifice having the best possible product, due to a limited budget.
+* **Browsers** that are supported by our web app, as well as devices compatible, are also major constraints.
+* **Storage**, which determines how much data from the web app can be stored.
+* **Deadline** for the final product is also a constraint, as more time may be needed to incorporate features that could help create the best product.
 
 ## Tech Stack Options
-**Front End:**
-- React.js:
-- Vue.js:
-- Angular.js:
+### Front End:
 
-**Back End:**
+**React.js (client's preference)**:
+* Pros:
+  - Useful for creating dynamic web applications, and makes use of JavaScript Extension. This extension allows the use of html tags in the designing and creative construction of the web application.
+  - It has virtual DOM, which helps improve the performance of the web application. Instead of writing directly to the DOM and reducing the web application’s performance, the virtual DOM allows us to write virtual components that reflect in the DOM, for better performance.
+  - Allows many options from the JavaScript library, for added flexibility and ability to design the web application to our satisfaction.
+* Cons:
+  - JavaScript Extension could be complex to work with, as opposed to traditionally using html to design the web application.
+  - Apparent concern that search engines can’t index dynamic web pages with client-side rendering. Which could pose a challenge for us if we were to incorporate search engines into our web app.
+  - The fast paced update of React’s tools and technologies can make it difficult for accurate documentation. It can also make it difficult and distracting to focus on the changes and upgrades to the tools and technologies, instead of fully focusing on web app development.
+
+**Vue.js**:
+* Pros:
+  - Easy to learn, and has a helpful user community of developers.
+  - Well known for its scalability and versatility, as it can be modified, changed and scaled to fit the developer’s preferences.
+  - It’s reactive and works well for single page and real time application development.
+* Cons:
+  - There are usually problems with using apps developed using Vue, on older versions on web browsers.
+  - Small community of vue users, which makes it difficult for collaborative development. Also, the framework was created by a Chinese company, in Chinese language, so most members in the community are non-English speakers and may not be of much help when needed.
+  - Does not have many of the common plugins used for working with other tools for easier and more efficient development.
+
+**Angular.js**:
+* Pros:
+  - Supports caching, thereby reducing burden on server CPUs for better performance.
+  - Supports faster and easier two-way data binding.
+  - Implements the model-view-viewmodel concept which is a strong foundation for application performance and easy management.
+* Cons:
+  - Browsers are often slow to render web applications designed with this frameworks, which could be time consuming.
+  - It has scopes that are layered hierarchically, and are complex to handle especially during debugging processes.
+  - Can sometimes be difficult to learn; Can only really enjoy the full benefits of using this framework after lots of experience.
+
+### Back End:
 
 
 ## Testing Procedure 
