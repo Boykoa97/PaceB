@@ -1,7 +1,9 @@
 # Client Meetings:
-**Meeting 1 (24/09/2020)**: 30 mins; Phil & Christian present; agenda was introduction; to get familiar with the client, and have an idea of project design and expectations; discussed topics on agenda, set of actions to outline we think the project should like, and provide questions for client (if needed) for next meeting.
+**Meeting 1 (24/09/2020)**: 30 mins; Phil & Christian present; Agenda was introduction, to get familiar with the client, and have an idea of project design and expectations; Discussed topics on agenda; Set of actions to outline we think the project should like, and provide questions for client (if needed) for next meeting.
 
-**Meeting 2 (29/09/2020)**: 1 hour; Phil, Christian & Anthony present; agenda was to ask and get answers to questions regarding the project features and expectations; discussed ideas and suggestions on tech stacks and programs to use, as well as more specific details on how the web app should operate; set of actions to have somewhat of a low level prototype to confirm we on the same page, for next meeting.
+**Meeting 2 (29/09/2020)**: 1 hour; Phil, Christian & Anthony present; Agenda was to ask and get answers to questions regarding the project features and expectations; Discussed ideas and suggestions on tech stacks and programs to use, as well as more specific details on how the web app should operate; Set of actions to have somewhat of a low level prototype to confirm we on the same page, for next meeting.
+
+**Meeting 3 (06/10/2020)**: 1 hour; Phil, Christian & Anthony present; Agenda was to ask any further questions fro clarification, in preparation for video presentation; Discussions involved answering questions and clarifying expectations from the project, and confirmed our client's tech stack preferences. Set of actions to create a Trello board / Git board to use as agenda for weekly meetings.
 
 
 # Team Meetings:
