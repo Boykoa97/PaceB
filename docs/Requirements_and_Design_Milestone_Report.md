@@ -112,7 +112,7 @@ Milestone 3 Goals:
 
 ### Back End:
 
-**Node.js**:
+**Node.js (client's preference)**:
 * Pros:
   - Allows for the frontend and backend to be developed with the same language. This makes it easier for both frontend and backend developers to be on the same page. They can also help eachother out too. 
   - Simultaneous request handling through non-blocking IO operations and asynchronous request handling. This means node.js can handle multiple request concurrently leading to very fast performance 
@@ -144,7 +144,7 @@ Milestone 3 Goals:
 
 ### Database:
 
-**Firebase**:
+**Firebase (client's preference)**:
 * Pros: 
   - Vast availability of features
   - Access to google analytics 
