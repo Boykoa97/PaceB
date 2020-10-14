@@ -112,5 +112,65 @@ Milestone 3 Goals:
 
 ### Back End:
 
+**Node.js (client's preference)**:
+* Pros:
+  - Allows for the frontend and backend to be developed with the same language. This makes it easier for both frontend and backend developers to be on the same page. They can also help eachother out too. 
+  - Simultaneous request handling through non-blocking IO operations and asynchronous request handling. This means node.js can handle multiple request concurrently leading to very fast performance 
+  - Uses a microservices architecture. Meaning features are made to be compartmentalized and allows for flexibility and ease of adding additional features. This is achieved by each feature being allowed to use different frameworks for each service. This framework also allows for each of these features to be independent of one another further easing integration.  
+  - Can run on Relational or NoSql databases 
+* Cons:
+  - Requires lots of 3rd party libraries to do many of the tasks needed. So vigilance on the the quality of those libraries is key
+  - Does not support multithreaded meaning node.js will struggle 
+  - The asynchronous nature that gives Node a very fast runtime also means callback functions can get out of hand affecting readability and maintenance. 
+
+**PHP**:
+* Pros:
+  - Been an industry standard for many years. This means there is a large community who know the language and many are many resources for it
+  - Has its own unit testing feature called PHPUnit which makes testing easy to implement
+  - Tons of frameworks for this language due to its popularity being so high for many years. Such as Laravel, CodeIgniter, and Symfony are all examples of PHP frameworks
+* Cons:
+  - Is very slow due to the features the php frameworks use to speed up development
+  - Can only use relational databases 
+  - Frameworks limit your ability to modify core behaviour
+
+**Python**:
+* Pros:
+  - Easy to learn
+  - Lot of resources for beginners 
+  - Lots of libraries for machine learning and other technical skills
+* Cons:
+  - Not type-safe. This is because it doesn’t have a strong static type check meaning data type errors don’t occur till runtime which can cause major problems.
+  - Slower language to run
+
+### Database:
+
+**Firebase (client's preference)**:
+* Pros: 
+  - Vast availability of features
+  - Access to google analytics 
+  - Robust crash report to help spot bugs
+* Cons:
+  - Struggles with complex queries. Due to it being a realtime database
+  - Limited data migration because you do not host the data.
+  - Limited support on IOS. however we aren’t making an app so it should be the biggest concern
+
+**Google Cloud**:
+* Pros:
+  - Easy integration with all other google software
+  - Access to google cloud storage 
+  - Live Migration which reduces downtown during maintenance.
+* Cons:
+  - Costs money
+  - Slow rate of innovation
+  - Poor customer support
+
+**AWS**:
+* Pros:
+  - Fast and agile as in the service is easy to set up
+  - Scalable data storage 
+* Cons:
+  - Costs money
+  - Difficult to switch services 
+  - No compensation for data loss
 
 ## Testing Procedure 
