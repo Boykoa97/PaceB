@@ -174,3 +174,6 @@ Milestone 3 Goals:
   - No compensation for data loss
 
 ## Testing Procedure 
+
+For our testing procedure we will be using an array of tools each with a purpose. We have two tools for unit testing and coverage testing being Jest and React-testing-library. Jest will be used for both the frontend and the backend for testing functionality and make sure cases are handled for the majority lines of code. Looking for 80% coverage. React-testing-library is solely for the frontend. It allows us to have greater feedback than the true/false asserts that Jest does. It also lets us test the component values of the frontend. To make sure we are following the coding practices for our frontend and backend Linter allows us to set up rules on name, spacing and other various formatting styles coders have. This will also keep each group member consistent between members which will really help seeing as we are all acting as fullstack programmers. For continuous integration we plan using githubs built in features for this. For regression testing jest allows us to do a mockup of the browser with jdom so combined with React-testing-library we can extensively test that new code won’t break the frontend. 
+
