@@ -59,12 +59,12 @@ Summary of deliverable: By this milestone the web app should be completed, inclu
 
 Milestone 3 Goals:
 * Admin and organization functionality
-   * Organizations  should be able to host the web app, and therefore should have one organization admin per webapp instance
-   * When setting up the web app, an organization admin account should be created
+   * Organizations should be able to create an account, the individual who does becomes the organization admin for that organization
    * Admins should then be able to invite mentors through email, once a invitation is accepted, mentors should be able to create an account
-   * After a mentor account is created, they should then be needed to be approved by the admin
-   * Mentors should only have limited access if not approved by an admin, once they are, the webapp should then work like normal
-   
+   * Admins should be able to create new organization admins
+   * Admins should be able to delete mentor accounts
+   * Admins should be able to generate a iframe, that can be posted on other sites and be used by mentees
+
 ## Non-functional Requirements
 * **Security** is one of the most important requirements, as we must be able to guarantee our client’s company and its users’ data are well protected against attacks.
 * **Usability** is important, as we want our client and its users to be able to navigate the web app quickly and easily.
@@ -174,3 +174,6 @@ Milestone 3 Goals:
   - No compensation for data loss
 
 ## Testing Procedure 
+
+For our testing procedure we will be using an array of tools each with a purpose. We have two tools for unit testing and coverage testing being Jest and React-testing-library. Jest will be used for both the frontend and the backend for testing functionality and make sure cases are handled for the majority lines of code. Looking for 80% coverage. React-testing-library is solely for the frontend. It allows us to have greater feedback than the true/false asserts that Jest does. It also lets us test the component values of the frontend. To make sure we are following the coding practices for our frontend and backend Linter allows us to set up rules on name, spacing and other various formatting styles coders have. This will also keep each group member consistent between members which will really help seeing as we are all acting as fullstack programmers. For continuous integration we plan using githubs built in features for this. For regression testing jest allows us to do a mockup of the browser with jdom so combined with React-testing-library we can extensively test that new code won’t break the frontend. 
+
