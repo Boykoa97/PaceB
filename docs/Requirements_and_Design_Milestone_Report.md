@@ -85,6 +85,8 @@ In our level 0 diagram it shows our 3 main users and the top level process that 
 
 ![Image of DFD level 1](https://github.com/Boykoa97/PaceB/blob/Project-Requirements/docs/DFD%20Lvl1.JPG)
 
+On our level 1 for the DFD we have 5 processes. Alongside 3 datastores. How this works is an admin creates the organization account. They invite the mentors. Mentors fill out the form with their preferences and other information we need. They sign in and are show a screen. This information is stored. While conversely a mentee fills out an application and is shown these potential mentors and their information is stored. The mentee then chooses a mentor and that choice is stored so that the respective mentor can be notified. The mentor then chooses to accept the mentee or not. 
+
 ## Tech Stack Options
 ### Front End:
 
