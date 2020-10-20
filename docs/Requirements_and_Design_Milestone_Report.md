@@ -59,12 +59,12 @@ Summary of deliverable: By this milestone the web app should be completed, inclu
 
 Milestone 3 Goals:
 * Admin and organization functionality
-   * Organizations  should be able to host the web app, and therefore should have one organization admin per webapp instance
-   * When setting up the web app, an organization admin account should be created
+   * Organizations should be able to create an account, the individual who does becomes the organization admin for that organization
    * Admins should then be able to invite mentors through email, once a invitation is accepted, mentors should be able to create an account
-   * After a mentor account is created, they should then be needed to be approved by the admin
-   * Mentors should only have limited access if not approved by an admin, once they are, the webapp should then work like normal
-   
+   * Admins should be able to create new organization admins
+   * Admins should be able to delete mentor accounts
+   * Admins should be able to generate a iframe, that can be posted on other sites and be used by mentees
+
 ## Non-functional Requirements
 * **Security** is one of the most important requirements, as we must be able to guarantee our client’s company and its users’ data are well protected against attacks.
 * **Usability** is important, as we want our client and its users to be able to navigate the web app quickly and easily.
