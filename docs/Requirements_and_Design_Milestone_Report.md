@@ -1,5 +1,8 @@
 # Requirements and Design Milestone Report
-
+### By Capstone PACE B
+**Client Liaison**: Philip Okanlawon
+**Technical Lead**: Anthony Boyko
+**Project Manager**: Christian Pasteris
 
 ## Project Description
 
