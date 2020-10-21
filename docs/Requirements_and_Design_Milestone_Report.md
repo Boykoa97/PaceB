@@ -3,12 +3,23 @@
 
 ## Project Description
 
-PaceB objective is to create an embedded iframe that a company can put on their website whose goal is to link mentors and mentees together. We will be using firebase to host the database. Our chosen techstack is React.js front end and Node.js backend. The purpose of linking mentors and mentees is allow more senior employees to pass on their knowledge to newer employees. Our piece of software will allow mentees to find mentors using logical checks on fields such as time available, area of interest, etc. to find potential matches. 
+PaceB objective is to create a web application that can be embedded via an iframe, so a company whose goal is to link mentors and mentees together, can embed into their website. The target user groups include the organization(the admin), the mentors and the mentees. We will be using firebase to host the database. Our chosen techstack is React.js for the front end and Node.js for the backend. The purpose of linking mentors and mentees is to allow more senior employees to pass on their knowledge to newer employees. Our web app will allow mentees to find mentors using logical checks on fields such as time available, area of interest, etc. to find potential matches. When a mentor-mentee match is successful, the mentee is sent a confirmation email linking them to their mentor, and futher interaction and mentorship occurs externally through email.
 
 We have 3 target users:
-1. Each orginazition will have an admin user that will setup be set up by them. This admin user will verify their employees and handle personilization for their account.
-2. Mentors. Mentors are senior employees who have knowledge that can help guide the newer employees. Their skillset and availablity will be matched and shown for mentees to find a mentor
-3. Mentees. Mentees will fill out what they are looking for in a mentor. Our software shows potential matches and then the mentee pickes a mentor from that list.
+1. **The Organization**: each orginazition will have an admin user account, which is assigned to whoever creates the organization in the web app. This admin user will verify the organization's employees and handle personilization for their account.
+2. **The Mentors**: mentors are senior employees who have knowledge that can help guide the newer employees. Each mentor is invited by the admin, to create a user account and fill in specific information designed by the admin. Their skillset and availability will be matched and displayed for the mentees when choosing a mentor. The mentor also has access to a list of mentees who sign up using the embedded form.
+3. **The Mentees**: mentees will have access to a public form embedded on the company's website, where they can fill in specific information designed by the admin, as well as outline their mentor preferences majorly based on skillset and availability. Our software shows potential matches, then the mentee may pick a mentor from that list.
+
+
+## Data Flow Diagrams 
+
+![Image of DFD level 0](https://github.com/Boykoa97/PaceB/blob/Project-Requirements/docs/DFD%20Lvl0.JPG)
+
+In our level 0 diagram it shows our 3 main users and the top level process that they interact with. This process is the embedded iframe which holds the matching software.
+
+![Image of DFD level 1](https://github.com/Boykoa97/PaceB/blob/Project-Requirements/docs/DFD%20Lvl1.JPG)
+
+On our level 1 for the DFD we have 5 processes. Alongside 3 datastores. How this works is an admin creates the organization account. They invite the mentors. Mentors fill out the form with their preferences and other information we need. They sign in and are show a screen. This information is stored. Conversely, a mentee fills out an application and is shown these potential mentors and their information is stored. The mentee then chooses a mentor and that choice is stored so that the respective mentor can be notified. The mentor then chooses to accept the mentee or not. 
 
 
 ## Functional Requirements 
@@ -65,6 +76,7 @@ Milestone 3 Goals:
    * Admins should be able to delete mentor accounts
    * Admins should be able to generate a iframe, that can be posted on other sites and be used by mentees
 
+
 ## Non-functional Requirements
 * **Security** is one of the most important requirements, as we must be able to guarantee our client’s company and its users’ data are well protected against attacks.
 * **Usability** is important, as we want our client and its users to be able to navigate the web app quickly and easily.
@@ -72,20 +84,12 @@ Milestone 3 Goals:
 * **Performance**, as the web app must be able to create user accounts, submit forms to appropriate companies, connecting mentors to mentees quickly and efficiently.
 
 ## Constraints
-* **Cost** is a top constraint, as we may have to sacrifice having the best possible product, due to a limited budget.
+* **Cost** is a top constraint, as we may have to sacrifice having access to the best versions of our tech stack, as well as the best possible product, due to a limited budget.
 * **Browsers** that are supported by our web app, as well as devices compatible, are also major constraints.
 * **Storage**, which determines how much data from the web app can be stored.
-* **Deadline** for the final product is also a constraint, as more time may be needed to incorporate features that could help create the best product.
+* **Group Size**, as there are only 3 members in our group.
+* **Deadline** for the final product is also a constraint, as deadline may not allow for specific upgrades and bonus features to be implemented into the web app.
 
-## Data Flow Diagrams 
-
-![Image of DFD level 0](https://github.com/Boykoa97/PaceB/blob/Project-Requirements/docs/DFD%20Lvl0.JPG)
-
-In our level 0 diagram it shows our 3 main users and the top level process that they interact with. This process is the embedded iframe which hold the matching software.
-
-![Image of DFD level 1](https://github.com/Boykoa97/PaceB/blob/Project-Requirements/docs/DFD%20Lvl1.JPG)
-
-On our level 1 for the DFD we have 5 processes. Alongside 3 datastores. How this works is an admin creates the organization account. They invite the mentors. Mentors fill out the form with their preferences and other information we need. They sign in and are show a screen. This information is stored. While conversely a mentee fills out an application and is shown these potential mentors and their information is stored. The mentee then chooses a mentor and that choice is stored so that the respective mentor can be notified. The mentor then chooses to accept the mentee or not. 
 
 ## Tech Stack Options
 ### Front End:
@@ -125,63 +129,63 @@ On our level 1 for the DFD we have 5 processes. Alongside 3 datastores. How this
 **Node.js (client's preference)**:
 * Pros:
   - Allows for the frontend and backend to be developed with the same language. This makes it easier for both frontend and backend developers to be on the same page. They can also help eachother out too. 
-  - Simultaneous request handling through non-blocking IO operations and asynchronous request handling. This means node.js can handle multiple request concurrently leading to very fast performance 
+  - Simultaneous request handling through non-blocking IO operations and asynchronous request handling. This means node.js can handle multiple request concurrently leading to very fast performance. 
   - Uses a microservices architecture. Meaning features are made to be compartmentalized and allows for flexibility and ease of adding additional features. This is achieved by each feature being allowed to use different frameworks for each service. This framework also allows for each of these features to be independent of one another further easing integration.  
-  - Can run on Relational or NoSql databases 
+  - Can run on Relational or NoSql databases. 
 * Cons:
-  - Requires lots of 3rd party libraries to do many of the tasks needed. So vigilance on the the quality of those libraries is key
-  - Does not support multithreaded meaning node.js will struggle 
+  - Requires lots of 3rd party libraries to do many of the tasks needed. So vigilance on the the quality of those libraries is key.
+  - Does not support multithreaded meaning node.js will struggle.
   - The asynchronous nature that gives Node a very fast runtime also means callback functions can get out of hand affecting readability and maintenance. 
 
 **PHP**:
 * Pros:
-  - Been an industry standard for many years. This means there is a large community who know the language and many are many resources for it
-  - Has its own unit testing feature called PHPUnit which makes testing easy to implement
-  - Tons of frameworks for this language due to its popularity being so high for many years. Such as Laravel, CodeIgniter, and Symfony are all examples of PHP frameworks
+  - Been an industry standard for many years. This means there is a large community who know the language and many are many resources for it.
+  - Has its own unit testing feature called PHPUnit which makes testing easy to implement.
+  - Tons of frameworks for this language due to its popularity being so high for many years. Such as Laravel, CodeIgniter, and Symfony are all examples of PHP frameworks.
 * Cons:
-  - Is very slow due to the features the php frameworks use to speed up development
-  - Can only use relational databases 
-  - Frameworks limit your ability to modify core behaviour
+  - Is very slow due to the features the php frameworks use to speed up development.
+  - Can only use relational databases.
+  - Frameworks limit your ability to modify core behaviour.
 
 **Python**:
 * Pros:
-  - Easy to learn
-  - Lot of resources for beginners 
-  - Lots of libraries for machine learning and other technical skills
+  - Easy to learn.
+  - Lot of resources for beginners.
+  - Lots of libraries for machine learning and other technical skills.
 * Cons:
   - Not type-safe. This is because it doesn’t have a strong static type check meaning data type errors don’t occur till runtime which can cause major problems.
-  - Slower language to run
+  - Slower language to run.
 
 ### Database:
 
 **Firebase (client's preference)**:
 * Pros: 
-  - Vast availability of features
-  - Access to google analytics 
-  - Robust crash report to help spot bugs
+  - Vast availability of features.
+  - Access to google analytics.
+  - Robust crash report to help spot bugs.
 * Cons:
-  - Struggles with complex queries. Due to it being a realtime database
+  - Struggles with complex queries. Due to it being a realtime database.
   - Limited data migration because you do not host the data.
-  - Limited support on IOS. however we aren’t making an app so it should be the biggest concern
+  - Limited support on IOS. however we aren’t making an app so it should be the biggest concern.
 
 **Google Cloud**:
 * Pros:
-  - Easy integration with all other google software
-  - Access to google cloud storage 
+  - Easy integration with all other google software.
+  - Access to google cloud storage.
   - Live Migration which reduces downtown during maintenance.
 * Cons:
-  - Costs money
-  - Slow rate of innovation
-  - Poor customer support
+  - Costs money.
+  - Slow rate of innovation.
+  - Poor customer support.
 
-**AWS**:
+**Amazon Web Services (AWS)**:
 * Pros:
-  - Fast and agile as in the service is easy to set up
-  - Scalable data storage 
+  - Fast and agile as in the service is easy to set up.
+  - Scalable data storage.
 * Cons:
-  - Costs money
-  - Difficult to switch services 
-  - No compensation for data loss
+  - Costs money.
+  - Difficult to switch services.
+  - No compensation for data loss.
 
 ## Testing Procedure 
 
