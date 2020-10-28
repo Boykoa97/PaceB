@@ -11,3 +11,6 @@ cd counter-app
 npm start
 
 I will continue to update this branch until I am at the completed stage. It isn't commented right now. However i plan on completion to annotation everything in detail so it can be used as a learning exercise for my teammates alongside a tool if I need a refresher on anything. 
+
+the video if you want to do this yourself is 
+https://www.youtube.com/watch?v=Ke90Tje7VS0
