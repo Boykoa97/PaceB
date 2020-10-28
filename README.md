@@ -1,4 +1,4 @@
-#React Tutorial goals
+# React Tutorial goals
 
 The goal of this project is to make a something that mimics a shopping cart. It will have increment and decrement buttons. A dynamic counter that changes based on value where if its 0 it will change colour. 
 
