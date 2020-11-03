@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
-import Counter from './components/counter'
+
+
+// The index file is the top level component and displays the root of the software which is App.js in most cases 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Counter />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
