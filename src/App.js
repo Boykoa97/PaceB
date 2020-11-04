@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import NavBar from './components/Navbar';
 import './App.css';
-import Counters from './components/counters'
+import Counters from './components/counters';
+import DatePicker from './components/datePicker'
 import { render } from '@testing-library/react';
+import QuestionList from './components/questionList';
+
 
 
 /*
@@ -88,8 +91,15 @@ class App extends Component {
       <React.Fragment>
         <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length}/>
       <main className="container">
-        <Counters counters={this.state.counters} onReset={this.handleReset} onIncrement={this.handleIncrement} onDelete = {this.handleDelete}/>
+        <QuestionList></QuestionList>
+        <DatePicker></DatePicker>
+        <div>
+            <button className="btn btn-secondary btn-med badge-primary">
+              Submit
+            </button>
+          </div>
       </main>
+      
       </React.Fragment>
   );
   }
