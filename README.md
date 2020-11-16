@@ -40,7 +40,7 @@ Navigate to the directory where this project is stored on the terminal then:
 
 now we need to add the project to the project to do this use the command
 
-firebasee use --add
+firebase use --add
 
 after running this command select the project you made for running this project
 
