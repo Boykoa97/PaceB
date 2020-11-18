@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import NavBar from './components/Navbar';
+import NavBar from '../Navbar';
 import './App.css';
-import Counters from './components/counters';
-import DatePicker from './components/datePicker'
+import Counters from '../counters';
+import DatePicker from '../datePicker'
 import { render } from '@testing-library/react';
-import QuestionList from './components/questionList';
+import QuestionList from '../questionList';
 
 
 
