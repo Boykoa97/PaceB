@@ -37,8 +37,8 @@ class App extends Component {
     ],
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props)
     console.log('App - Constructor');
   }
 
@@ -90,15 +90,20 @@ class App extends Component {
     return (
       <React.Fragment>
         <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length}/>
-      <main className="container">
-        <QuestionList></QuestionList>
-        <DatePicker></DatePicker>
-        <div>
-            <button className="btn btn-secondary btn-med badge-primary">
-              Submit
-            </button>
+        <main className="container">
+          <div className="App">
+            <div className="Welcome">
+              <h1>Capstone Pace B</h1>
+            </div>
+            <QuestionList></QuestionList>
+            <DatePicker></DatePicker>
+            <div>
+              <button className="btn btn-secondary btn-med badge-primary">
+                Submit
+              </button>
+            </div>
           </div>
-      </main>
+        </main>
       
       </React.Fragment>
   );
