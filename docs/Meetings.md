@@ -19,3 +19,9 @@
 **Team Meeting 2(04/10/2020)**:(2:08-2:46);All group members present; Meeting mainly focused on what to have ready for next client meeting, which is have the tech stack pros and cons finished, as well as a rough timeline of milestones/functional requirements. Also covered other things needed for the requirements in slightly less detail, and planned when to have most things done by.
 
 **Team Meeting 3(07/10/2020)**:(11:00-11:47);All group members present; New meeting time, so not a lot was covered. Reviewed who is going to do which requirements for the deadline, and came up with a rough timeline for when we are going to get the video presentation done. Also updated each other on what we have done, and adjusted plans accordingly.
+
+**Team Meeting 4(18/10/2020)**:(2:00-2:48);All group members present; Covered feedback from the group evaluations, and decided on what to improve on for our report, before our next client meeting and the requirements deadline.
+
+**Team Meeting 5(1/11/2020)**:(1:07-2:19);All group members present; Decided on what to do now that the requirments deadline has passed, and what to have done for the next week. Going to focus on building enviroments, and starting to build a start page.
+
+**Team Meeting 6(14/11/2020)**:(2:10-2:55);Chrstian and Anthony present; Assigned tasks for the next deliverable, and figured out what exactly needs to be done.
