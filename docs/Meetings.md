@@ -12,6 +12,8 @@
 
 **Meeting 6 (27/10/2020)**: 1 hour; Phil & Anthony present; Agenda was to go through the trello board and discuss any current plans and ideas; Discussions involved suggestions for watching tutorials, and taking down important notes relating to the web app project; Set of actions were to use the week for tech stack tutorials.
 
+**Meeting 7 (03/11/2020)**:
+
 # Team Meetings:
 
 **Team Meeting 1(28/09/2020)**:(2:17-3:52);All group members present; Goals were figuring out what to ask the client, setting up the repo, determining when to work on the requirements, and which ones to start working on.
