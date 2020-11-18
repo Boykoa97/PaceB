@@ -104,7 +104,6 @@ class App extends Component {
             </div>
           </div>
         </main>
-      
       </React.Fragment>
   );
   }
