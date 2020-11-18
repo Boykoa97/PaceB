@@ -10,9 +10,13 @@
 
 **Meeting 5 (20/10/2020)**: 1 hour; Phil, Christian & Anthony present; Agenda was to go over web functionality, as well as go over trello board and address outstanding issues; Discussions made involved establishing ideas on high level functionality of the web app, as well as changes to be made to web app functionality for simplicity purposes; Set of actions were to build unto our trello board, adnset up environment for the project.
 
-**Meeting 6 (27/10/2020)**: 1 hour; Phil & Anthony present; Agenda was to go through the trello board and discuss any current plans and ideas; Discussions involved suggestions for watching tutorials, and taking down important notes relating to the web app project; Set of actions were to use the week for tech stack tutorials.
+**Meeting 6 (27/10/2020)**: 30 mins; Phil & Anthony present; Agenda was to go through the trello board and discuss any current plans and ideas; Discussions involved suggestions for watching tutorials, and taking down important notes relating to the web app project; Set of actions were to use the week for tech stack tutorials.
 
-**Meeting 7 (03/11/2020)**:
+**Meeting 7 (03/11/2020)**: 1 hour; Phil, Christian & Anthony present; Agenda was to go through trello board, discuss what was learned from tutorials, as well as challenges and plans moving forward; Discussions involved suggestions on tools to use in project development, as well as some tech stack information to research, like react updates and new coding syntax. Set of actions were to have visuals of practice developed from tutorials.
+
+**Meeting 8 (10/11/2020)**: 45 mins; Phil & Anthony present; Agenda was to go through trello, explain progress and request feedback on implementations.
+
+**Meeting 9 (17/11/2020)**: 30 mins; Phil & Anthony present; Agenda was to go through trello board, maintenance and check-in on progress. Discussions made included firebase and UI funcitonality in preparation for peer testing. Set of actions were to set up trello tickets for what we plan to implement in the web app, as well as break the tickets down into smaller workload.
 
 # Team Meetings:
 
