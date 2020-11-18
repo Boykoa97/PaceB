@@ -6,11 +6,13 @@
 
 **Meeting 3 (06/10/2020)**: 1 hour; Phil, Christian & Anthony present; Agenda was to ask any further questions fro clarification, in preparation for video presentation; Discussions involved answering questions and clarifying expectations from the project, and confirmed our client's tech stack preferences; Set of actions to create a Trello board / Git board to use as agenda for weekly meetings.
 
-**Meeting 4 (13/10/2020)**: 1 hour; Phl, Christian & Anthony present; Agenda was to provide feedback on details of report in preparation for requirements milestone; Discussions made were feedback on accuracy of information in our report; Set of actions are to have resources for the report fully completed, so final clarification questions can be answered.
+**Meeting 4 (13/10/2020)**: 1 hour; Phil, Christian & Anthony present; Agenda was to provide feedback on details of report in preparation for requirements milestone; Discussions made were feedback on accuracy of information in our report; Set of actions are to have resources for the report fully completed, so final clarification questions can be answered.
 
 **Meeting 5 (20/10/2020)**: 1 hour; Phil, Christian & Anthony present; Agenda was to go over web functionality, as well as go over trello board and address outstanding issues; Discussions made involved establishing ideas on high level functionality of the web app, as well as changes to be made to web app functionality for simplicity purposes; Set of actions were to build unto our trello board, adnset up environment for the project.
 
 **Meeting 6 (27/10/2020)**: 1 hour; Phil & Anthony present; Agenda was to go through the trello board and discuss any current plans and ideas; Discussions involved suggestions for watching tutorials, and taking down important notes relating to the web app project; Set of actions were to use the week for tech stack tutorials.
+
+**Meeting 7 (03/11/2020)**:
 
 # Team Meetings:
 
