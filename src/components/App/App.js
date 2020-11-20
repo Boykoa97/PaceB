@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import NavBar from '../Navbar';
 import './App.css';
+
+import NavBar from '../NavBar/NavBar';
+
 import Counters from '../counters';
 import DatePicker from '../datePicker'
 import { render } from '@testing-library/react';
@@ -88,24 +90,22 @@ class App extends Component {
     console.log("App - Rendered");
 
     return (
-      <React.Fragment>
-        <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length}/>
-        <main className="container">
-          <div className="App">
-            <div className="Welcome">
-              <h1>Capstone Pace B</h1>
-            </div>
-            <QuestionList></QuestionList>
-            <DatePicker></DatePicker>
-            <div>
-              <button className="btn btn-secondary btn-med badge-primary">
-                Submit
-              </button>
-            </div>
+      <div className="App">
+        <NavBar />
+        <div className="webpage">
+          <div className="Welcome">
+            <h1>Capstone Pace B</h1>
           </div>
-        </main>
-      </React.Fragment>
-  );
+          <QuestionList></QuestionList>
+          <DatePicker></DatePicker>
+          <div>
+            <button className="btn btn-secondary btn-med badge-primary">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 
