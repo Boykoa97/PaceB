@@ -4,10 +4,11 @@ import './App.css';
 import NavBar from '../NavBar/NavBar';
 
 import Counters from '../counters';
-import DatePicker from '../datePicker'
+import createacc from './createacc.jsx';
+import DatePicker from '../datePicker';
+import login from './login.jsx';
 import { render } from '@testing-library/react';
 import QuestionList from '../questionList';
-
 
 
 /*
@@ -97,13 +98,15 @@ class App extends Component {
             <h1>Capstone Pace B</h1>
           </div>
           <QuestionList></QuestionList>
-          <DatePicker></DatePicker>
+          {/*<DatePicker></DatePicker>
           <div>
             <button className="btn btn-secondary btn-med badge-primary">
               Submit
             </button>
+          </div>*/}
+          <login></login>
           </div>
-        </div>
+
       </div>
     );
   }
