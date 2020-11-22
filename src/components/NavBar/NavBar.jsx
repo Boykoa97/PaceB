@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './NavBar.css';
 import { NavItems } from './NavItems';
 import { Button } from './Button';
+import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component{
     state = { clicked: false }
@@ -12,9 +13,9 @@ class NavBar extends React.Component{
     }
 
     render(){
-        return(
+        return( 
             <nav className="navbar">
-                <h1 className="navbar-logo">pace b <i className='fab fa-angellist'></i></h1>
+                <Link className="navbar-logo" to='/'>pace b <i className='fab fa-angellist'></i></Link> 
                 <div className="menu-icon" onClick={this.handleClick}>
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
@@ -22,14 +23,18 @@ class NavBar extends React.Component{
                     { NavItems.map((item, index)=> {
                         return (
                             <li key={index}>
-                                <a className={item.cName} href={item.url}>
+                                <Link to={item.url} className={item.cName}> 
                                     {item.title}
-                                </a>
+                                </Link>
                             </li>
                         )
                     }) }
                 </ul>
-                <Button>Sign Up</Button>
+                <li className='sign-up'>
+                    <Link to="/signup" className='sign_up'>
+                        Sign Up
+                    </Link>
+                </li>
             </nav>
         );
     }
