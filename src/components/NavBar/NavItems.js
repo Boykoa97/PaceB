@@ -1,28 +1,18 @@
 // For manipulating menu names
 export const NavItems = [
     {
-        title: 'Home',
-        url: '#',
-        cName: 'nav-links'
-    },
-    {
         title: 'Mentee',
-        url: '#',
+        url: "/mentee",
         cName: 'nav-links'
     },
     {
         title: 'Mentor',
-        url: '#',
+        url: "/mentor",
         cName: 'nav-links'
     },
     {
         title: 'Admin',
-        url: '#',
+        url: "/admin",
         cName: 'nav-links'
-    },
-    {
-        title: 'Sign Up',
-        url: '#',
-        cName: 'nav-links-mobile'
     }
 ]

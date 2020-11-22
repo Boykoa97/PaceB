@@ -9,6 +9,13 @@
   margin: 2.5rem;
 }
 
-.Welcome {
-  text-align: center;
+.mentor,
+.mentee,
+.admin,
+.signup {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
 }
