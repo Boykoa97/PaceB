@@ -7,9 +7,11 @@ import Counters from "../counters";
 import Createacc from "../createacc.jsx";
 import DatePicker from "../datePicker";
 import Login from "../login.jsx";
+import Logout from "../logout.jsx";
 import { render } from "@testing-library/react";
 import QuestionList from "../questionList";
 import firebase from "../firebase";
+import fire from "../firebase";
 
 /*
 
@@ -43,6 +45,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     console.log("App - Constructor");
+    this.state = {
+      user: null,
+    };
+    this.authListener = this.authListener.bind(this);
   }
 
   componentDidMount() {
@@ -50,6 +56,7 @@ class App extends Component {
     //set the sate here
 
     console.log("App - Mounted");
+    this.authListener();
   }
 
   //when incrementing a value react does not automatically update the view to the user
@@ -79,7 +86,18 @@ class App extends Component {
     const counters = this.state.counters.filter((c) => c.id !== counterId);
     this.setState({ counters });
   };
-
+  authListener() {
+    fire.auth().onAuthStateChanged((user) => {
+      console.log(user);
+      if (user) {
+        this.setState({ user });
+        localStorage.setItem("user", user.uid);
+      } else {
+        this.setState({ user: null });
+        localStorage.removeItem("user");
+      }
+    });
+  }
   //Here is where we render the app and its components
   //You see we have two objects that are components that are rendered yet many more objects are rendered
   // this is due to what actually makes about the Counters class
@@ -103,7 +121,8 @@ class App extends Component {
             </button>
           </div>*/}
           {/*<Login></Login> */}
-          <Createacc></Createacc>
+
+          {this.state.user ? <Logout></Logout> : <Login></Login>}
         </div>
       </div>
     );
