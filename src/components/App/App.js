@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-import NavBar from '../NavBar/NavBar';
+import NavBar from "../NavBar/NavBar";
 
-import Counters from '../counters';
-import createacc from './createacc.jsx';
-import DatePicker from '../datePicker';
-import login from './login.jsx';
-import { render } from '@testing-library/react';
-import QuestionList from '../questionList';
-
+import Counters from "../counters";
+import Createacc from "../createacc.jsx";
+import DatePicker from "../datePicker";
+import Login from "../login.jsx";
+import { render } from "@testing-library/react";
+import QuestionList from "../questionList";
+import firebase from "../firebase";
 
 /*
 
@@ -41,21 +41,20 @@ class App extends Component {
   };
 
   constructor(props) {
-    super(props)
-    console.log('App - Constructor');
+    super(props);
+    console.log("App - Constructor");
   }
 
   componentDidMount() {
     //use this for ajax calls form the server
-    //set the sate here 
+    //set the sate here
 
-    console.log('App - Mounted');
+    console.log("App - Mounted");
   }
-  
 
-  //when incrementing a value react does not automatically update the view to the user 
-  //this is due to the nature of react. So to change the state of on object you need to set the state of it 
-  //by taking the object we want to adjust making a copy and modifying it. Then update the state of the parent object so it is rendered with that new information   
+  //when incrementing a value react does not automatically update the view to the user
+  //this is due to the nature of react. So to change the state of on object you need to set the state of it
+  //by taking the object we want to adjust making a copy and modifying it. Then update the state of the parent object so it is rendered with that new information
   handleIncrement = (counter) => {
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
@@ -64,8 +63,8 @@ class App extends Component {
     console.log(this.state.counters[index]);
     this.setState({ counters });
   };
-  
-  // () => {} represents a function in javascript 
+
+  // () => {} represents a function in javascript
   //in this function we take our list of counters objects and change all the values of the counter children to be 0
   handleReset = () => {
     const counters = this.state.counters.map((c) => {
@@ -75,19 +74,18 @@ class App extends Component {
     this.setState({ counters });
   };
 
-
   //this function show us how we can pass a parameter and and remove it from the list which then we then render it again
   handleDelete = (counterId) => {
     const counters = this.state.counters.filter((c) => c.id !== counterId);
     this.setState({ counters });
   };
-  
+
   //Here is where we render the app and its components
-  //You see we have two objects that are components that are rendered yet many more objects are rendered 
-  // this is due to what actually makes about the Counters class 
+  //You see we have two objects that are components that are rendered yet many more objects are rendered
+  // this is due to what actually makes about the Counters class
   // Also the items in the curly braces in each component are how the method say "handleReset" is passed down to children
   //This is so the method can be done in that jsx file but the information it needs to is stored here in the app file
-  render(){
+  render() {
     console.log("App - Rendered");
 
     return (
@@ -97,20 +95,20 @@ class App extends Component {
           <div className="Welcome">
             <h1>Capstone Pace B</h1>
           </div>
-          <QuestionList></QuestionList>
-          {/*<DatePicker></DatePicker>
+          {/*<QuestionList></QuestionList>
+          <DatePicker></DatePicker>
           <div>
             <button className="btn btn-secondary btn-med badge-primary">
               Submit
             </button>
           </div>*/}
-          <login></login>
-          </div>
-
+          {/*<Login></Login> */}
+          <Createacc></Createacc>
+        </div>
       </div>
     );
   }
 }
 
-//when you call the app component it will use this this as the default app code 
+//when you call the app component it will use this this as the default app code
 export default App;

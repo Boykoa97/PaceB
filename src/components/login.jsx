@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 
-class createacc extends Component {
+class login extends Component {
   state = {};
   render() {
     return (
-        <div>
+      <div>
+        <script src="auth.js"></script>
         <form>
           <div class="form-group">
             <label for="email">Email address</label>
@@ -22,11 +23,11 @@ class createacc extends Component {
               id="password"
               required/>
           </div>
-          <button type="submit" value="submit">Create Account</button>
+          <button type="submit" value="submit">Log in</button>
         </form>
       </div>
     );
   }
 }
 
-export default createacc;
+export default login;
