@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import fire from "../../../firebase";
 
+import "./SignUp.css";
+
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -27,7 +29,7 @@ class SignUp extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <div className="signup-page">
         <h1>Create an Account:</h1>
         <form>
           <div class="form-group">
@@ -54,7 +56,7 @@ class SignUp extends Component {
               required
             />
           </div>
-          <button type="submit" onClick={this.signup} value="submit">
+          <button className="create-acc-btn" type="submit" onClick={this.signup} value="submit">
             Create Account
           </button>
         </form>
