@@ -50,7 +50,7 @@ class login extends Component {
               name="password"
               required/>
           </div>
-          <button type="submit" onClick={this.login} value="submit">Log in</button>
+          <button className="login-btn" type="submit" onClick={this.login} value="submit">Log in</button>
         </form>
       </div>
     );

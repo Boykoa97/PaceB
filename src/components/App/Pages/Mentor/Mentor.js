@@ -3,6 +3,8 @@ import Login from "./login.jsx";
 import Logout from "./logout.jsx";
 import fire from "../../../firebase";
 
+import "./Mentor.css";
+
 class Mentor extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +36,13 @@ class Mentor extends Component {
     });
   }
   render() {
-    return <nav>{this.state.user ? <Logout></Logout> : <Login></Login>}</nav>;
+    return (
+      <nav className="mentor-page">
+        <div className="login-form">
+          {this.state.user ? <Logout></Logout> : <Login></Login>}
+        </div>
+      </nav>
+    );
   }
 }
 
