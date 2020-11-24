@@ -1,19 +1,21 @@
 import React, { Component } from "react";
-import fire from "./firebase";
+import fire from "../../../firebase";
+import { Link } from 'react-router-dom';
 
-class createacc extends Component {
+class login extends Component {
   constructor(props){
     super(props);
-    this.signup = this.signup.bind(this);
+    this.login = this.login.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.state = {
       email:'',
       password:''
-    }
+    };
   }
-  signup(e){
+  login(e){
     e.preventDefault();
-    fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{}).catch((error)=>{
+    console.log("message");
+    fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{}).catch((error)=>{
       console.log(error);
     });
   }
@@ -24,6 +26,7 @@ class createacc extends Component {
   render() {
     return (
       <div>
+        <h1>please log in:</h1>
         <form>
           <div class="form-group">
             <label for="email">Email address</label>
@@ -47,11 +50,11 @@ class createacc extends Component {
               name="password"
               required/>
           </div>
-          <button type="submit" onClick={this.signup} value="submit">Create Account</button>
+          <button type="submit" onClick={this.login} value="submit">Log in</button>
         </form>
       </div>
     );
   }
 }
 
-export default createacc;
+export default login;

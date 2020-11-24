@@ -1,32 +1,34 @@
 import React, { Component } from "react";
-import fire from "./firebase";
-import { Link } from 'react-router-dom';
+import fire from "../../../firebase";
 
-class login extends Component {
-  constructor(props){
+class SignUp extends Component {
+  constructor(props) {
     super(props);
-    this.login = this.login.bind(this);
+    this.signup = this.signup.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.state = {
-      email:'',
-      password:''
+      email: "",
+      password: "",
     };
   }
-  login(e){
+  signup(e) {
     e.preventDefault();
-    console.log("message");
-    fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{}).catch((error)=>{
-      console.log(error);
-    });
+    fire
+      .auth()
+      .createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then((u) => {})
+      .catch((error) => {
+        console.log(error);
+      });
   }
-  handleChange(e){
-    this.setState({ [e.target.name]: e.target.value});
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
   state = {};
   render() {
     return (
       <div>
-        <h1>please log in:</h1>
+        <h1>Create an Account:</h1>
         <form>
           <div class="form-group">
             <label for="email">Email address</label>
@@ -37,7 +39,8 @@ class login extends Component {
               name="email"
               class="form-control"
               id="email"
-              required/>
+              required
+            />
           </div>
           <div class="form-group">
             <label for="password">Password</label>
@@ -48,13 +51,16 @@ class login extends Component {
               class="form-control"
               id="password"
               name="password"
-              required/>
+              required
+            />
           </div>
-          <button type="submit" onClick={this.login} value="submit">Log in</button>
+          <button type="submit" onClick={this.signup} value="submit">
+            Create Account
+          </button>
         </form>
       </div>
     );
   }
 }
 
-export default login;
+export default SignUp;

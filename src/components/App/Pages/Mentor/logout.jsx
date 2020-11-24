@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import fire from "./firebase";
+import fire from "../../../firebase";
 
 class logout extends Component {
   constructor(props){

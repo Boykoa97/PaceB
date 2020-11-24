@@ -3,6 +3,7 @@ import firebase from "firebase";
 import "firebase/firestore";
 import "firebase/auth";
 
+//for testing, replace config variable with your own firebase project config
 const config = {
   apiKey: "AIzaSyDhHAtJTnrPRK1nWelEdV5tmCuUWnkSVu4",
   authDomain: "paceb-e8e94.firebaseapp.com",
