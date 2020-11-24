@@ -14,6 +14,7 @@ class login extends Component {
   }
   login(e){
     e.preventDefault();
+    console.log("message");
     fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{}).catch((error)=>{
       console.log(error);
     });
@@ -49,7 +50,7 @@ class login extends Component {
               name="password"
               required/>
           </div>
-          <button type="submit" onclick={this.login} value="submit">Log in</button>
+          <button type="submit" onClick={this.login} value="submit">Log in</button>
         </form>
       </div>
     );

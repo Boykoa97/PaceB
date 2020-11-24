@@ -22,7 +22,7 @@ class logout extends Component {
     return (
       <div>
         <h1>logged in, press button to log out</h1>
-          <button type="submit" onclick={this.logout} value="submit">Log in</button>
+          <button type="submit" onClick={this.logout} value="submit">Log out</button>
       </div>
     );
   }

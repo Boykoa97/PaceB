@@ -47,8 +47,7 @@ class createacc extends Component {
               name="password"
               required/>
           </div>
-          <button type="submit" onclick={this.signup} value="submit">Log in</button>
-          <button onclick={this.signup} classname="buttn-succ"></button>
+          <button type="submit" onClick={this.signup} value="submit">Create Account</button>
         </form>
       </div>
     );

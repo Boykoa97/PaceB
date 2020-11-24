@@ -122,7 +122,8 @@ class App extends Component {
           </div>*/}
           {/*<Login></Login> */}
 
-          {this.state.user ? <Logout></Logout> : <Login></Login>}
+          {/*{this.state.user ? <Logout></Logout> : <Login></Login>}*/}
+          <Createacc></Createacc>
         </div>
       </div>
     );
