@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -27,6 +27,7 @@ class App extends Component {
             <Route path='/signup' exact component={SignUp} />
           </Switch>
         </Router>
+        {/*{this.state.user ? <Logout></Logout> : <Login></Login>}*/}
       </div>
     );
   }
