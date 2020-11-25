@@ -1,3 +1,4 @@
+import userEvent from "@testing-library/user-event";
 import React, { Component } from "react";
 import fire from "../../../firebase";
 
@@ -6,11 +7,17 @@ class logout extends Component {
     super(props);
     this.logout = this.logout.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    const user = fire.auth().currentUser;
+    const email = user.email;
+    const uid = user.uid;
     this.state = {
-      email:'',
-      password:''
+      email:email,
+      password:'',
+      uid:uid,
     }
   }
+
+
   logout(){
     fire.auth().signOut();
   }
@@ -21,8 +28,11 @@ class logout extends Component {
   render() {
     return (
       <div>
-        <h1>logged in, press button to log out</h1>
-          <button className="logout-btn" type="submit" onClick={this.logout} value="submit">Log out</button>
+        <h1>Logged In</h1>
+        <p>Account information is:</p>
+          <p>Email: {this.state.email}</p>
+          <p>User id: {this.state.uid}</p>
+         <p>Press the button in the upper left to log out</p>
       </div>
     );
   }
