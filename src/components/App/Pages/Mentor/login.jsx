@@ -9,14 +9,17 @@ class login extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.state = {
       email:'',
-      password:''
+      password:'',
+      eMessage:'',
     };
   }
   login(e){
     e.preventDefault();
     console.log("message");
     fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{}).catch((error)=>{
-      console.log(error);
+      const eMessage = error.message;
+        this.setState({ eMessage });
+        console.log(error);
     });
   }
   handleChange(e){
@@ -50,7 +53,8 @@ class login extends Component {
               name="password"
               required/>
           </div>
-          <button className="login-btn" type="submit" onClick={this.login} value="submit">Log in</button>
+          <button type="submit" onClick={this.login} value="submit">Log in</button>
+          <p>{this.state.eMessage}</p>
         </form>
       </div>
     );
