@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import fire from "../../../firebase";
-
+import nodemailer from "nodemailer";
 import "./SignUp.css";
 
 class SignUp extends Component {
@@ -12,6 +12,7 @@ class SignUp extends Component {
       email: "",
       password: "",
       eMessage: "",
+      authOK: false,
     };
   }
   signup(e) {
@@ -19,7 +20,10 @@ class SignUp extends Component {
     fire
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then((u) => {})
+      .then((u) => {
+        const authOK = true;
+        this.setState({ authOK });
+      })
       .catch((error) => {
         const eMessage = error.message;
         this.setState({ eMessage });
@@ -28,6 +32,16 @@ class SignUp extends Component {
   }
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+  }
+
+  creationMessage() {
+    if (this.state.authOK) {
+      let message = "Welcome " + this.state.email;
+      message = this.state.eMessage === "" ? message : this.state.eMessage;
+      return message;
+    } else {
+      return "";
+    }
   }
   state = {};
   render() {
@@ -59,10 +73,15 @@ class SignUp extends Component {
               required
             />
           </div>
-          <button className="create-acc-btn" type="submit" onClick={this.signup} value="submit">
+          <button
+            className="create-acc-btn"
+            type="submit"
+            onClick={this.signup}
+            value="submit"
+          >
             Create Account
           </button>
-          <p>{this.state.eMessage}</p>
+          <p>{this.creationMessage()}</p>
         </form>
       </div>
     );
