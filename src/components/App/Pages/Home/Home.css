@@ -5,10 +5,27 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.webpage {
+.Home {
   margin: 2.5rem;
+  margin-right: 4rem;
 }
 
 .Welcome {
   text-align: center;
+}
+
+.mentor-form-btn {
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  color: white;
+  background-color: #9196e4;
+}
+
+.mentor-form-btn:hover {
+  background: #afb3e9;
+  color: black;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
 }
