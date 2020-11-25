@@ -9,6 +9,7 @@ class SignUp extends Component {
     this.state = {
       email: "",
       password: "",
+      eMessage: "",
     };
   }
   signup(e) {
@@ -18,6 +19,8 @@ class SignUp extends Component {
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {})
       .catch((error) => {
+        const eMessage = error.message;
+        this.setState({ eMessage });
         console.log(error);
       });
   }
@@ -57,6 +60,7 @@ class SignUp extends Component {
           <button type="submit" onClick={this.signup} value="submit">
             Create Account
           </button>
+          <p>{this.state.eMessage}</p>
         </form>
       </div>
     );
