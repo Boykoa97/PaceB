@@ -1,9 +1,10 @@
 import React from "react";
 
-import Counters from "./counters";
-import DatePicker from "./datePicker";
+import DatePicker from "../Mentor/datePicker";
 import { render } from "@testing-library/react";
-import QuestionList from "./questionList";
+import QuestionList from "../Mentor/questionList";
+
+import "./Home.css";
 
 /*
 In this case the App mimics some functionality of a a shopping cart 
@@ -79,18 +80,16 @@ class Home extends React.Component {
 
     return (
       <div className="Home">
-        <div className="webpage">
           <div className="Welcome">
             <h1>Capstone Pace B</h1>
           </div>
           <QuestionList></QuestionList>
-          <DatePicker></DatePicker>
+          {/* <DatePicker></DatePicker> */}
           <div>
-            <button className="btn btn-secondary btn-med badge-primary">
+            <button className="mentor-form-btn">
               Submit
             </button>
           </div>
-        </div>
       </div>
     );
   }

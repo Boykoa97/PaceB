@@ -5,13 +5,14 @@ import "firebase/auth";
 
 //for testing, replace config variable with your own firebase project config
 const config = {
-  apiKey: "AIzaSyDhHAtJTnrPRK1nWelEdV5tmCuUWnkSVu4",
-  authDomain: "paceb-e8e94.firebaseapp.com",
-  databaseURL: "https://paceb-e8e94.firebaseio.com",
-  projectId: "paceb-e8e94",
-  storageBucket: "paceb-e8e94.appspot.com",
-  messagingSenderId: "512536264006",
-  appId: "1:512536264006:web:99744d6e1960f09665f947",
+  apiKey: "AIzaSyCUCtJ-qKVBWrBqIiX5oG7FUYWmm8i774A",
+    authDomain: "capstone-pace-b.firebaseapp.com",
+    databaseURL: "https://capstone-pace-b.firebaseio.com",
+    projectId: "capstone-pace-b",
+    storageBucket: "capstone-pace-b.appspot.com",
+    messagingSenderId: "737272886261",
+    appId: "1:737272886261:web:a553f1dba1e45117d166bc",
+    measurementId: "G-0JG82T8DQE"
 };
 
 const fire = firebase.initializeApp(config);
