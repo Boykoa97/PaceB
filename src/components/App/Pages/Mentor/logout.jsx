@@ -32,7 +32,7 @@ class logout extends Component {
         <p>Account information is:</p>
           <p>Email: {this.state.email}</p>
           <p>User id: {this.state.uid}</p>
-         <p>Press the button in the upper left to log out</p>
+         <p>Press the button in the top right corner to log out</p>
       </div>
     );
   }
