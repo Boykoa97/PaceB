@@ -18,6 +18,10 @@
 
 **Meeting 9 (17/11/2020)**: 30 mins; Phil & Anthony present; Agenda was to go through trello board, maintenance and check-in on progress. Discussions made included firebase and UI funcitonality in preparation for peer testing. Set of actions were to set up trello tickets for what we plan to implement in the web app, as well as break the tickets down into smaller workload.
 
+**Meeting 10 (24/11/2020)**: 1 hour; Phil & Anthony present; Agenda was to go through trello tickets and look at app progress;Discussions made included UI and authentication preferences; Set of actions was to incorporate multiple suggested featuresincluding firebase authentication API, modify some login functionality and edit mentor form.
+
+**Meeting 11 (01/12/2020)**: 1 hour; Phil & Anthony present; Agenda was to go over results from peer testingand discuss criticism from peers and establish modifications to the pp; Discussions included suggestions for libraries to use to better assist web app development, as well as verification and authentication preferences. Also discussed admin and mentee user tasks within the app. Set of actions were to research APIs and libraries to incorporate into app development.
+
 # Team Meetings:
 
 **Team Meeting 1(28/09/2020)**:(2:17-3:52);All group members present; Goals were figuring out what to ask the client, setting up the repo, determining when to work on the requirements, and which ones to start working on.
