@@ -8,7 +8,9 @@ import Home from './Pages/Home/Home';
 import Mentor from './Pages/Mentor/Mentor';
 import Mentee from './Pages/Mentee/Mentee';
 import Admin from './Pages/Admin/Admin';
+import AdminHome from './Pages/Admin/AdminHome';
 import SignUp from './Pages/SignUp/SignUp';
+import history from './History';
 
 
 class App extends Component {
@@ -17,14 +19,15 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Router>
+        <Router History={ history }>
           <NavBar />
           <Switch>
-            <Route path='/' exact component={Home} />
-            <Route path='/mentee' exact component={Mentee} />
-            <Route path='/mentor' exact component={Mentor} />
-            <Route path='/admin' exact component={Admin} />
-            <Route path='/signup' exact component={SignUp} />
+            <Route exact path='/' component={Home} />
+            <Route exact path='/mentee' component={Mentee} />
+            <Route exact path='/mentor' component={Mentor} />
+            <Route exact path='/admin' component={Admin} />
+            <Route exact path='/adminhome' component={AdminHome} />
+            <Route exact path='/signup' component={SignUp} />
           </Switch>
         </Router>
         {/*{this.state.user ? <Logout></Logout> : <Login></Login>}*/}

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
-import fire from "../../../firebase";
-import { Link } from 'react-router-dom';
+import fire from "../../firebase";
+import history from "../History";
+
+import "./loginout.css";
+
 
 class login extends Component {
   constructor(props){
@@ -30,7 +33,7 @@ class login extends Component {
     return (
       <div>
         <h1>please log in:</h1>
-        <form>
+        <form onSubmit={this.login}>
           <div class="form-group">
             <label for="email">Email address</label>
             <input
@@ -53,9 +56,15 @@ class login extends Component {
               name="password"
               required/>
           </div>
-          <button type="submit" onClick={this.login} value="submit">Log in</button>
+          <button className="login-btn" type="submit" value="submit">Sign in</button>
           <p>{this.state.eMessage}</p>
         </form>
+        <p>
+          Don't have an account? 
+          <form className="su-btn">
+            <button className="signup-btn" onClick={() => history.push('/signup')}>Sign Up</button>
+          </form>
+        </p>
       </div>
     );
   }

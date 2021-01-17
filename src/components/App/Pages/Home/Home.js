@@ -1,11 +1,11 @@
 import React from "react";
 
-import DatePicker from "../Mentor/datePicker";
 import { render } from "@testing-library/react";
-import QuestionList from "../Mentor/questionList";
+//import DatePicker from "../Mentor/datePicker";
+//import QuestionList from "../Mentor/questionList";
+import history from '../../History';
 
 import "./Home.css";
-
 
 
 class Home extends React.Component {
@@ -22,15 +22,23 @@ class Home extends React.Component {
     return (
       <div className="Home">
           <div className="Welcome">
-            <h1>Capstone Pace B</h1>
-          </div>
+            <h1>Welcome to Capstone Pace B</h1>
+          {/*</div>
           <QuestionList></QuestionList>
-          {/* <DatePicker></DatePicker> */}
-          <div>
-            <button className="mentor-form-btn">
-              Submit
-            </button>
+          <DatePicker></DatePicker>
+          <div>*/}
           </div>
+          <form className="home-btns">
+            <button className="home-btn" onClick={() => history.push('/mentee')}>
+              Sign In As Mentee
+            </button>
+            <button className="home-btn" onClick={() => history.push('/mentor')}>
+              Sign In As Mentor
+            </button>
+            <button className="home-btn" onClick={() => history.push('/admin')}>
+              Sign In As Admin
+            </button>
+          </form>
       </div>
     );
   }

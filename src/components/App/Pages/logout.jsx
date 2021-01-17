@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import fire from "../../../firebase";
+import fire from "../../firebase";
+
+import "./loginout.css";
 
 class logout extends Component {
   constructor(props){
@@ -22,7 +24,7 @@ class logout extends Component {
     return (
       <div>
         <h1>logged in, press button to log out</h1>
-          <button className="logout-btn" type="submit" onClick={this.logout} value="submit">Log out</button>
+        <button className="logout-btn" type="submit" onClick={this.logout} value="submit">Sign out</button>
       </div>
     );
   }
