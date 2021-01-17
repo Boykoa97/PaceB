@@ -36,7 +36,7 @@ class Home extends React.Component {
               Sign In As Mentor
             </button>
             <button className="home-btn" onClick={() => history.push('/admin')}>
-              Sign In As Admin
+              Sign In As Admin (this is for git testing branch)
             </button>
           </form>
       </div>
@@ -46,3 +46,7 @@ class Home extends React.Component {
 
 //when you call the app component it will use this this as the default app code
 export default Home;
+
+
+
+
