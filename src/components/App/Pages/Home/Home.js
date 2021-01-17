@@ -36,7 +36,7 @@ class Home extends React.Component {
               Sign In As Mentor
             </button>
             <button className="home-btn" onClick={() => history.push('/admin')}>
-              Sign In As Admin (this is for git testing branch)
+              Sign In As Admin
             </button>
           </form>
       </div>
