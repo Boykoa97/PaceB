@@ -4,13 +4,45 @@ import './NavBar.css';
 import { NavItems } from './NavItems';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
+import fire from "../firebase";
 
 class NavBar extends React.Component{
+    constructor(props) {
+        super(props);
+        console.log("App - Constructor");
+        this.state = {
+          user: null,
+        };
+        this.logout = this.logout.bind(this);
+        this.authListener = this.authListener.bind(this);
+      }
     state = { clicked: false }
 
     handleClick = () => {
         this.setState({ clicked: !this.state.clicked })
     }
+    authListener() {
+        fire.auth().onAuthStateChanged((user) => {
+          console.log(user);
+          if (user) {
+            this.setState({ user });
+            localStorage.setItem("user", user.uid);
+          } else {
+            this.setState({ user: null });
+            localStorage.removeItem("user");
+          }
+        });
+      }
+      logout(){
+        fire.auth().signOut();
+      }
+      componentDidMount() {
+        //use this for ajax calls form the server
+        //set the sate here
+    
+        console.log("App - Mounted");
+        this.authListener();
+      }
 
     render(){
         return( 
@@ -31,9 +63,9 @@ class NavBar extends React.Component{
                     }) }
                 </ul>
                 <li className='sign-up'>
-                    <Link to="/signup" className='sign_up'>
+                {this.state.user ? <button className='sign_up' onClick={this.logout} >Sign Out</button>: <Link to="/signup" className='sign_up'>
                         Sign Up
-                    </Link>
+                    </Link>}
                 </li>
             </nav>
         );

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import fire from "../../../firebase";
 
 import "./SignUp.css";
@@ -12,10 +13,13 @@ class SignUp extends Component {
       email: "",
       password: "",
       eMessage: "",
+      authok: false,
     };
   }
   signup(e) {
     e.preventDefault();
+    const authok = true;
+    this.setState({ authok });
     fire
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
@@ -24,6 +28,8 @@ class SignUp extends Component {
         const eMessage = error.message;
         this.setState({ eMessage });
         console.log(error);
+        const authok = false;
+        this.setState({ authok });
       });
   }
   handleChange(e) {
@@ -31,6 +37,9 @@ class SignUp extends Component {
   }
   state = {};
   render() {
+    if (this.state.authok === true) {
+      <Redirect to="/mentor" />;
+    }
     return (
       <div className="signup-page">
         <h1>Create an Account:</h1>
