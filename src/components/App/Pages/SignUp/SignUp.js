@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import fire from "../../../firebase";
-import history from "../../History";
 
 import "./SignUp.css";
 
@@ -77,9 +75,9 @@ class SignUp extends Component {
                   <option>Admin</option>
               </select>
           </div>
-          <button className="create-acc-btn" type="submit" value="submit" onClick={() => history.push('/mentor')}>
-            Create Account
-          </button>
+            <button className="create-acc-btn" type="submit" value="submit">
+              Create Account
+            </button>
           <p>{this.state.eMessage}</p>
         </form>
       </div>
