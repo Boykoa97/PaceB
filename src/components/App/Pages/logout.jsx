@@ -1,6 +1,8 @@
 import userEvent from "@testing-library/user-event";
 import React, { Component } from "react";
-import fire from "../../../firebase";
+import fire from "../../firebase";
+
+import "./loginout.css";
 
 class logout extends Component {
   constructor(props){

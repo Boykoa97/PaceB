@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import fire from "../../../firebase";
 
 import "./SignUp.css";
@@ -37,13 +36,13 @@ class SignUp extends Component {
   }
   state = {};
   render() {
-    if (this.state.authok === true) {
+    {/*if (this.state.authok === true) {
       <Redirect to="/mentor" />;
-    }
+    }*/}
     return (
       <div className="signup-page">
         <h1>Create an Account:</h1>
-        <form>
+        <form onSubmit={this.signup}>
           <div class="form-group">
             <label for="email">Email address</label>
             <input
@@ -68,14 +67,17 @@ class SignUp extends Component {
               required
             />
           </div>
-          <button
-            className="create-acc-btn"
-            type="submit"
-            onClick={this.signup}
-            value="submit"
-          >
-            Create Account
-          </button>
+          <div class="form-group">
+            <label for="usertype">User Type:</label>
+              <select className="userlist">
+                  <option>Mentee</option>
+                  <option>Mentor</option>
+                  <option>Admin</option>
+              </select>
+          </div>
+            <button className="create-acc-btn" type="submit" value="submit">
+              Create Account
+            </button>
           <p>{this.state.eMessage}</p>
         </form>
       </div>

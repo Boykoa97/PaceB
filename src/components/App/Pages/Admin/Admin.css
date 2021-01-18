@@ -5,16 +5,12 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.Home {
+.admin-page {
   margin: 2.5rem;
   text-align: center;
 }
 
-.home-btns {
-  margin-top: 3rem;
-}
-
-.home-btn {
+.admin-btn {
   text-decoration: none;
   padding: 8px 20px;
   border-radius: 4px;
@@ -23,7 +19,7 @@
   margin: 2.5rem;
 }
 
-.home-btn:hover {
+.admin-btn:hover {
   background: #afb3e9;
   color: black;
   border-radius: 4px;

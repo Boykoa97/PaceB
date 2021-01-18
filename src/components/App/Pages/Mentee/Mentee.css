@@ -1,35 +1,35 @@
-.signup-page {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.mentee-page {
+  margin: 2.5rem;
+  text-align: center;
+}
+
+.mentee-login-form {
   background-color: rgb(116, 111, 218);
   padding: 30px;
   width: 40rem;
   margin: auto;
   margin-top: 5rem;
+  text-align: left;
 }
 
-.create-acc-btn {
+.signup-btn {
   text-decoration: none;
-  padding: 8px 20px;
+  padding: 0px 5px;
   border-radius: 4px;
-  background: #fff;
+  background: #9196e4;
 }
 
-.create-acc-btn:hover {
+.signup-btn:hover {
   color: white;
   background-color: #9196e4;
   border-radius: 4px;
   transition: all 0.2s ease-out;
   text-decoration: none;
-}
-
-.userlist {
-  display: inline;
-  margin: 0rem 1.2rem;
-  text-decoration: none;
-  padding: 3px 3px;
-  border-radius: 8px;
-  background: #fff;
-}
-
-.userlist:hover {
-  cursor: pointer;
 }
