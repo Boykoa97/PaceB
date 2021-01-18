@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import fire from "../../../firebase";
+import history from "../../History";
 
 import "./SignUp.css";
 
@@ -37,9 +38,9 @@ class SignUp extends Component {
   }
   state = {};
   render() {
-    if (this.state.authok === true) {
+    {/*if (this.state.authok === true) {
       <Redirect to="/mentor" />;
-    }
+    }*/}
     return (
       <div className="signup-page">
         <h1>Create an Account:</h1>
@@ -76,7 +77,7 @@ class SignUp extends Component {
                   <option>Admin</option>
               </select>
           </div>
-          <button className="create-acc-btn" type="submit" value="submit">
+          <button className="create-acc-btn" type="submit" value="submit" onClick={() => history.push('/mentor')}>
             Create Account
           </button>
           <p>{this.state.eMessage}</p>
