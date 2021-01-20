@@ -1,0 +1,20 @@
+.login-btn,
+.logout-btn {
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.login-btn:hover,
+.logout-btn:hover {
+  color: white;
+  background-color: #9196e4;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+}
+
+.su-btn {
+  display: inline;
+}

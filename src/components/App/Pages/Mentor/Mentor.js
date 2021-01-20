@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Login from "./login.jsx";
-import Logout from "./logout.jsx";
+import Login from "../login.jsx";
+import Logout from "../logout.jsx";
 import fire from "../../../firebase";
 
 import "./Mentor.css";
@@ -38,8 +38,13 @@ class Mentor extends Component {
   render() {
     return (
       <nav className="mentor-page">
-        <div className="login-form">
-          {this.state.user ? <Logout></Logout> : <Login></Login>}
+        <div>
+          <div className="Welcome">
+            <h1>MENTOR PAGE</h1>
+          </div>
+          <div className="mentor-login-form">
+            {this.state.user ? <Logout></Logout> : <Login></Login>}
+          </div>
         </div>
       </nav>
     );

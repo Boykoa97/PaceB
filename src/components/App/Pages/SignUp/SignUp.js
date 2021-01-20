@@ -12,10 +12,13 @@ class SignUp extends Component {
       email: "",
       password: "",
       eMessage: "",
+      authok: false,
     };
   }
   signup(e) {
     e.preventDefault();
+    const authok = true;
+    this.setState({ authok });
     fire
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
@@ -24,6 +27,8 @@ class SignUp extends Component {
         const eMessage = error.message;
         this.setState({ eMessage });
         console.log(error);
+        const authok = false;
+        this.setState({ authok });
       });
   }
   handleChange(e) {
@@ -31,10 +36,13 @@ class SignUp extends Component {
   }
   state = {};
   render() {
+    {/*if (this.state.authok === true) {
+      <Redirect to="/mentor" />;
+    }*/}
     return (
       <div className="signup-page">
         <h1>Create an Account:</h1>
-        <form>
+        <form onSubmit={this.signup}>
           <div class="form-group">
             <label for="email">Email address</label>
             <input
@@ -59,9 +67,17 @@ class SignUp extends Component {
               required
             />
           </div>
-          <button className="create-acc-btn" type="submit" onClick={this.signup} value="submit">
-            Create Account
-          </button>
+          <div class="form-group">
+            <label for="usertype">User Type:</label>
+              <select className="userlist">
+                  <option>Mentee</option>
+                  <option>Mentor</option>
+                  <option>Admin</option>
+              </select>
+          </div>
+            <button className="create-acc-btn" type="submit" value="submit">
+              Create Account
+            </button>
           <p>{this.state.eMessage}</p>
         </form>
       </div>
