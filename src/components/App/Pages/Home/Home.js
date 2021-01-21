@@ -22,6 +22,10 @@ class Home extends React.Component {
           <div className="Welcome">
             <h1>Welcome to Capstone Pace B</h1>
           </div>
+          <div id="sys-description">
+            <h3>System Description:</h3>
+            <p>Pace B aims to link mentors and mentees together!</p>
+          </div>
           <form className="home-btns">
             <button className="home-btn" onClick={() => history.push('/create-organization')}>
               Create Organization
