@@ -44,6 +44,11 @@
   background: #fff;
 }
 
+#sign_in {
+  text-decoration: none;
+  color: #6d76f7;
+}
+
 .sign_in:hover {
   color: white;
   background-color: #9196e4;

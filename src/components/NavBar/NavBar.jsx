@@ -62,9 +62,9 @@ class NavBar extends React.Component{
                     }) }
                 </ul>
                 <li className='sign-in'>  {/* login button in top right */}
-                {this.state.user ? <button className='sign_in' onClick={this.logout} >Sign Out</button>: <Link to="/sign-in" className='sign_in'>
-                        Sign In
-                    </Link>}
+                {this.state.user ? <button className='sign_in' onClick={this.logout} >Sign Out</button>: <button className='sign_in'>
+                  <Link id="sign_in" to="/sign-in">Sign In</Link>
+                  </button>}
                 </li>
             </nav>
         );
