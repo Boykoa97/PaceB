@@ -36,9 +36,6 @@ class SignUp extends Component {
   }
   state = {};
   render() {
-    {/*if (this.state.authok === true) {
-      <Redirect to="/mentor" />;
-    }*/}
     return (
       <div className="signup-page">
         <h1>Create an Account:</h1>
@@ -70,9 +67,7 @@ class SignUp extends Component {
           <div class="form-group">
             <label for="usertype">User Type:</label>
               <select className="userlist">
-                  <option>Mentee</option>
                   <option>Mentor</option>
-                  <option>Admin</option>
               </select>
           </div>
             <button className="create-acc-btn" type="submit" value="submit">

@@ -31,12 +31,12 @@
   margin-top: 1rem;
 }
 
-.sign-up {
+.sign-in {
   list-style: none;
   margin-right: 2rem;
 }
 
-.sign_up {
+.sign_in {
   color: #6d76f7;
   text-decoration: none;
   padding: 8px 20px;
@@ -44,7 +44,7 @@
   background: #fff;
 }
 
-.sign_up:hover {
+.sign_in:hover {
   color: white;
   background-color: #9196e4;
   border-radius: 4px;
@@ -141,7 +141,7 @@
     font-size: 2rem;
   }
 
-  .sign_up {
+  .sign_in {
     position: absolute;
     left: 70%;
     top: 17px;

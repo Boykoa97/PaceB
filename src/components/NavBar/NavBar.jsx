@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import './NavBar.css';
 import { NavItems } from './NavItems';
-import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import fire from "../firebase";
 
@@ -47,11 +46,11 @@ class NavBar extends React.Component{
     render(){
         return( 
             <nav className="navbar">
-                <Link className="navbar-logo" to='/'>pace b <i className='fab fa-angellist'></i></Link> 
+                <Link className="navbar-logo" to='/'>pace b <i className='fab fa-angellist'></i></Link> {/* homepage / logo */}
                 <div className="menu-icon" onClick={this.handleClick}>
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
-                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
+                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>  {/* nav menu items */}
                     { NavItems.map((item, index)=> {
                         return (
                             <li key={index}>
@@ -62,9 +61,9 @@ class NavBar extends React.Component{
                         )
                     }) }
                 </ul>
-                <li className='sign-up'>
-                {this.state.user ? <button className='sign_up' onClick={this.logout} >Sign Out</button>: <Link to="/signup" className='sign_up'>
-                        Sign Up
+                <li className='sign-in'>  {/* login button in top right */}
+                {this.state.user ? <button className='sign_in' onClick={this.logout} >Sign Out</button>: <Link to="/mentor" className='sign_in'>
+                        Sign In
                     </Link>}
                 </li>
             </nav>
