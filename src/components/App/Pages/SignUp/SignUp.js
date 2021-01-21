@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import fire from "../../../firebase";
+import history from "../../History";
 
 import "./SignUp.css";
 
@@ -12,23 +13,20 @@ class SignUp extends Component {
       email: "",
       password: "",
       eMessage: "",
-      authok: false,
     };
   }
   signup(e) {
     e.preventDefault();
-    const authok = true;
-    this.setState({ authok });
     fire
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then((u) => {})
+      .then((u) => {
+        this.props.history.push('/')
+      })
       .catch((error) => {
         const eMessage = error.message;
         this.setState({ eMessage });
         console.log(error);
-        const authok = false;
-        this.setState({ authok });
       });
   }
   handleChange(e) {
