@@ -1,14 +1,17 @@
 import React from 'react';
-import fire from "../../../firebase";
+
+import "./AdminHome.css";
 
 class AdminHome extends React.Component {
 
     render(){
         return(
-            <div>
-                <h1>Admin Home</h1>
-                <button onClick={() => fire.auth().signOut}>Sign Out</button>
-            </div>
+            <nav className="admin-home">
+                <div>
+                    <h1 id='title'>Admin</h1>
+                    <p id="msg">This is the Admin Home Page</p>
+                </div>
+            </nav>
         )
     }
 }

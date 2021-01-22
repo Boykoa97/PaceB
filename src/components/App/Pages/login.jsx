@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import fire from "../../firebase";
 import history from "../History";
 
-import "./loginout.css";
+import "./login.css";
 
 
 class login extends Component {
@@ -19,7 +19,11 @@ class login extends Component {
   login(e){
     e.preventDefault();
     console.log("message");
-    fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{}).catch((error)=>{
+    fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+    .then((u)=>{
+      this.props.history.push('/')
+    })
+    .catch((error)=>{
       const eMessage = error.message;
         this.setState({ eMessage });
         console.log(error);
@@ -31,7 +35,7 @@ class login extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <div className="login-page">
         <h1>please log in:</h1>
         <form onSubmit={this.login}>
           <div class="form-group">
