@@ -22,6 +22,8 @@
 
 **Meeting 11 (01/12/2020)**: 1 hour; Phil & Anthony present; Agenda was to go over results from peer testingand discuss criticism from peers and establish modifications to the pp; Discussions included suggestions for libraries to use to better assist web app development, as well as verification and authentication preferences. Also discussed admin and mentee user tasks within the app. Set of actions were to research APIs and libraries to incorporate into app development.
 
+**Meeting 12 (12/01/2021)**: 45 mins; Phil present; Agenda was to go over changes made during the break, but client was not present.
+
 # Team Meetings:
 
 **Team Meeting 1(28/09/2020)**:(2:17-3:52);All group members present; Goals were figuring out what to ask the client, setting up the repo, determining when to work on the requirements, and which ones to start working on.

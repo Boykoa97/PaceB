@@ -30,3 +30,7 @@
   transition: all 0.2s ease-out;
   text-decoration: none;
 }
+
+#sys-description {
+  margin-top: 4rem;
+}
