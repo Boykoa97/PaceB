@@ -3,10 +3,9 @@ import Login from "../login.jsx";
 import Logout from "../logout.jsx";
 import fire from "../../../firebase";
 
-import MenteeHome from "./MenteeHome";
 import MenteeForm from "./MenteeForm";
 
-import "./Mentee.css";
+//import "./Mentee.css";
 import { Redirect } from "react-router-dom";
 
 class Mentee extends React.Component {
@@ -46,9 +45,6 @@ class Mentee extends React.Component {
           <div className="Welcome">
             <h1>MENTEE PAGE</h1>
           </div>
-          {/* <div className="mentee-login-form">
-            {this.state.user ? <MenteeHome></MenteeHome> : <Login></Login>}
-          </div> */}
           <div className="mentee-matching-form">
             <MenteeForm></MenteeForm>
           </div>
