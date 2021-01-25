@@ -4,29 +4,37 @@ import history from "../History";
 
 import "./loginout.css";
 
-
 class login extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.login = this.login.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.state = {
-      email:'',
-      password:'',
-      eMessage:'',
+      email: "",
+      password: "",
+      eMessage: "",
     };
   }
-  login(e){
+  login(e) {
     e.preventDefault();
     console.log("message");
-    fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{}).catch((error)=>{
-      const eMessage = error.message;
-        this.setState({ eMessage });
-        console.log(error);
-    });
+    fire
+      .auth()
+      .setPersistence("none")
+      .then(() => {
+        fire
+          .auth()
+          .signInWithEmailAndPassword(this.state.email, this.state.password)
+          .then((u) => {})
+          .catch((error) => {
+            const eMessage = error.message;
+            this.setState({ eMessage });
+            console.log(error);
+          });
+      });
   }
-  handleChange(e){
-    this.setState({ [e.target.name]: e.target.value});
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
   state = {};
   render() {
@@ -43,7 +51,8 @@ class login extends Component {
               name="email"
               class="form-control"
               id="email"
-              required/>
+              required
+            />
           </div>
           <div class="form-group">
             <label for="password">Password</label>
@@ -54,15 +63,23 @@ class login extends Component {
               class="form-control"
               id="password"
               name="password"
-              required/>
+              required
+            />
           </div>
-          <button className="login-btn" type="submit" value="submit">Sign in</button>
+          <button className="login-btn" type="submit" value="submit">
+            Sign in
+          </button>
           <p>{this.state.eMessage}</p>
         </form>
         <p>
-          Don't have an account? 
+          Don't have an account?
           <form className="su-btn">
-            <button className="signup-btn" onClick={() => history.push('/signup')}>Sign Up</button>
+            <button
+              className="signup-btn"
+              onClick={() => history.push("/signup")}
+            >
+              Sign Up
+            </button>
           </form>
         </p>
       </div>
