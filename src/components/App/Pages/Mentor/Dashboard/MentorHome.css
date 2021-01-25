@@ -1,0 +1,21 @@
+.mentor-dashboard {
+  text-align: center;
+}
+
+#profile {
+  width: 30rem;
+  display: inline;
+  float: left;
+  margin: auto;
+}
+
+#calendar {
+  width: 30rem;
+  display: inline;
+  float: left;
+}
+
+#foot-note {
+  text-align: center;
+  display: block;
+}

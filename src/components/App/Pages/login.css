@@ -1,3 +1,11 @@
+.login-page {
+  background-color: rgb(116, 111, 218);
+  padding: 30px;
+  width: 40rem;
+  margin: auto;
+  margin-top: 5rem;
+}
+
 .login-btn,
 .logout-btn {
   text-decoration: none;
@@ -17,4 +25,15 @@
 
 .su-btn {
   display: inline;
+}
+
+.signup-btn {
+  text-decoration: none;
+  padding: 0px 3px;
+  border-radius: 4px;
+  background: #9196e4;
+}
+
+.signup-btn:hover {
+  color: white;
 }

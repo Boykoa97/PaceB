@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import fire from "../../firebase";
 import history from "../History";
 
-import "./loginout.css";
+import "./login.css";
 
 class login extends Component {
   constructor(props) {
@@ -20,17 +20,14 @@ class login extends Component {
     console.log("message");
     fire
       .auth()
-      .setPersistence("none")
-      .then(() => {
-        fire
-          .auth()
-          .signInWithEmailAndPassword(this.state.email, this.state.password)
-          .then((u) => {})
-          .catch((error) => {
-            const eMessage = error.message;
-            this.setState({ eMessage });
-            console.log(error);
-          });
+      .signInWithEmailAndPassword(this.state.email, this.state.password)
+      .then((u) => {
+        this.props.history.push("/");
+      })
+      .catch((error) => {
+        const eMessage = error.message;
+        this.setState({ eMessage });
+        console.log(error);
       });
   }
   handleChange(e) {
@@ -39,7 +36,7 @@ class login extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <div className="login-page">
         <h1>please log in:</h1>
         <form onSubmit={this.login}>
           <div class="form-group">
