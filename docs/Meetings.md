@@ -24,6 +24,8 @@
 
 **Meeting 12 (12/01/2021)**: 45 mins; Phil present; Agenda was to go over changes made during the break, but client was not present.
 
+**Meeting 13 (19/01/2021)**: 1 hour; Phil & Anthony present; Agenda was to go over trello board, show updated app based on feedback from testing; Discussions included establishing appropriate login fuunctionality, key points about mentor and admin interactions with mentees; Set of actions were to fix web app based on feedback, fix environment and security implementations on database configurations, transition from trello to github project.
+
 # Team Meetings:
 
 **Team Meeting 1(28/09/2020)**:(2:17-3:52);All group members present; Goals were figuring out what to ask the client, setting up the repo, determining when to work on the requirements, and which ones to start working on.
