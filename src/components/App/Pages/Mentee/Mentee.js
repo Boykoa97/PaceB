@@ -1,12 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
+import Login from "../login.jsx";
+import Logout from "../logout.jsx";
 import fire from "../../../firebase";
 
-import Login from "../login.jsx";
-import MentorHome from "./Dashboard/MentorHome";
+import MenteeForm from "./MenteeForm";
 
-import "./Mentor.css";
+//import "./Mentee.css";
+import { Redirect } from "react-router-dom";
 
-class Mentor extends Component {
+class Mentee extends React.Component {
   constructor(props) {
     super(props);
     console.log("App - Constructor");
@@ -36,14 +38,15 @@ class Mentor extends Component {
       }
     });
   }
-
   render() {
     return (
-      <nav className="mentor-page">
+      <nav className="mentee-page">
         <div>
-          <div className="mentor-login-form">
-            {/* If user isn't logged in, they are redirected to login page, else they are redirected to mentor dashboard */}
-            {this.state.user ? <MentorHome /> : <Login />}
+          <div className="Welcome">
+            <h1>MENTEE PAGE</h1>
+          </div>
+          <div className="mentee-matching-form">
+            <MenteeForm></MenteeForm>
           </div>
         </div>
       </nav>
@@ -51,4 +54,4 @@ class Mentor extends Component {
   }
 }
 
-export default Mentor;
+export default Mentee;
