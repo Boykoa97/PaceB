@@ -39,3 +39,7 @@
 **Team Meeting 5(1/11/2020)**:(1:07-2:19);All group members present; Decided on what to do now that the requirments deadline has passed, and what to have done for the next week. Going to focus on building enviroments, and starting to build a start page.
 
 **Team Meeting 6(14/11/2020)**:(2:10-2:55);Chrstian and Anthony present; Assigned tasks for the next deliverable, and figured out what exactly needs to be done.
+
+**Team Meeting 7(23/11/2020)**:(1:01-2:10);All group members present; Went over what has been completed, and what still has to be done for peer testing 1. Authentication and react routing are now done, assigned remaining things that still need to be completed
+
+**Team Meeting 8(17/1/2021)**:(12:15-1:04);All group members present; First meeting since the break. Covered what we want to work on next, as well as combined any changes that did not make it into the last peer testing
