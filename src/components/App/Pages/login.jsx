@@ -1,36 +1,44 @@
 import React, { Component } from "react";
-import fire from "../../../firebase";
-import { Link } from 'react-router-dom';
+import fire from "../../firebase";
+import history from "../History";
+
+import "./login.css";
 
 class login extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.login = this.login.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.state = {
-      email:'',
-      password:'',
-      eMessage:'',
+      email: "",
+      password: "",
+      eMessage: "",
     };
   }
-  login(e){
+  login(e) {
     e.preventDefault();
     console.log("message");
-    fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{}).catch((error)=>{
-      const eMessage = error.message;
+    fire
+      .auth()
+      .signInWithEmailAndPassword(this.state.email, this.state.password)
+      .then((u) => {
+        this.props.history.push("/");
+      })
+      .catch((error) => {
+        const eMessage = error.message;
         this.setState({ eMessage });
         console.log(error);
-    });
+      });
   }
-  handleChange(e){
-    this.setState({ [e.target.name]: e.target.value});
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
   state = {};
   render() {
     return (
-      <div>
+      <div className="login-page">
         <h1>please log in:</h1>
-        <form>
+        <form onSubmit={this.login}>
           <div class="form-group">
             <label for="email">Email address</label>
             <input
@@ -40,7 +48,8 @@ class login extends Component {
               name="email"
               class="form-control"
               id="email"
-              required/>
+              required
+            />
           </div>
           <div class="form-group">
             <label for="password">Password</label>
@@ -51,11 +60,25 @@ class login extends Component {
               class="form-control"
               id="password"
               name="password"
-              required/>
+              required
+            />
           </div>
-          <button type="submit" onClick={this.login} value="submit">Log in</button>
+          <button className="login-btn" type="submit" value="submit">
+            Sign in
+          </button>
           <p>{this.state.eMessage}</p>
         </form>
+        <p>
+          Don't have an account?
+          <form className="su-btn">
+            <button
+              className="signup-btn"
+              onClick={() => history.push("/signup")}
+            >
+              Sign Up
+            </button>
+          </form>
+        </p>
       </div>
     );
   }

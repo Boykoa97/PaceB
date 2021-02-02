@@ -1,4 +1,4 @@
-.signup-page {
+.login-page {
   background-color: rgb(116, 111, 218);
   padding: 30px;
   width: 40rem;
@@ -6,14 +6,16 @@
   margin-top: 5rem;
 }
 
-.create-acc-btn {
+.login-btn,
+.logout-btn {
   text-decoration: none;
   padding: 8px 20px;
   border-radius: 4px;
   background: #fff;
 }
 
-.create-acc-btn:hover {
+.login-btn:hover,
+.logout-btn:hover {
   color: white;
   background-color: #9196e4;
   border-radius: 4px;
@@ -21,15 +23,17 @@
   text-decoration: none;
 }
 
-.userlist {
+.su-btn {
   display: inline;
-  margin: 0rem 1.2rem;
-  text-decoration: none;
-  padding: 3px 3px;
-  border-radius: 8px;
-  background: #fff;
 }
 
-.userlist:hover {
-  cursor: pointer;
+.signup-btn {
+  text-decoration: none;
+  padding: 0px 3px;
+  border-radius: 4px;
+  background: #9196e4;
+}
+
+.signup-btn:hover {
+  color: white;
 }

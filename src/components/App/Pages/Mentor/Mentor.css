@@ -1,28 +1,15 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
 .mentor-page {
-  margin: 1.5rem;
+  margin: 2.5rem;
+  text-align: center;
 }
 
-.login-form {
-  background-color: rgb(116, 111, 218);
-  padding: 30px;
-  width: 40rem;
-  margin: auto;
-  margin-top: 5rem;
-}
-
-.logout-btn,
-.login-btn {
-  text-decoration: none;
-  padding: 8px 20px;
-  border-radius: 4px;
-  background: #fff;
-}
-
-.logout-btn:hover,
-.login-btn:hover {
-  color: white;
-  background-color: #9196e4;
-  border-radius: 4px;
-  transition: all 0.2s ease-out;
-  text-decoration: none;
+.mentor-login-form {
+  text-align: left;
 }
