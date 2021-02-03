@@ -1,5 +1,6 @@
 The Goal of this project is to match mentors with a mentee. 
 
+
 A mentee will interact with a form similar to this. The information given from the form will then be matched with a mentor who has a similar form. Emails will be sent to the mentor if they wish to accept the request. Once that is done both users will get an email
 
 ![First part of the mentee form](https://github.com/Boykoa97/PaceB/blob/react_tutorial_anthony/images/sampleMenteeForm1.JPG)
