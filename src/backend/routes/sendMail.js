@@ -27,7 +27,7 @@ transporter.verify(function (error, success) {
 
 sendToMeRouter.use(express.json());
 
-sendToMeRouter.post("/", (req, res, next) => {
+sendToMeRouter.post("/mentee", (req, res, next) => {
   //make mailable object
   console.log("i hit the post request");
   //   we will need to update this pass information we want to email and also asthetics

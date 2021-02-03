@@ -16,7 +16,7 @@ function MenteeForm() {
     e.preventDefault();
     //destructure from inputs
     const { email, name, subject, description } = inputs;
-    axios.post("/", {
+    axios.post("/mentee", {
       //make an object to be handled from req.body on the backend.
       email,
       name,

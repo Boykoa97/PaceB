@@ -8,7 +8,12 @@ const port = 4444;
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.use("/", require("./routes/sendMail"));
+var sendMail = require("./routes/sendMail");
+var cookies = require("./routes/cookies");
+
+//app.use("/", sendMail);
+app.post("/mentee", sendMail);
+app.post("/mentor", cookies);
 
 // app.use("http://localhost:3000/mentee", require("./routes/sendMail"));
 
