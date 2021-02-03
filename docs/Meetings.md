@@ -26,6 +26,8 @@
 
 **Meeting 13 (19/01/2021)**: 1 hour; Phil & Anthony present; Agenda was to go over trello board, show updated app based on feedback from testing; Discussions included establishing appropriate login fuunctionality, key points about mentor and admin interactions with mentees; Set of actions were to fix web app based on feedback, fix environment and security implementations on database configurations, transition from trello to github project.
 
+**Meeting 14 (27/01/2021)**: 1 hour; Phil, Christian & Anthony present; Agenda was to go through updated web app and ask questions regarding mentor funcitonality and admin accessibility; Discussions included mentor dashboard and user functionality, as well as app implementations like cards and UI matching preferences; Set of actions were to work on matching preferences, establish functional user database retrieval system, and improve app implementations.
+
 # Team Meetings:
 
 **Team Meeting 1(28/09/2020)**:(2:17-3:52);All group members present; Goals were figuring out what to ask the client, setting up the repo, determining when to work on the requirements, and which ones to start working on.
