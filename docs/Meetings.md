@@ -26,6 +26,8 @@
 
 **Meeting 13 (19/01/2021)**: 1 hour; Phil & Anthony present; Agenda was to go over trello board, show updated app based on feedback from testing; Discussions included establishing appropriate login fuunctionality, key points about mentor and admin interactions with mentees; Set of actions were to fix web app based on feedback, fix environment and security implementations on database configurations, transition from trello to github project.
 
+**Meeting 14 (27/01/2021)**: 1 hour; Phil, Christian & Anthony present; Agenda was to go through updated web app and ask questions regarding mentor funcitonality and admin accessibility; Discussions included mentor dashboard and user functionality, as well as app implementations like cards and UI matching preferences; Set of actions were to work on matching preferences, establish functional user database retrieval system, and improve app implementations.
+
 # Team Meetings:
 
 **Team Meeting 1(28/09/2020)**:(2:17-3:52);All group members present; Goals were figuring out what to ask the client, setting up the repo, determining when to work on the requirements, and which ones to start working on.
@@ -43,3 +45,5 @@
 **Team Meeting 7(23/11/2020)**:(1:01-2:10);All group members present; Went over what has been completed, and what still has to be done for peer testing 1. Authentication and react routing are now done, assigned remaining things that still need to be completed
 
 **Team Meeting 8(17/1/2021)**:(12:15-1:04);All group members present; First meeting since the break. Covered what we want to work on next, as well as combined any changes that did not make it into the last peer testing
+
+**Team Meeting 9(01/02/2021)**:(12:10-12:44);All group members present; Figured out what we want to do database wise, and what our major goals are for peer testing 2. Also assigned tasks for the next 1-2 weeks. Will mainly focus on admin functionality, the generation of an iframe, and cookies functionality.
