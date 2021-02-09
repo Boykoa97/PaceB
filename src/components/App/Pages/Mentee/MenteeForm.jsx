@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import "./MenteeForm.css";
+
 function MenteeForm() {
   const [inputs, setInputs] = useState({
     email: "",
@@ -27,8 +29,8 @@ function MenteeForm() {
   };
   return (
     <div>
-      <h1>feed back form. </h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="mentee-fb">
+        <h1>feed back form. (for testing)</h1>
         <input
           type="text"
           placeholder="email"
@@ -62,7 +64,60 @@ function MenteeForm() {
           rows="10"
         ></textarea>
         <br />
-        <button>submit</button>
+        <button id="mentee-btn">submit</button>
+      </form>
+
+      <form className="menteeform">
+        <h1>Mentee Sign Up Form</h1>
+        <label>First Name: </label>
+        <input
+          id="input-box"
+          type="text"
+          name="first-name"
+          onChange={handleChange}
+          required
+        />
+        <br />
+        <label>Last Name: </label>
+        <input
+          id="input-box"
+          type="text"
+          name="last-name"
+          onChange={handleChange}
+          required
+        />
+        <br />
+        <label>Email Address: </label>
+        <input
+          id="input-box"
+          type="email"
+          name="email"
+          onChange={handleChange}
+          required
+        />
+        <br />
+        <label>Skill 1:</label>
+        <select className="skills-list">
+          <option>JavaScript</option>
+          <option>Python</option>
+          <option>C++</option>
+        </select>
+        <label>Skill 2:</label>
+        <select className="skills-list">
+          <option>None</option>
+          <option>JavaScript</option>
+          <option>Python</option>
+          <option>C++</option>
+        </select>
+        <label>Skill 3:</label>
+        <select className="skills-list">
+          <option>None</option>
+          <option>JavaScript</option>
+          <option>Python</option>
+          <option>C++</option>
+        </select>
+        <br />
+        <button id="mentee-btn">submit</button>
       </form>
     </div>
   );

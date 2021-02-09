@@ -1,4 +1,4 @@
-.mentor-dashboard {
+#md-title {
   text-align: center;
 }
 
@@ -13,9 +13,4 @@
   width: 30rem;
   display: inline;
   float: left;
-}
-
-#foot-note {
-  text-align: center;
-  display: block;
 }

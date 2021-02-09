@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import fire from "../../../firebase";
 
 import Login from "../login.jsx";
+
 import MentorHome from "./Dashboard/MentorHome";
 
 import "./Mentor.css";
@@ -39,14 +40,12 @@ class Mentor extends Component {
 
   render() {
     return (
-      <nav className="mentor-page">
-        <div>
-          <div className="mentor-login-form">
-            {/* If user isn't logged in, they are redirected to login page, else they are redirected to mentor dashboard */}
-            {this.state.user ? <MentorHome /> : <Login />}
-          </div>
+      <div className="mentor-page">
+        <div className="mentor-login-form">
+          {/* If user isn't logged in, they are redirected to login page, else they are redirected to mentor dashboard */}
+          {this.state.user ? <MentorHome /> : <Login />}
         </div>
-      </nav>
+      </div>
     );
   }
 }

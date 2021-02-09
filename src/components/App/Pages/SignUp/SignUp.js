@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import fire from "../../../firebase";
-import history from "../../History";
 
 import "./SignUp.css";
 
@@ -62,15 +61,32 @@ class SignUp extends Component {
               required
             />
           </div>
-          <div class="form-group">
-            <label for="usertype">User Type:</label>
-              <select className="userlist">
-                  <option>Mentor</option>
-              </select>
+          <div className="form-group>">
+            <label>Skill 1:</label>
+            <select className="skills-list">
+              <option>JavaScript</option>
+              <option>Python</option>
+              <option>C++</option>
+            </select>
+            <label>Skill 2:</label>
+            <select className="skills-list">
+              <option>None</option>
+              <option>JavaScript</option>
+              <option>Python</option>
+              <option>C++</option>
+            </select>
+            <label>Skill 3:</label>
+            <select className="skills-list">
+              <option>None</option>
+              <option>JavaScript</option>
+              <option>Python</option>
+              <option>C++</option>
+            </select>
           </div>
-            <button className="create-acc-btn" type="submit" value="submit">
-              Create Account
-            </button>
+          <br />
+          <button className="create-acc-btn" type="submit" value="submit">
+            Create Account
+          </button>
           <p>{this.state.eMessage}</p>
         </form>
       </div>

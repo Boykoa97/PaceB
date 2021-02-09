@@ -1,5 +1,6 @@
 import React from 'react';
 
+import MentorNav from "../MentorNav";
 import Profile from "./Profile/Profile";
 import Calendar from "./Calendar/Calendar";
 
@@ -9,8 +10,9 @@ class MentorHome extends React.Component {
     
     render() {
         return (
-            <div className="mentor-dashboard">
-                <h1>Mentor Dashboard</h1>
+            <div>
+                <MentorNav />
+                <h1 id="md-title">Mentor Dashboard</h1>
                 <div id="profile">
                     <Profile />
                 </div>
