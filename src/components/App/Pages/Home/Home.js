@@ -1,8 +1,6 @@
 import React from "react";
 import history from '../../History';
 
-import { render } from "@testing-library/react";
-
 import "./Home.css";
 
 
@@ -31,7 +29,7 @@ class Home extends React.Component {
               Create Organization
             </button>
             <button className="home-btn" onClick={() => history.push('/mentor')}>
-              Mentor Sign In
+              Mentor Page
             </button>
           </form>
       </div>

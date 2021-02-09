@@ -19,6 +19,7 @@ class Profile extends React.Component {
     render() {
         return (
             <div className="mentor-profile">
+                <h1 id="profile-title">User Profile</h1>
                 <p>Account information is:</p>
                 <p>Email: {this.state.email}</p>
                 <p>User id: {this.state.uid}</p>
