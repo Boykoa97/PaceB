@@ -62,25 +62,37 @@ class SignUp extends Component {
             />
           </div>
           <div className="form-group>">
-            <label>Skill 1:</label>
+            <label>Skill #1:</label>
             <select className="skills-list">
-              <option>JavaScript</option>
-              <option>Python</option>
-              <option>C++</option>
+              <option>Machine Learning</option>
+              <option>Frontend Web Dev</option>
+              <option>Backend Web Dev</option>
+              <option>UI / UX</option>
             </select>
-            <label>Skill 2:</label>
+            <label>Skill #2:</label>
             <select className="skills-list">
               <option>None</option>
-              <option>JavaScript</option>
-              <option>Python</option>
-              <option>C++</option>
+              <option>Machine Learning</option>
+              <option>Frontend Web Dev</option>
+              <option>Backend Web Dev</option>
+              <option>UI / UX</option>
             </select>
-            <label>Skill 3:</label>
+            <br />
+            <label>Skill #3:</label>
             <select className="skills-list">
               <option>None</option>
-              <option>JavaScript</option>
-              <option>Python</option>
-              <option>C++</option>
+              <option>Machine Learning</option>
+              <option>Frontend Web Dev</option>
+              <option>Backend Web Dev</option>
+              <option>UI / UX</option>
+            </select>
+            <label>Skill #4:</label>
+            <select className="skills-list">
+              <option>None</option>
+              <option>Machine Learning</option>
+              <option>Frontend Web Dev</option>
+              <option>Backend Web Dev</option>
+              <option>UI / UX</option>
             </select>
           </div>
           <br />

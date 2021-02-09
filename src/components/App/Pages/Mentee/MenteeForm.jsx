@@ -29,6 +29,7 @@ function MenteeForm() {
   };
   return (
     <div>
+      {/* Feedback Form for testing: */}
       <form onSubmit={handleSubmit} className="mentee-fb">
         <h1>feed back form. (for testing)</h1>
         <input
@@ -66,7 +67,7 @@ function MenteeForm() {
         <br />
         <button id="mentee-btn">submit</button>
       </form>
-
+      {/* Mentee Sign Up Form: */}
       <form className="menteeform">
         <h1>Mentee Sign Up Form</h1>
         <label>First Name: </label>
@@ -96,27 +97,38 @@ function MenteeForm() {
           required
         />
         <br />
-        <label>Skill 1:</label>
+        <label>Skill #1:</label>
         <select className="skills-list">
-          <option>JavaScript</option>
-          <option>Python</option>
-          <option>C++</option>
+          <option>Machine Learning</option>
+          <option>Frontend Web Dev</option>
+          <option>Backend Web Dev</option>
+          <option>UI / UX</option>
         </select>
-        <label>Skill 2:</label>
+        <label>Skill #2:</label>
         <select className="skills-list">
           <option>None</option>
-          <option>JavaScript</option>
-          <option>Python</option>
-          <option>C++</option>
-        </select>
-        <label>Skill 3:</label>
-        <select className="skills-list">
-          <option>None</option>
-          <option>JavaScript</option>
-          <option>Python</option>
-          <option>C++</option>
+          <option>Machine Learning</option>
+          <option>Frontend Web Dev</option>
+          <option>Backend Web Dev</option>
+          <option>UI / UX</option>
         </select>
         <br />
+        <label>Skill #3:</label>
+        <select className="skills-list">
+          <option>None</option>
+          <option>Machine Learning</option>
+          <option>Frontend Web Dev</option>
+          <option>Backend Web Dev</option>
+          <option>UI / UX</option>
+        </select>
+        <label>Skill #4:</label>
+        <select className="skills-list">
+          <option>None</option>
+          <option>Machine Learning</option>
+          <option>Frontend Web Dev</option>
+          <option>Backend Web Dev</option>
+          <option>UI / UX</option>
+        </select>
         <button id="mentee-btn">submit</button>
       </form>
     </div>

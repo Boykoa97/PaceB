@@ -33,7 +33,9 @@
 .skills-list {
   display: inline;
   margin-left: 0.5rem;
-  margin-right: 1.2rem;
+  margin-right: 1.5rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-decoration: none;
   padding: 3px 3px;
   border-radius: 8px;
