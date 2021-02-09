@@ -1,10 +1,13 @@
 import React from 'react';
+import { Card } from 'antd';
 
 import MentorNav from "../MentorNav";
 import Profile from "./Profile/Profile";
 import Calendar from "./Calendar/Calendar";
 
 import "./MentorHome.css";
+
+const { Meta } = Card;
 
 class MentorHome extends React.Component {
     
@@ -13,12 +16,12 @@ class MentorHome extends React.Component {
             <div>
                 <MentorNav />
                 <h1 id="md-title">Mentor Dashboard</h1>
-                <div id="profile">
+                <Card id="profile">
                     <Profile />
-                </div>
-                <div id="calendar">
+                </Card>
+                <Card id="calendar">
                     <Calendar />
-                </div>
+                </Card>
             </div>
         )
     }
