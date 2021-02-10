@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import fire from "../../../firebase";
-
+import axios from "axios";
 import "./SignUp.css";
 
 class SignUp extends Component {
@@ -20,7 +20,12 @@ class SignUp extends Component {
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {
-        this.props.history.push('/')
+        this.props.history.push("/");
+        var uid = u.user.uid;
+        console.log(uid);
+        axios.post("/adduser", {
+          fid: uid,
+        });
       })
       .catch((error) => {
         const eMessage = error.message;
