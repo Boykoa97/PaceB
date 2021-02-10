@@ -47,3 +47,5 @@
 **Team Meeting 8(17/1/2021)**:(12:15-1:04);All group members present; First meeting since the break. Covered what we want to work on next, as well as combined any changes that did not make it into the last peer testing
 
 **Team Meeting 9(01/02/2021)**:(12:10-12:44);All group members present; Figured out what we want to do database wise, and what our major goals are for peer testing 2. Also assigned tasks for the next 1-2 weeks. Will mainly focus on admin functionality, the generation of an iframe, and cookies functionality.
+
+**Team Meeting 10(09/02/2021)**:(12:34-1:20);All group members present; Covered what we have done in the past week, as well as what we are going to have done for peer testing 2. Continuing to work on the Iframe, admin functionality, and cookies. Updated eachother on progress and what we individually have done.
