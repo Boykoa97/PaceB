@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import './NavBar.css';
 import { NavItems } from './NavItems';
@@ -15,11 +15,7 @@ class NavBar extends React.Component{
         this.logout = this.logout.bind(this);
         this.authListener = this.authListener.bind(this);
       }
-    state = { clicked: false }
 
-    handleClick = () => {
-        this.setState({ clicked: !this.state.clicked })
-    }
     authListener() {
         fire.auth().onAuthStateChanged((user) => {
           console.log(user);
@@ -47,10 +43,7 @@ class NavBar extends React.Component{
         return( 
             <nav className="navbar">
                 <Link className="navbar-logo" to='/'>pace b <i className='fab fa-angellist'></i></Link> {/* homepage / logo */}
-                <div className="menu-icon" onClick={this.handleClick}>
-                    <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
-                </div>
-                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>  {/* nav menu items */}
+                <ul className={this.state.user ? 'nav-menu-hide' : 'nav-menu'}>  {/* nav menu items */}
                     { NavItems.map((item, index)=> {
                         return (
                             <li key={index}>
@@ -62,8 +55,12 @@ class NavBar extends React.Component{
                     }) }
                 </ul>
                 <li className='sign-in'>  {/* login button in top right */}
-                {this.state.user ? <button className='sign_in' onClick={this.logout} >Sign Out</button>: <button className='sign_in'>
-                  <Link id="sign_in" to="/sign-in">Sign In</Link>
+                {this.state.user ? 
+                  <button className='sign_in' onClick={this.logout} >
+                    Sign Out
+                  </button>:
+                  <button className='sign_in'>
+                    <Link id="sign_in" to="/sign-in">Sign In</Link>
                   </button>}
                 </li>
             </nav>

@@ -1,10 +1,10 @@
-import React from "react";
-import fire from "../../../firebase";
+import React, { Component } from "react";
+import fire from "../../../../firebase";
 
-import "./Mentee.css";
-import MenteeForm from "./MenteeForm";
+import Login from "../../login";
+import MenteeList from "./MenteeList";
 
-class Mentee extends React.Component {
+class MenteeListAccess extends Component {
   constructor(props) {
     super(props);
     console.log("App - Constructor");
@@ -34,20 +34,17 @@ class Mentee extends React.Component {
       }
     });
   }
+
   render() {
     return (
-      <nav className="mentee-page">
-        <div>
-          <div className="Welcome">
-            <h1 id="mp-title">MENTEE PAGE</h1>
-          </div>
-          <div className="mentee-matching-form">
-            <MenteeForm></MenteeForm>
-          </div>
+      <div className="mentor-page">
+        <div className="mentor-login-form">
+          {/* If user isn't logged in, they are redirected to login page, else they are shown mentee list page */}
+          {this.state.user ? <MenteeList /> : <Login />}
         </div>
-      </nav>
+      </div>
     );
   }
 }
 
-export default Mentee;
+export default MenteeListAccess;

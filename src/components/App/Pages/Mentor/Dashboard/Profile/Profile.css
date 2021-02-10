@@ -1,5 +1,10 @@
 .mentor-profile {
   background-color: rgb(116, 111, 218);
-  padding: 100px 40px;
-  margin: 3rem;
+  padding: 10px 40px;
+  padding-bottom: 60px;
+}
+
+#profile-title {
+  color: antiquewhite;
+  padding-bottom: 20px;
 }

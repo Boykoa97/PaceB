@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import fire from "../../../firebase";
-import history from "../../History";
 import axios from "axios";
-
 import "./SignUp.css";
 
 class SignUp extends Component {
@@ -68,12 +66,41 @@ class SignUp extends Component {
               required
             />
           </div>
-          <div class="form-group">
-            <label for="usertype">User Type:</label>
-            <select className="userlist">
-              <option>Mentor</option>
+          <div className="form-group>">
+            <label>Skill #1:</label>
+            <select className="skills-list">
+              <option>Machine Learning</option>
+              <option>Frontend Web Dev</option>
+              <option>Backend Web Dev</option>
+              <option>UI / UX</option>
+            </select>
+            <label>Skill #2:</label>
+            <select className="skills-list">
+              <option>None</option>
+              <option>Machine Learning</option>
+              <option>Frontend Web Dev</option>
+              <option>Backend Web Dev</option>
+              <option>UI / UX</option>
+            </select>
+            <br />
+            <label>Skill #3:</label>
+            <select className="skills-list">
+              <option>None</option>
+              <option>Machine Learning</option>
+              <option>Frontend Web Dev</option>
+              <option>Backend Web Dev</option>
+              <option>UI / UX</option>
+            </select>
+            <label>Skill #4:</label>
+            <select className="skills-list">
+              <option>None</option>
+              <option>Machine Learning</option>
+              <option>Frontend Web Dev</option>
+              <option>Backend Web Dev</option>
+              <option>UI / UX</option>
             </select>
           </div>
+          <br />
           <button className="create-acc-btn" type="submit" value="submit">
             Create Account
           </button>
