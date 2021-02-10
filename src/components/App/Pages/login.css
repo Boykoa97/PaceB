@@ -4,6 +4,7 @@
   width: 40rem;
   margin: auto;
   margin-top: 5rem;
+  border-style: groove;
 }
 
 .login-btn,
