@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import fire from "../../../firebase";
 import history from "../../History";
+import axios from "axios";
 
 import "./SignUp.css";
 
@@ -21,7 +22,12 @@ class SignUp extends Component {
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {
-        this.props.history.push('/')
+        this.props.history.push("/");
+        var uid = u.user.uid;
+        console.log(uid);
+        axios.post("/adduser", {
+          fid: uid,
+        });
       })
       .catch((error) => {
         const eMessage = error.message;
@@ -64,13 +70,13 @@ class SignUp extends Component {
           </div>
           <div class="form-group">
             <label for="usertype">User Type:</label>
-              <select className="userlist">
-                  <option>Mentor</option>
-              </select>
+            <select className="userlist">
+              <option>Mentor</option>
+            </select>
           </div>
-            <button className="create-acc-btn" type="submit" value="submit">
-              Create Account
-            </button>
+          <button className="create-acc-btn" type="submit" value="submit">
+            Create Account
+          </button>
           <p>{this.state.eMessage}</p>
         </form>
       </div>

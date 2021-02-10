@@ -1,14 +1,16 @@
 const express = require("express");
 const app = express();
-require("dotenv").config();
 const morgan = require("morgan");
 const nodemailer = require("nodemailer");
+const mysql = require("mysql");
 const port = 4444;
+const mysqlconnection = require("./mysqlconnection");
 
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.use("/", require("./routes/sendMail"));
+app.post("/adduser", require("./routes/adduser"));
+app.post("/sendmail", require("./routes/sendMail"));
 
 // app.use("http://localhost:3000/mentee", require("./routes/sendMail"));
 
