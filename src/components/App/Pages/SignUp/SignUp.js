@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import fire from "../../../firebase";
+import axios from "axios";
+import "./SignUp.css";
 
 class SignUp extends Component {
   constructor(props) {
@@ -9,6 +11,7 @@ class SignUp extends Component {
     this.state = {
       email: "",
       password: "",
+      eMessage: "",
     };
   }
   signup(e) {
@@ -16,8 +19,17 @@ class SignUp extends Component {
     fire
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then((u) => {})
+      .then((u) => {
+        this.props.history.push("/");
+        var uid = u.user.uid;
+        console.log(uid);
+        axios.post("/adduser", {
+          fid: uid,
+        });
+      })
       .catch((error) => {
+        const eMessage = error.message;
+        this.setState({ eMessage });
         console.log(error);
       });
   }
@@ -27,9 +39,9 @@ class SignUp extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <div className="signup-page">
         <h1>Create an Account:</h1>
-        <form>
+        <form onSubmit={this.signup}>
           <div class="form-group">
             <label for="email">Email address</label>
             <input
@@ -54,9 +66,45 @@ class SignUp extends Component {
               required
             />
           </div>
-          <button type="submit" onClick={this.signup} value="submit">
+          <div className="form-group>">
+            <label>Skill #1:</label>
+            <select className="skills-list">
+              <option>Machine Learning</option>
+              <option>Frontend Web Dev</option>
+              <option>Backend Web Dev</option>
+              <option>UI / UX</option>
+            </select>
+            <label>Skill #2:</label>
+            <select className="skills-list">
+              <option>None</option>
+              <option>Machine Learning</option>
+              <option>Frontend Web Dev</option>
+              <option>Backend Web Dev</option>
+              <option>UI / UX</option>
+            </select>
+            <br />
+            <label>Skill #3:</label>
+            <select className="skills-list">
+              <option>None</option>
+              <option>Machine Learning</option>
+              <option>Frontend Web Dev</option>
+              <option>Backend Web Dev</option>
+              <option>UI / UX</option>
+            </select>
+            <label>Skill #4:</label>
+            <select className="skills-list">
+              <option>None</option>
+              <option>Machine Learning</option>
+              <option>Frontend Web Dev</option>
+              <option>Backend Web Dev</option>
+              <option>UI / UX</option>
+            </select>
+          </div>
+          <br />
+          <button className="create-acc-btn" type="submit" value="submit">
             Create Account
           </button>
+          <p>{this.state.eMessage}</p>
         </form>
       </div>
     );

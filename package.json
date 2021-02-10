@@ -1,14 +1,22 @@
 {
-  "name": "counter-app",
+  "name": "PaceB",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "antd": "^4.12.2",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.5.3",
+    "dotenv": "^8.2.0",
     "firebase": "^8.1.1",
     "moment": "^2.29.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.4.17",
+    "nodemon": "^2.0.7",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-calendar": "^3.1.0",
@@ -23,8 +31,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon ./src/backend/server.js"
   },
+  "proxy": "http://localhost:4444/",
   "eslintConfig": {
     "extends": [
       "react-app",

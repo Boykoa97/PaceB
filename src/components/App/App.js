@@ -1,33 +1,38 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import history from "./History";
 
-import NavBar from '../NavBar/NavBar';
-import Home from './Pages/Home/Home';
-import Mentor from './Pages/Mentor/Mentor';
-import Mentee from './Pages/Mentee/Mentee';
-import Admin from './Pages/Admin/Admin';
-import SignUp from './Pages/SignUp/SignUp';
-
+import NavBar from "../NavBar/NavBar";
+import Home from "./Pages/Home/Home";
+import Mentor from "./Pages/Mentor/Mentor";
+import MenteeListAccess from "./Pages/Mentor/MenteeList/MenteeListAccess";
+import Admin from "./Pages/Admin/Admin";
+import AdminHome from "./Pages/Admin/AdminHome";
+import SignUp from "./Pages/SignUp/SignUp";
+import login from "./Pages/login";
+import Mentee from "./Pages/Mentee/Mentee";
 
 class App extends Component {
-  render(){
+  render() {
     console.log("App - Rendered");
 
     return (
       <div className="App">
-        <Router>
+        <Router History={history}>
           <NavBar />
           <Switch>
-            <Route path='/' exact component={Home} />
-            <Route path='/mentee' exact component={Mentee} />
-            <Route path='/mentor' exact component={Mentor} />
-            <Route path='/admin' exact component={Admin} />
-            <Route path='/signup' exact component={SignUp} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/create-organization" component={Admin} />
+            <Route exact path="/adminhome" component={AdminHome} />
+            <Route exact path="/mentor" component={Mentor} />
+            <Route exact path="/mentee-list" component={MenteeListAccess} />
+            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/sign-in" component={login} />
+            <Route exact path="/mentee-signup" component={Mentee} />
           </Switch>
         </Router>
-        {/*{this.state.user ? <Logout></Logout> : <Login></Login>}*/}
       </div>
     );
   }

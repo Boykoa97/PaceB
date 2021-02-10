@@ -18,6 +18,16 @@
 
 **Meeting 9 (17/11/2020)**: 30 mins; Phil & Anthony present; Agenda was to go through trello board, maintenance and check-in on progress. Discussions made included firebase and UI funcitonality in preparation for peer testing. Set of actions were to set up trello tickets for what we plan to implement in the web app, as well as break the tickets down into smaller workload.
 
+**Meeting 10 (24/11/2020)**: 1 hour; Phil & Anthony present; Agenda was to go through trello tickets and look at app progress;Discussions made included UI and authentication preferences; Set of actions was to incorporate multiple suggested featuresincluding firebase authentication API, modify some login functionality and edit mentor form.
+
+**Meeting 11 (01/12/2020)**: 1 hour; Phil & Anthony present; Agenda was to go over results from peer testingand discuss criticism from peers and establish modifications to the pp; Discussions included suggestions for libraries to use to better assist web app development, as well as verification and authentication preferences. Also discussed admin and mentee user tasks within the app. Set of actions were to research APIs and libraries to incorporate into app development.
+
+**Meeting 12 (12/01/2021)**: 45 mins; Phil present; Agenda was to go over changes made during the break, but client was not present.
+
+**Meeting 13 (19/01/2021)**: 1 hour; Phil & Anthony present; Agenda was to go over trello board, show updated app based on feedback from testing; Discussions included establishing appropriate login fuunctionality, key points about mentor and admin interactions with mentees; Set of actions were to fix web app based on feedback, fix environment and security implementations on database configurations, transition from trello to github project.
+
+**Meeting 14 (27/01/2021)**: 1 hour; Phil, Christian & Anthony present; Agenda was to go through updated web app and ask questions regarding mentor funcitonality and admin accessibility; Discussions included mentor dashboard and user functionality, as well as app implementations like cards and UI matching preferences; Set of actions were to work on matching preferences, establish functional user database retrieval system, and improve app implementations.
+
 # Team Meetings:
 
 **Team Meeting 1(28/09/2020)**:(2:17-3:52);All group members present; Goals were figuring out what to ask the client, setting up the repo, determining when to work on the requirements, and which ones to start working on.
@@ -31,3 +41,11 @@
 **Team Meeting 5(1/11/2020)**:(1:07-2:19);All group members present; Decided on what to do now that the requirments deadline has passed, and what to have done for the next week. Going to focus on building enviroments, and starting to build a start page.
 
 **Team Meeting 6(14/11/2020)**:(2:10-2:55);Chrstian and Anthony present; Assigned tasks for the next deliverable, and figured out what exactly needs to be done.
+
+**Team Meeting 7(23/11/2020)**:(1:01-2:10);All group members present; Went over what has been completed, and what still has to be done for peer testing 1. Authentication and react routing are now done, assigned remaining things that still need to be completed
+
+**Team Meeting 8(17/1/2021)**:(12:15-1:04);All group members present; First meeting since the break. Covered what we want to work on next, as well as combined any changes that did not make it into the last peer testing
+
+**Team Meeting 9(01/02/2021)**:(12:10-12:44);All group members present; Figured out what we want to do database wise, and what our major goals are for peer testing 2. Also assigned tasks for the next 1-2 weeks. Will mainly focus on admin functionality, the generation of an iframe, and cookies functionality.
+
+**Team Meeting 10(09/02/2021)**:(12:34-1:20);All group members present; Covered what we have done in the past week, as well as what we are going to have done for peer testing 2. Continuing to work on the Iframe, admin functionality, and cookies. Updated eachother on progress and what we individually have done.

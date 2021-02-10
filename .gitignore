@@ -1,3 +1,30 @@
 node_modules
 firebase.js
 .env
+<<<<<<< HEAD
+=======
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+>>>>>>> 38f58293ce6ee65e5cc12fc8bdc03b5f010eeb9f

@@ -1,0 +1,26 @@
+#md-title {
+  text-align: center;
+}
+
+.mh-card {
+  border-style: groove;
+}
+
+#profile {
+  width: 30rem;
+  display: inline;
+  float: left;
+  margin: auto;
+  margin-left: 10rem;
+  margin-top: 2rem;
+  border-style: groove;
+}
+
+#calendar {
+  width: 30rem;
+  display: inline;
+  float: left;
+  margin-left: 10rem;
+  margin-top: 5rem;
+  border-style: groove;
+}

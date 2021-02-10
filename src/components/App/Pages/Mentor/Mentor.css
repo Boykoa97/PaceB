@@ -4,3 +4,12 @@
   padding: 0;
   font-family: "Montserrat", sans-serif;
 }
+
+.mentor-page {
+  margin: 0;
+  text-align: center;
+}
+
+.mentor-login-form {
+  text-align: left;
+}

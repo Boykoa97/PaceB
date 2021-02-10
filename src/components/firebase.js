@@ -1,10 +1,9 @@
-import React, { Component } from "react";
 import firebase from "firebase";
 import "firebase/firestore";
 import "firebase/auth";
 
-//for testing, replace config variable with your own firebase project config
-const config = {
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
   apiKey: "AIzaSyCUCtJ-qKVBWrBqIiX5oG7FUYWmm8i774A",
   authDomain: "capstone-pace-b.firebaseapp.com",
   databaseURL: "https://capstone-pace-b.firebaseio.com",
@@ -15,5 +14,5 @@ const config = {
   measurementId: "G-0JG82T8DQE",
 };
 
-const fire = firebase.initializeApp(config);
+const fire = firebase.initializeApp(firebaseConfig);
 export default fire;
