@@ -11,7 +11,7 @@ const firebaseConfig = {
   storageBucket: "capstone-pace-b.appspot.com",
   messagingSenderId: "737272886261",
   appId: "1:737272886261:web:a553f1dba1e45117d166bc",
-  measurementId: "G-0JG82T8DQE"
+  measurementId: "G-0JG82T8DQE",
 };
 
 const fire = firebase.initializeApp(firebaseConfig);

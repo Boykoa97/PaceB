@@ -11,6 +11,7 @@ app.use(express.json());
 
 app.post("/adduser", require("./routes/adduser"));
 app.post("/sendmail", require("./routes/sendMail"));
+app.post("/getprofile", require("./routes/getprofile"));
 
 // app.use("http://localhost:3000/mentee", require("./routes/sendMail"));
 
