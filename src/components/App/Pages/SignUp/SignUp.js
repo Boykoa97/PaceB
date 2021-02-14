@@ -20,7 +20,15 @@ class SignUp extends Component {
       skill2: "",
       skill3: "",
       skill4: "",
+      slist: [],
     };
+    axios.post("/getskills").then((res) => {
+      var slist = res.data;
+      this.setState({ slist });
+    });
+  }
+  componentWillMount() {
+    this.mounted = true;
   }
   signup(e) {
     e.preventDefault();
@@ -61,8 +69,11 @@ class SignUp extends Component {
   skillChange4(event) {
     this.setState({ skill4: event.target.value });
   }
-  state = {};
   render() {
+    let slist = this.state.slist;
+    let optionitems = slist.map((item) => (
+      <option value={item.skills}>{item.skills}</option>
+    ));
     return (
       <div className="signup-page">
         <h1>Create an Account:</h1>
@@ -98,11 +109,7 @@ class SignUp extends Component {
               value={this.state.skill1}
               onChange={this.skillChange1}
             >
-              <option value="">None</option>
-              <option value="Machine Learning">Machine Learning</option>
-              <option value="Frontend Web Dev">Frontend Web Dev</option>
-              <option value="Backend Web Dev">Backend Web Dev</option>
-              <option value="UI/UX">UI/UX</option>
+              {optionitems}
             </select>
             <label>Skill #2:</label>
             <select
@@ -110,11 +117,7 @@ class SignUp extends Component {
               value={this.state.skill2}
               onChange={this.skillChange2}
             >
-              <option value="">None</option>
-              <option value="Machine Learning">Machine Learning</option>
-              <option value="Frontend Web Dev">Frontend Web Dev</option>
-              <option value="Backend Web Dev">Backend Web Dev</option>
-              <option value="UI/UX">UI/UX</option>
+              {optionitems}
             </select>
             <br />
             <label>Skill #3:</label>
@@ -123,11 +126,7 @@ class SignUp extends Component {
               value={this.state.skill3}
               onChange={this.skillChange3}
             >
-              <option value="">None</option>
-              <option value="Machine Learning">Machine Learning</option>
-              <option value="Frontend Web Dev">Frontend Web Dev</option>
-              <option value="Backend Web Dev">Backend Web Dev</option>
-              <option value="UI/UX">UI/UX</option>
+              {optionitems}
             </select>
             <label>Skill #4:</label>
             <select
@@ -135,11 +134,7 @@ class SignUp extends Component {
               value={this.state.skill4}
               onChange={this.skillChange4}
             >
-              <option value="">None</option>
-              <option value="Machine Learning">Machine Learning</option>
-              <option value="Frontend Web Dev">Frontend Web Dev</option>
-              <option value="Backend Web Dev">Backend Web Dev</option>
-              <option value="UI/UX">UI/UX</option>
+              {optionitems}
             </select>
           </div>
           <br />
