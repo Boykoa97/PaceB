@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import fire from "../../firebase";
 import history from "../History";
+import axios from "axios";
 
 import "./login.css";
 
@@ -21,8 +22,12 @@ class login extends Component {
     fire
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then((u) => {
-        this.props.history.push("/");
+      // .then((u) => {
+      //   this.props.history.push("/");
+      // })
+      .then(() => {
+        console.log("should be posting to create cookie");
+        axios.post("/mentor", {});
       })
       .catch((error) => {
         const eMessage = error.message;

@@ -13,6 +13,7 @@ app.post("/adduser", require("./routes/adduser"));
 app.post("/sendmail", require("./routes/sendMail"));
 app.post("/getprofile", require("./routes/getprofile"));
 app.post("/getskills", require("./routes/getskills"));
+
 // app.use("http://localhost:3000/mentee", require("./routes/sendMail"));
 
 app.listen(port, () => {
