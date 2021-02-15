@@ -8,7 +8,7 @@ class AdminHome extends React.Component {
         return(
             <nav className="admin-home">
                 <div>
-                    <h1 id='title'>Admin</h1>
+                    <h1>Admin</h1>
                     <p id="msg">This is the Admin Home Page</p>
                 </div>
             </nav>

@@ -1,0 +1,29 @@
+.mentor-nav {
+  background: rgb(73, 68, 163);
+  height: 40px;
+  align-self: flex-start;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 1.2rem;
+  width: fit-content;
+  border-style: double;
+}
+
+.mentor-navitems {
+  list-style: none;
+}
+
+#mentor-navitem {
+  color: white;
+  text-decoration: none;
+  padding: 0.1rem 2rem;
+}
+
+#mentor-navitem:hover {
+  color: rgb(206, 208, 238);
+  background-color: #6d76f7;
+  border-radius: 4px;
+  transition: all 0.6s ease-out;
+  text-decoration: none;
+}

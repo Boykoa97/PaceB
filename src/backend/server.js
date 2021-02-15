@@ -1,19 +1,18 @@
 const express = require("express");
 const app = express();
-require("dotenv").config();
 const morgan = require("morgan");
 const nodemailer = require("nodemailer");
+const mysql = require("mysql");
 const port = 4444;
+const mysqlconnection = require("./mysqlconnection");
 
 app.use(morgan("dev"));
 app.use(express.json());
 
-var sendMail = require("./routes/sendMail");
-var cookies = require("./routes/cookies");
-
-//app.use("/", sendMail);
-app.post("/mentee", sendMail);
-app.post("/mentor", cookies);
+app.post("/adduser", require("./routes/adduser"));
+app.post("/sendmail", require("./routes/sendMail"));
+app.post("/getprofile", require("./routes/getprofile"));
+app.post("/getskills", require("./routes/getskills"));
 
 // app.use("http://localhost:3000/mentee", require("./routes/sendMail"));
 
