@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+#iframe,
+#embed {
+  margin-left: 20rem;
+  margin-right: 20rem;
+  border: none;
+}
+
+#embed-btn {
+  background: rgb(73, 68, 163);
+  color: white;
+  width: fit-content;
+  border-style: double;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 0.1rem 0.6rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#embed-btn:hover {
+  color: white;
+  background-color: #636acf;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+}
+
+#iframe-txt {
+  width: 90%;
+  height: 26px;
+}
+
+#iframe-note {
+  text-align: left;
+}
