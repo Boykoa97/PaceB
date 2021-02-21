@@ -60,7 +60,7 @@ class NavBar extends React.Component{
                     Sign Out
                   </button>:
                   <button className='sign_in'>
-                    <Link id="sign_in" to="/mentor">Sign In</Link>
+                    <Link id="sign_in" to="/sign-in">Sign In</Link>
                   </button>
                 }
                 </li>

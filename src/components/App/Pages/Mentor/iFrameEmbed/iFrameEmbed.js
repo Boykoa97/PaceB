@@ -39,8 +39,7 @@ class iFrameEmbed extends Component {
 
   /* Function to copy to clipboard onClick */
   copytoClipboard = () => {
-      this.textArea.select();
-      document.execCommand("copy")
+      navigator.clipboard.writeText('<iframe src="http://localhost:3000/mentee-form" width="100%" height="520"></iframe>');
   }
 
   render() {
@@ -54,9 +53,8 @@ class iFrameEmbed extends Component {
                     <div className="iframe-embed">
                         <h1 id="ml-title">Mentee Sign Up Form</h1>
                         <div id="embed">
-                            <button id="embed-btn">Copy Form</button>
+                            <button id="embed-btn" onClick={this.copytoClipboard}>Copy Form</button>
                             <textarea id="iframe-txt"
-                                ref = {(textarea) => this.textArea = textarea}
                                 value = '<iframe src="http://localhost:3000/mentee-form" width="100%" height="520"></iframe>'
                             />
                         </div>
