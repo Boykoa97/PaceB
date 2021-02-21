@@ -6,6 +6,8 @@ import MentorNav from "../MentorNav";
 
 import "./iFrameEmbed.css";
 
+import NavBar from "../../../../NavBar/NavBar";
+
 class iFrameEmbed extends Component {
   constructor(props) {
     super(props);
@@ -39,13 +41,13 @@ class iFrameEmbed extends Component {
 
   /* Function to copy to clipboard onClick */
   copytoClipboard = () => {
-      navigator.clipboard.writeText('<iframe src="http://localhost:3000/mentee-form" width="100%" height="520"></iframe>');
+      navigator.clipboard.writeText('<iframe src="http://localhost:3000/mentee-form" width="100%" height="450"></iframe>');
   }
 
   render() {
     return (
-      <div>
         <div>
+          <NavBar />
             {/* If user isn't logged in, they are redirected to login page, else they are shown iframe embed page */}
             {this.state.user ? 
                 <div>
@@ -60,14 +62,13 @@ class iFrameEmbed extends Component {
                         </div>
                         <div id="iframe">
                             <h2 id="iframe-note">Preview:</h2>
-                            <iframe src="http://localhost:3000/mentee-form" width="100%" height="520"></iframe>
+                            <iframe src="http://localhost:3000/mentee-form" width="100%" height="450"></iframe>
                         </div>
                     </div>
                 </div>
                 : <Login />
             }
         </div>
-      </div>
     );
   }
 }

@@ -5,11 +5,11 @@
   font-family: "Montserrat", sans-serif;
 }
 
-#iframe,
 #embed {
   margin-left: 20rem;
   margin-right: 20rem;
   border: none;
+  text-align: center;
 }
 
 #embed-btn {
@@ -30,6 +30,12 @@
   border-radius: 4px;
   transition: all 0.2s ease-out;
   text-decoration: none;
+}
+
+#iframe {
+  margin-left: 23rem;
+  margin-right: 23rem;
+  border: none;
 }
 
 #iframe-txt {

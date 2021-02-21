@@ -1,6 +1,9 @@
 .admin-page {
-  margin: 2.5rem;
   text-align: center;
+}
+
+#admin-title {
+  margin-top: 2.5rem;
 }
 
 .admin-btn {
