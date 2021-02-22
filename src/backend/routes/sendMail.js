@@ -27,23 +27,31 @@ transporter.verify(function (error, success) {
 
 sendToMeRouter.use(express.json());
 
-sendToMeRouter.post("/mentee", (req, res, next) => {
+// this is the function the sends mail from the mentees form
+sendToMeRouter.post("/findMatch", (req, res, next) => {
   //make mailable object
   console.log("i hit the post request");
+  console.log(req.body);
+  console.log(res.locals);
   //   we will need to update this pass information we want to email and also asthetics
   const mail = {
     from: process.env.EMAIL_USER,
-    to: req.body.email,
-    subject: "Welcome",
+    to: res.locals.mentorEmail,
+    subject: "Potential Menttee",
+    //update contact so it has the mentors email and not mentees
     text: `
-      from:
-      ${req.body.name} 
+      ${req.body.first_name} ${req.body.last_name} would like to be mentored,
 
-      contact: ${req.body.email}
+      If you wish to mentor them:
 
-      message: 
+      Your menttees email is: ${req.body.email}. 
 
-      This is a test`,
+      They wish to be mentored in ${req.body.skill1} and ${req.body.skill2} and ${req.body.skill3} and ${req.body.skill4}. 
+      
+      Please email them to communicate further.
+      
+      Best,
+      PaceB`,
   };
   // error handling goes here.
   transporter.sendMail(mail, (err, data) => {
