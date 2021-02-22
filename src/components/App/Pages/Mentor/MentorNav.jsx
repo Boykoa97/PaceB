@@ -23,9 +23,12 @@ class MentorNav extends React.Component{
                 <li className="mentor-navitems">
                     <Link to="/mentor" id="mentor-navitem">Dashboard</Link>
                 </li>
-                <li className="mentor-navitems">
+                {/*<li className="mentor-navitems">
                     <Link to="/mentee-list" id="mentor-navitem">Mentees</Link>
-                </li>   
+                    </li>*/ }  
+                <li className="mentor-navitems">
+                    <Link to="/iframe-embed" id="mentor-navitem">Mentee Form</Link>
+                </li>  
             </nav>
         );
     }

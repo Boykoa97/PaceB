@@ -2,12 +2,14 @@ import React from 'react';
 import history from "../../History";
 
 import "./Admin.css";
+import NavBar from "../../../NavBar/NavBar";
 
 class Admin extends React.Component {
     render() {
         return (
             <div className="admin-page">
-                <h1>CREATE YOUR ORGANIZATION</h1>
+                <NavBar />
+                <h1 id='admin-title' >CREATE YOUR ORGANIZATION</h1>
                 <form>
                     <button className="admin-btn" onClick={() => history.push('/adminhome')}>
                         Create Organization

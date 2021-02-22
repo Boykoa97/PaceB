@@ -9,6 +9,7 @@ class Calendar extends React.Component {
             <div>
                 <div className="mentor-calendar">
                     <h1>Your Calendar</h1>
+                    <p>*to be implemented*</p>
                 </div>
             </div>
         )
