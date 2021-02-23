@@ -3,6 +3,8 @@ import fire from "../../../firebase";
 import axios from "axios";
 import "./SignUp.css";
 
+import NavBar from "../../../NavBar/NavBar";
+
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -75,6 +77,8 @@ class SignUp extends Component {
       <option value={item.skills}>{item.skills}</option>
     ));
     return (
+      <div>
+        <NavBar />
       <div className="signup-page">
         <h1>Create an Account:</h1>
         <form onSubmit={this.signup}>
@@ -143,6 +147,7 @@ class SignUp extends Component {
           </button>
           <p>{this.state.eMessage}</p>
         </form>
+      </div>
       </div>
     );
   }

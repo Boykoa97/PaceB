@@ -4,6 +4,8 @@ import fire from "../../../firebase";
 import "./Mentee.css";
 import MenteeForm from "./MenteeForm";
 
+import NavBar from "../../../NavBar/NavBar";
+
 class Mentee extends React.Component {
   constructor(props) {
     super(props);
@@ -38,6 +40,7 @@ class Mentee extends React.Component {
     return (
       <nav className="mentee-page">
         <div>
+        <NavBar />
           <div className="Welcome">
             <h1 id="mp-title">MENTEE PAGE</h1>
           </div>

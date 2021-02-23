@@ -1,15 +1,17 @@
 import React from 'react';
 
 import "./AdminHome.css";
+import NavBar from "../../../NavBar/NavBar";
 
 class AdminHome extends React.Component {
 
     render(){
         return(
-            <nav className="admin-home">
+            <nav>
                 <div>
-                    <h1>Admin</h1>
-                    <p id="msg">This is the Admin Home Page</p>
+                <NavBar />
+                    <h1 id="admin-home">Admin</h1>
+                    <p id="msg">This page is under construction!</p>
                 </div>
             </nav>
         )
