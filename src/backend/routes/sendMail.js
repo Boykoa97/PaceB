@@ -37,14 +37,14 @@ sendToMeRouter.post("/findMatch", (req, res, next) => {
   const mail = {
     from: process.env.EMAIL_USER,
     to: res.locals.mentorEmail,
-    subject: "Potential Menttee",
+    subject: "Potential Mentee",
     //update contact so it has the mentors email and not mentees
     text: `
       ${req.body.first_name} ${req.body.last_name} would like to be mentored,
 
       If you wish to mentor them:
 
-      Your menttees email is: ${req.body.email}. 
+      Your mentees email is: ${req.body.email}. 
 
       They wish to be mentored in ${req.body.skill1} and ${req.body.skill2} and ${req.body.skill3} and ${req.body.skill4}. 
       

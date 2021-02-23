@@ -197,6 +197,7 @@ async function checkSkills(querryList, skillList) {
     //break the loop if you find a match
     for (var i = 0; i < querryList.length; i++) {
       console.log("Running querry to check matches on skill " + (i + 1));
+      //need to adjust this function such that findMatchx can be written async
       let matchedIDQuerry = findMatchx(querryList[i], skillList, i);
       if (
         matchedIDQuerry != "" &&
