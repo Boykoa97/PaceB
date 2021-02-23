@@ -24,6 +24,7 @@ class login extends Component {
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {
         this.props.history.push("/mentor");
+
       })
       .then(() => {
         console.log("should be posting to create cookie");
