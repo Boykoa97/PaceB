@@ -6,6 +6,7 @@ import Login from "../login.jsx";
 import MentorHome from "./Dashboard/MentorHome";
 
 import "./Mentor.css";
+import NavBar from "../../../NavBar/NavBar";
 
 class Mentor extends Component {
   constructor(props) {
@@ -41,6 +42,7 @@ class Mentor extends Component {
   render() {
     return (
       <div className="mentor-page">
+        <NavBar />
         <div className="mentor-login-form">
           {/* If user isn't logged in, they are redirected to login page, else they are redirected to mentor dashboard */}
           {this.state.user ? <MentorHome /> : <Login />}
