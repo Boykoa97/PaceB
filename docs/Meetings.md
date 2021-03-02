@@ -28,6 +28,14 @@
 
 **Meeting 14 (27/01/2021)**: 1 hour; Phil, Christian & Anthony present; Agenda was to go through updated web app and ask questions regarding mentor funcitonality and admin accessibility; Discussions included mentor dashboard and user functionality, as well as app implementations like cards and UI matching preferences; Set of actions were to work on matching preferences, establish functional user database retrieval system, and improve app implementations.
 
+**Meeting 15 (03/02/2021)**: 1 hour; Phil & Anthony present; Agenda was to go over project board, completed functionalities and goals; Discussions included database functionality preferences, as well as prefered software for state retrieval; Set of actions were explore firebase tokens.
+
+**Meeting 16 (10/02/2021)**: 1 hour; Phil present; Agenda was weekly checkin, go over expectations and implementations; Discussions included emphasis on mentor functionality, and iframe implementation plus the ability to copy iframe; Set of actions were to build iframe and ability to copy it, and to implement component libraries in development.
+
+**Meeting 17 (24/02/2021)**: 1 hour; Phil present; Agenda was to address matching compatibility, mentor's ability to select and accept mentees, and to go over updated web app for milestone; Discussions included cleaning up and simplifying code, so it may be used as open source for interested companies, and to consider adding ability to have multiple admins in each company; Set of actions were to run tests to updated code, and fix bugs for milestone.
+
+**Meeting 18 (02/03/2021)**: 1 hour; Phil, Christian & Anthony present; Agenda was to have a full rundown of project expectations and clarify changes for final milestone; Discussions included establishing expected matching algorthm, visualizing functionalities and addressing cookie implementation; Set of actions were to implement these changes step by step, based on mvp priority.
+
 # Team Meetings:
 
 **Team Meeting 1(28/09/2020)**:(2:17-3:52);All group members present; Goals were figuring out what to ask the client, setting up the repo, determining when to work on the requirements, and which ones to start working on.
