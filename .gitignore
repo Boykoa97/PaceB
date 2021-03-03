@@ -1,3 +1,6 @@
+node_modules
+firebase.js
+
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -18,6 +21,8 @@
 .env.test.local
 .env.production.local
 .env
+capstone-pace-b-e0985e42e768.json
+
 
 npm-debug.log*
 yarn-debug.log*
