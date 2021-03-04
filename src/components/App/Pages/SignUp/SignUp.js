@@ -9,7 +9,7 @@ import { Select } from 'antd';
 
 const { Option } = Select;
 
-function handleChange(value) {
+function handleChangeSkills(value) {
   console.log(`selected ${value}`);
 }
 
@@ -180,7 +180,7 @@ class SignUp extends Component {
                 style={{ width: '60%', marginLeft: '2rem'}}
                 placeholder="select 5 skills"
                 //defaultValue={['machine learning']}
-                onChange={handleChange}
+                onChange={handleChangeSkills}
                 optionLabelProp="label"
               >
                 <Option value="machine learning" label="Machine Learning">

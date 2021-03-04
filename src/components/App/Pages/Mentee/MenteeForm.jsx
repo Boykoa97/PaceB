@@ -7,7 +7,7 @@ import { Select } from 'antd';
 
 const { Option } = Select;
 
-function handleChange(value) {
+function handleChangeSkills(value) {
   console.log(`selected ${value}`);
 }
 
@@ -21,10 +21,10 @@ function MenteeForm() {
     skill3: "None",
     skill4: "None",
   });
-  /*const handleChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setInputs((prev) => ({ ...prev, [name]: value }));
-  };*/
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     //destructure from inputs
@@ -87,7 +87,7 @@ function MenteeForm() {
               style={{ width: '60%', marginLeft: '2rem'}}
               placeholder="select 5 skills"
               //defaultValue={['machine learning']}
-              onChange={handleChange}
+              onChange={handleChangeSkills}
               optionLabelProp="label"
             >
               <Option value="machine learning" label="Machine Learning">
