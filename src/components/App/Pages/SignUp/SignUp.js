@@ -5,6 +5,14 @@ import "./SignUp.css";
 
 import NavBar from "../../../NavBar/NavBar";
 
+import { Select } from 'antd';
+
+const { Option } = Select;
+
+function handleChange(value) {
+  console.log(`selected ${value}`);
+}
+
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -79,75 +87,146 @@ class SignUp extends Component {
     return (
       <div>
         <NavBar />
-      <div className="signup-page">
-        <h1>Create an Account:</h1>
-        <form onSubmit={this.signup}>
-          <div class="form-group">
-            <label for="email">Email address</label>
-            <input
-              value={this.state.email}
-              onChange={this.handleChange}
-              type="email"
-              name="email"
-              class="form-control"
-              id="email"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input
-              value={this.state.password}
-              onChange={this.handleChange}
-              type="password"
-              class="form-control"
-              id="password"
-              name="password"
-              required
-            />
-          </div>
-          <div className="form-group>">
-            <label>Skill #1:</label>
-            <select
-              className="skills-list"
-              value={this.state.skill1}
-              onChange={this.skillChange1}
-            >
-              {optionitems}
-            </select>
-            <label>Skill #2:</label>
-            <select
-              className="skills-list"
-              value={this.state.skill2}
-              onChange={this.skillChange2}
-            >
-              {optionitems}
-            </select>
+        <div className="signup-page">
+          <h1>Create an Account:</h1>
+          <form onSubmit={this.signup}>
+            <div class="form-group">  {/* For User First Name */}
+              <label for="fname">First Name</label>
+              <input
+                value={this.state.fname}
+                onChange={this.handleChange}
+                type="text"
+                name="fname"
+                class="form-control"
+                id="fname"
+                required
+              />
+            </div>
+            <div class="form-group">  {/* For User Last Name */}
+              <label for="lname">Last Name</label>
+              <input
+                value={this.state.lname}
+                onChange={this.handleChange}
+                type="text"
+                name="lname"
+                class="form-control"
+                id="lname"
+                required
+              />
+            </div>
+            <div class="form-group">  {/* For User Email */}
+              <label for="email">Email address</label>
+              <input
+                value={this.state.email}
+                onChange={this.handleChange}
+                type="email"
+                name="email"
+                class="form-control"
+                id="email"
+                required
+              />
+            </div>
+            <div class="form-group">  {/* For User Password */}
+              <label for="password">Password</label>
+              <input
+                value={this.state.password}
+                onChange={this.handleChange}
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                required
+              />
+            </div>
+           {/* <div className="form-group>">
+              <label>Skill #1:</label>
+              <select
+                className="skills-list"
+                value={this.state.skill1}
+                onChange={this.skillChange1}
+              >
+                {optionitems}
+              </select>
+              <label>Skill #2:</label>
+              <select
+                className="skills-list"
+                value={this.state.skill2}
+                onChange={this.skillChange2}
+              >
+                {optionitems}
+              </select>
+              <br />
+              <label>Skill #3:</label>
+              <select
+                className="skills-list"
+                value={this.state.skill3}
+                onChange={this.skillChange3}
+              >
+                {optionitems}
+              </select>
+              <label>Skill #4:</label>
+              <select
+                className="skills-list"
+                value={this.state.skill4}
+                onChange={this.skillChange4}
+              >
+                {optionitems}
+              </select>
+            </div> */}
+            <div> {/* Multiselect input dialogue for preferred Skills */}
+              <label>Preferred Skills:</label>
+              <Select
+                mode="multiple"
+                style={{ width: '60%', marginLeft: '2rem'}}
+                placeholder="select 5 skills"
+                //defaultValue={['machine learning']}
+                onChange={handleChange}
+                optionLabelProp="label"
+              >
+                <Option value="machine learning" label="Machine Learning">
+                  <div className="demo-option-label-item">
+                    Machine Learning
+                  </div>
+                </Option>
+                <Option value="front end web dev" label="Front End">
+                  <div className="demo-option-label-item">
+                    Front End Web Development
+                  </div>
+                </Option>
+                <Option value="back end web dev" label="Back End">
+                  <div className="demo-option-label-item">
+                    Back End Web Development
+                  </div>
+                </Option>
+                <Option value="ui ux" label="UI/UX Design">
+                  <div className="demo-option-label-item">
+                    User Interface / User Experience Design
+                  </div>
+                </Option>
+                <Option value="android" label="Android">
+                  <div className="demo-option-label-item">
+                    Android Development
+                  </div>
+                </Option>
+                <Option value="ios" label="iOS">
+                  <div className="demo-option-label-item">
+                    iOS Development
+                  </div>
+                </Option>
+                <Option value="data analysis" label="Data Analysis">
+                  <div className="demo-option-label-item">
+                    Data Analysis
+                  </div>
+                </Option>
+              </Select>
+            </div>
             <br />
-            <label>Skill #3:</label>
-            <select
-              className="skills-list"
-              value={this.state.skill3}
-              onChange={this.skillChange3}
-            >
-              {optionitems}
-            </select>
-            <label>Skill #4:</label>
-            <select
-              className="skills-list"
-              value={this.state.skill4}
-              onChange={this.skillChange4}
-            >
-              {optionitems}
-            </select>
-          </div>
-          <br />
-          <button className="create-acc-btn" type="submit" value="submit">
-            Create Account
-          </button>
-          <p>{this.state.eMessage}</p>
-        </form>
-      </div>
+            <button className="create-acc-btn" type="submit" value="submit">
+              Create Account
+            </button>
+            <p>{this.state.eMessage}</p>
+          </form>
+        </div>
       </div>
     );
   }
