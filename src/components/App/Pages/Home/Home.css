@@ -6,8 +6,12 @@
 }
 
 .Home {
-  margin: 2.5rem;
+  margin: 0rem;
   text-align: center;
+}
+
+#Welcome {
+  margin-top: 2.5rem;
 }
 
 .home-btns {

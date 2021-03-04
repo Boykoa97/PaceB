@@ -4,6 +4,8 @@ import fire from "../../../firebase";
 import "./Mentee.css";
 import MenteeForm from "./MenteeForm";
 
+import NavBar from "../../../NavBar/NavBar";
+
 class Mentee extends React.Component {
   constructor(props) {
     super(props);

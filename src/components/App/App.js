@@ -13,6 +13,8 @@ import AdminHome from "./Pages/Admin/AdminHome";
 import SignUp from "./Pages/SignUp/SignUp";
 import login from "./Pages/login";
 import Mentee from "./Pages/Mentee/Mentee";
+import iFrameEmbed from "./Pages/Mentor/iFrameEmbed/iFrameEmbed";
+import MenteeFormEmbed from "./Pages/Mentor/iFrameEmbed/MenteeFormEmbed";
 
 class App extends Component {
   render() {
@@ -21,7 +23,7 @@ class App extends Component {
     return (
       <div className="App">
         <Router History={history}>
-          <NavBar />
+          {/* <NavBar /> */}
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/create-organization" component={Admin} />
@@ -31,6 +33,8 @@ class App extends Component {
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/sign-in" component={login} />
             <Route exact path="/mentee-signup" component={Mentee} />
+            <Route exact path="/iframe-embed" component={iFrameEmbed} />
+            <Route exact path="/mentee-form" component={MenteeFormEmbed} />
           </Switch>
         </Router>
       </div>
