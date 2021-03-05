@@ -10,16 +10,17 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 //mentor post request is unhandled
-app.post("/adduser", require("./routes/adduser"));
+app.post("/addUser", require("./routes/addUser"));
 app.post(
   "/findMatch",
   require("./routes/findMatch"),
   require("./routes/sendMail")
 );
 //app.post("/findMatch",);
-app.post("/getprofile", require("./routes/getprofile"));
-app.post("/getskills", require("./routes/getskills"));
+app.post("/getProfile", require("./routes/getProfile"));
+app.post("/getSkills", require("./routes/getSkills"));
 app.post("/mentor", require("./routes/cookies"));
+app.post("/getUserSkills", require("./routes/getUserSkills"));
 
 // app.use("http://localhost:3000/mentee", require("./routes/sendMail"));
 

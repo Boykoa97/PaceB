@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const mysqlconnection = require("../mysqlconnection");
 const app = express();
 var uid;
-sendToMeRouter.post("/adduser", (req, res, next) => {
+sendToMeRouter.post("/addUser", (req, res, next) => {
   //variables are taken from the request and are saved for the sql query
   var fid = req.body.fid;
   var fname = req.body.fname;
@@ -36,6 +36,7 @@ function adduser(fid, fname, lname) {
   });
 }
 async function getuid(fid) {
+  //query function that retrieves a uid, it need to be completed before running the rest of the code, signified by the async and await(later)
   return new Promise((resolve, reject) => {
     var sql2 = "SELECT uid FROM USERS WHERE fid='" + fid + "'";
     mysqlconnection.query(sql2, (err, info) => {
@@ -43,6 +44,7 @@ async function getuid(fid) {
         console.log(sql2);
         console.log("user retrived");
         var uid = info;
+        //returns with resolve or reject, reject returns an error, where the query fails, and resolve returns the uid, where the query completes
         resolve(uid);
       } else {
         console.log(err);
@@ -53,7 +55,9 @@ async function getuid(fid) {
 }
 
 async function addskills(uid, uslist, fid) {
+  //query is ran in a for loop, where each item in uslist is added to the database, along with thier respective uids.
   var i;
+  //await is used in order to wait for the uid response, which is needed for the rest of the query
   var res = await getuid(fid);
   var uid = res[0].uid;
   for (i = 0; i < uslist.length; i++) {

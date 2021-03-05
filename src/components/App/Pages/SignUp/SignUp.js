@@ -24,8 +24,10 @@ class SignUp extends Component {
       slist: [],
       uslist: [],
     };
-    axios.post("/getskills").then((res) => {
+    //request to the database that gets the skills for the skill select menu
+    axios.post("/getSkills").then((res) => {
       var slist = res.data;
+      //returns it and saves in slist
       this.setState({ slist });
     });
   }
@@ -40,8 +42,9 @@ class SignUp extends Component {
       .then((u) => {
         this.props.history.push("/");
         var uid = u.user.uid;
-        axios.post("/adduser", {
-          //uid and the skills are sent as part of the database request
+        //request to send user information to the database
+        axios.post("/addUser", {
+          //uid, first name, last name and user skills are sent as part of the database request
           fid: uid,
           fname: this.state.fname,
           lname: this.state.lname,
@@ -49,20 +52,23 @@ class SignUp extends Component {
         });
       })
       .catch((error) => {
+        //logs an error if one occurs, and displays it to the user
         const eMessage = error.message;
         this.setState({ eMessage });
         console.log(error);
       });
   }
   handleChange(e) {
+    //saves text box contents into their proper variables
     this.setState({ [e.target.name]: e.target.value });
   }
   handleChangeSkills(value) {
+    //saves the skill array into its proper varliable
     var uslist = value;
     this.setState({ uslist });
-    console.log(this.state.uslist);
   }
   render() {
+    //maps the skill list into option items, where each skill is enclosed by an option tag, and the required values and classname is also added
     let slist = this.state.slist;
     let optionitems = slist.map((item) => (
       <Option value={item.sid} label={item.skills}>
