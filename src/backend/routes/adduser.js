@@ -20,13 +20,9 @@ function adduser(fid, fname, lname) {
   var sql =
     "INSERT INTO USERS (fid,admin,oid,fname,lname) Values('" +
     fid +
-    "',1,0,'" +
-    fname +
-    "','" +
-    lname +
-    "')";
+    "',1,0,?,?)";
   //query is ran
-  mysqlconnection.query(sql, (err) => {
+  mysqlconnection.query(sql, [fname, lname], (err) => {
     if (!err) {
       console.log("account added to the database");
       console.log(sql);
