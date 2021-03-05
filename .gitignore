@@ -1,5 +1,7 @@
 node_modules
 firebase.js
+.env
+capstone-pace-b-e0985e42e768.json
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
