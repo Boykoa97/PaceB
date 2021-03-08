@@ -11,18 +11,22 @@ sendToMeRouter.post("/addUser", (req, res, next) => {
   var fname = req.body.fname;
   var lname = req.body.lname;
   var uslist = req.body.uslist;
-  adduser(fid, fname, lname);
+  var email = req.body.email;
+  var utype = req.body.utype;
+  adduser(fid, fname, lname, email, utype);
   addskills(uid, uslist, fid);
 });
 
-function adduser(fid, fname, lname) {
+function adduser(fid, fname, lname, email, utype) {
   //variables needed for the database are added, admin and organization flags are set to a default at the moment
   var sql =
-    "INSERT INTO USERS (fid,admin,oid,fname,lname) Values('" +
+    "INSERT INTO USERS (fid,admin,oid,fname,lname,email,utype) Values('" +
     fid +
-    "',1,0,?,?)";
+    "',1,0,?,?,?," +
+    utype +
+    ")";
   //query is ran
-  mysqlconnection.query(sql, [fname, lname], (err) => {
+  mysqlconnection.query(sql, [fname, lname, email], (err) => {
     if (!err) {
       console.log("account added to the database");
       console.log(sql);

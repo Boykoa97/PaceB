@@ -48,7 +48,9 @@ class SignUp extends Component {
           fid: uid,
           fname: this.state.fname,
           lname: this.state.lname,
+          email: this.state.email,
           uslist: this.state.uslist,
+          utype: 1,
         });
       })
       .catch((error) => {
