@@ -40,7 +40,7 @@ class SignUp extends Component {
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {
-        this.props.history.push("/");
+        this.props.history.push("/mentor");
         var uid = u.user.uid;
         //request to send user information to the database
         axios.post("/addUser", {

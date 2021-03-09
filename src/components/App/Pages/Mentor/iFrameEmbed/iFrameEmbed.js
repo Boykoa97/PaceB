@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import fire from "../../../../firebase";
 
 import Login from "../../login";
-import MentorNav from "../MentorNav";
 
 import "./iFrameEmbed.css";
 
@@ -51,20 +50,19 @@ class iFrameEmbed extends Component {
             {/* If user isn't logged in, they are redirected to login page, else they are shown iframe embed page */}
             {this.state.user ? 
                 <div>
-                    <MentorNav />
-                    <div className="iframe-embed">
-                        <h1 id="ml-title">Mentee Sign Up Form</h1>
-                        <div id="embed">
-                            <button id="embed-btn" onClick={this.copytoClipboard}>Copy Form</button>
-                            <textarea id="iframe-txt"
-                                value = '<iframe src="http://localhost:3000/mentee-form" width="100%" height="520"></iframe>'
-                            />
-                        </div>
-                        <div id="iframe">
-                            <h2 id="iframe-note">Preview:</h2>
-                            <iframe src="http://localhost:3000/mentee-form" width="100%" height="450"></iframe>
-                        </div>
-                    </div>
+                  <div className="iframe-embed">
+                      <h1 id="ml-title">Mentee Sign Up Form</h1>
+                      <div id="embed">
+                          <button id="embed-btn" onClick={this.copytoClipboard}>Copy Form</button>
+                          <textarea id="iframe-txt"
+                              value = '<iframe src="http://localhost:3000/mentee-form" width="100%" height="520"></iframe>'
+                          />
+                      </div>
+                      <div id="iframe">
+                          <h2 id="iframe-note">Preview:</h2>
+                          <iframe src="http://localhost:3000/mentee-form" width="100%" height="450"></iframe>
+                      </div>
+                  </div>
                 </div>
                 : <Login />
             }
