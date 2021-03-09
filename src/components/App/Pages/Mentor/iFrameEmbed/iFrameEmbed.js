@@ -60,7 +60,7 @@ class iFrameEmbed extends Component {
                       </div>
                       <div id="iframe">
                           <h2 id="iframe-note">Preview:</h2>
-                          <iframe src="http://localhost:3000/mentee-form" width="100%" height="450"></iframe>
+                          <iframe src="http://localhost:3000/mentee-form" width="100%" height="400"></iframe>
                       </div>
                   </div>
                 </div>
