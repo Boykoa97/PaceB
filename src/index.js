@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./components/App/App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
+import 'antd/dist/antd.css';
 
 // The index file is the top level component and displays the root of the software which is App.js in most cases
 
