@@ -13,7 +13,7 @@ class MentorHome extends React.Component {
     
     render() {
         return (
-            <div style={{ backgroundColor: 'rgb(239, 238, 252)'}}>
+            <div>
                 <h1 id="md-title">Mentor Dashboard</h1>
                 <Card id="profile" style={{ backgroundColor: 'rgb(239, 238, 252)'}}>
                     <Profile /> 

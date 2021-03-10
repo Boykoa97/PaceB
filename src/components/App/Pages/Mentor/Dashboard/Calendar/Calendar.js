@@ -1,7 +1,5 @@
 import React from 'react';
 
-import "./Calendar.css";
-
 import { Calendar } from 'antd';
 
 function onPanelChange(value, mode) {
