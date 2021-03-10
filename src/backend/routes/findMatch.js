@@ -247,8 +247,8 @@ sendToMeRouter.post("/findMatch", async (req, res, next) => {
   let menteeIds = await getMenteeUIDS();
   console.log(menteeIds);
   var menteeNumbMatches = [];
-  countMatches(mentorSkillList, menteeIds[0]);
-  countMatches(mentorSkillList, menteeIds[1]);
+  //countMatches(mentorSkillList, menteeIds[0]);
+  //countMatches(mentorSkillList, menteeIds[1]);
 });
 
 //grab the uid of a mentor based off of their fid
