@@ -40,7 +40,6 @@ class Mentee extends React.Component {
     return (
       <nav className="mentee-page">
         <div>
-        <NavBar />
           <div className="Welcome">
             <h1 id="mp-title">MENTEE PAGE</h1>
           </div>
