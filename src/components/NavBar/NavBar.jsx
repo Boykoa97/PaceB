@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './NavBar.css';
-import { NavItems } from './NavItems';
+import { NavItems, MentorNavItems } from './NavItems';
 import { Link } from 'react-router-dom';
 import fire from "../firebase";
 
@@ -43,8 +43,10 @@ class NavBar extends React.Component{
         return( 
             <nav className="navbar">
                 <Link className="navbar-logo" to='/'>pace b <i className='fab fa-angellist'></i></Link> {/* homepage / logo */}
-                <ul className={this.state.user ? 'nav-menu-hide' : 'nav-menu'}>  {/* nav menu items */}
-                    { NavItems.map((item, index)=> {
+                <ul className = 'nav-menu'>  {/* nav menu items */}
+                  {
+                    this.state.user ? (
+                      MentorNavItems.map((item, index)=> {
                         return (
                             <li key={index}>
                                 <Link to={item.url} className={item.cName}> 
@@ -52,7 +54,19 @@ class NavBar extends React.Component{
                                 </Link>
                             </li>
                         )
-                    }) }
+                    })
+                    ) : (
+                      NavItems.map((item, index)=> {
+                        return (
+                            <li key={index}>
+                                <Link to={item.url} className={item.cName}> 
+                                    {item.title}
+                                </Link>
+                            </li>
+                        )
+                    })
+                    )
+                  }
                 </ul>
                 <li className='sign-in'>  {/* login button in top right */}
                 {this.state.user ? 
