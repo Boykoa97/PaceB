@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "./MenteeList.css";
 
-import { List, Avatar, Button } from 'antd';
+import { List, Avatar } from 'antd';
 
 const unmatchedMentees = [
   {
