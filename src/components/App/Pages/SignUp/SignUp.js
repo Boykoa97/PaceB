@@ -136,9 +136,9 @@ class SignUp extends Component {
                 required
               />
             </div>
-            <div>
+            {/* <div>
               {" "}
-              {/* Multiselect input dialogue for preferred Skills */}
+              Multiselect input dialogue for preferred Skills 
               <label>Preferred Skills:</label>
               <Select
                 mode="multiple"
@@ -150,7 +150,7 @@ class SignUp extends Component {
               >
                 {optionitems}
               </Select>
-            </div>
+            </div> */}
             <br />
             <button className="create-acc-btn" type="submit" value="submit">
               Create Account
