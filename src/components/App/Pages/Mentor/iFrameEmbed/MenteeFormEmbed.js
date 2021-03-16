@@ -1,5 +1,13 @@
 import React from 'react';
 
+import { Select } from 'antd';
+
+const { Option } = Select;
+
+function handleChangeSkills(value) {
+  console.log(`selected ${value}`);
+}
+
 class MenteeFormEmbed extends React.Component {
 
     render() {
@@ -7,23 +15,23 @@ class MenteeFormEmbed extends React.Component {
             <div>
                 <form className="menteeform">
                     <h1>Mentee Sign Up Form</h1>
-                    <label>First Name: </label>
+                    <label>First Name: </label> {/* For User First Name */}
                     <input
                         id="input-box"
                         type="text"
-                        name="first-name"
+                        name="first_name"
                         required
                     />
                     <br />
-                    <label>Last Name: </label>
+                    <label>Last Name: </label>  {/* For User Last Name */}
                     <input
                         id="input-box"
                         type="text"
-                        name="last-name"
+                        name="last_name"
                         required
                     />
                     <br />
-                    <label>Email Address: </label>
+                    <label>Email Address: </label>  {/* For User Email */}
                     <input
                         id="input-box"
                         type="email"
@@ -31,38 +39,52 @@ class MenteeFormEmbed extends React.Component {
                         required
                     />
                     <br />
-                    <label>Skill #1:</label>
-                    <select className="skills-list">
-                        <option>Machine Learning</option>
-                        <option>Frontend Web Dev</option>
-                        <option>Backend Web Dev</option>
-                        <option>UI / UX</option>
-                    </select>
-                    <label>Skill #2:</label>
-                    <select className="skills-list">
-                        <option>None</option>
-                        <option>Machine Learning</option>
-                        <option>Frontend Web Dev</option>
-                        <option>Backend Web Dev</option>
-                        <option>UI / UX</option>
-                    </select>
-                    <br />
-                    <label>Skill #3:</label>
-                    <select className="skills-list">
-                        <option>None</option>
-                        <option>Machine Learning</option>
-                        <option>Frontend Web Dev</option>
-                        <option>Backend Web Dev</option>
-                        <option>UI / UX</option>
-                    </select>
-                    <label>Skill #4:</label>
-                    <select className="skills-list">
-                        <option>None</option>
-                        <option>Machine Learning</option>
-                        <option>Frontend Web Dev</option>
-                        <option>Backend Web Dev</option>
-                        <option>UI / UX</option>
-                    </select>
+                    <label>Preferred Skills:</label>  {/* Multiselect input dialogue for preferred Skills */}
+                        <Select
+                        mode="multiple"
+                        style={{ width: '60%', marginLeft: '2rem'}}
+                        placeholder="select 5 skills"
+                        //defaultValue={['machine learning']}
+                        onChange={handleChangeSkills}
+                        optionLabelProp="label"
+                        >
+                        <Option value="machine learning" label="Machine Learning">
+                            <div className="demo-option-label-item">
+                            Machine Learning
+                            </div>
+                        </Option>
+                        <Option value="front end web dev" label="Front End">
+                            <div className="demo-option-label-item">
+                            Front End Web Development
+                            </div>
+                        </Option>
+                        <Option value="back end web dev" label="Back End">
+                            <div className="demo-option-label-item">
+                            Back End Web Development
+                            </div>
+                        </Option>
+                        <Option value="ui ux" label="UI/UX Design">
+                            <div className="demo-option-label-item">
+                            User Interface / User Experience Design
+                            </div>
+                        </Option>
+                        <Option value="android" label="Android">
+                            <div className="demo-option-label-item">
+                            Android Development
+                            </div>
+                        </Option>
+                        <Option value="ios" label="iOS">
+                            <div className="demo-option-label-item">
+                            iOS Development
+                            </div>
+                        </Option>
+                        <Option value="data analysis" label="Data Analysis">
+                            <div className="demo-option-label-item">
+                            Data Analysis
+                            </div>
+                        </Option>
+                        </Select>
+                    <br/>
                     <button id="mentee-btn">submit</button>
                 </form>
             </div>
