@@ -1,18 +1,10 @@
-.mentee-fb,
-.menteeform {
+.mentee-signup-page {
   background-color: rgb(116, 111, 218);
   padding: 30px;
-  width: 35rem;
+  width: 30rem;
   margin: auto;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 5rem;
   border-style: groove;
-}
-
-#input-box {
-  margin-left: 1.2rem;
-  border-radius: 5px;
-  width: 20rem;
 }
 
 #mentee-btn {
@@ -28,20 +20,4 @@
   border-radius: 4px;
   transition: all 0.2s ease-out;
   text-decoration: none;
-}
-
-.skills-list {
-  display: inline;
-  margin-left: 0.5rem;
-  margin-right: 1.5rem;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-decoration: none;
-  padding: 3px 3px;
-  border-radius: 8px;
-  background: #fff;
-}
-
-.skills-list:hover {
-  cursor: pointer;
 }
