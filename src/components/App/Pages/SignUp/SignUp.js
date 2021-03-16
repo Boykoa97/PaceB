@@ -136,13 +136,36 @@ class SignUp extends Component {
                 required
               />
             </div>
+            <br />
+            <button className="create-acc-btn" type="submit" value="submit">
+              Create Account
+            </button>
+            <p>{this.state.eMessage}</p>
+          </form>
+        </div>
+        <div className="signup-skills">
+          <h1>User Profile:</h1>
+          <form>
+            <div class="form-group">
+              {/* For User Calendar */}
+              <label for="url">Calendar Link</label>
+              <input
+                value={this.state.url}
+                onChange={this.handleChange}
+                type="url"
+                class="form-control"
+                id="url"
+                name="url"
+                required
+              />
+            </div>
             <div>
               {" "}
               {/* Multiselect input dialogue for preferred Skills */}
               <label>Preferred Skills:</label>
               <Select
                 mode="multiple"
-                style={{ width: "60%", marginLeft: "2rem" }}
+                style={{ width: "66%", marginLeft: "2rem" }}
                 placeholder="select 5 skills"
                 //defaultValue={['machine learning']}
                 onChange={this.handleChangeSkills}
@@ -155,7 +178,6 @@ class SignUp extends Component {
             <button className="create-acc-btn" type="submit" value="submit">
               Create Account
             </button>
-            <p>{this.state.eMessage}</p>
           </form>
         </div>
       </div>

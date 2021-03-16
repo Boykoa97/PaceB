@@ -1,7 +1,6 @@
 import React from "react";
 import fire from "../../../firebase";
 
-import "./Mentee.css";
 import MenteeForm from "./MenteeForm";
 
 class Mentee extends React.Component {
@@ -36,11 +35,8 @@ class Mentee extends React.Component {
   }
   render() {
     return (
-      <nav className="mentee-page">
+      <nav>
         <div>
-          <div className="Welcome">
-            <h1 id="mp-title">MENTEE PAGE</h1>
-          </div>
           <div className="mentee-matching-form">
             <MenteeForm></MenteeForm>
           </div>

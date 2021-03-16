@@ -52,41 +52,51 @@ function MenteeForm() {
   };
   return (
     <div>
-      {
-        /* Mentee Sign Up Form: */
-        <form onSubmit={handleSubmit} className="menteeform">
-          <h1>Mentee Sign Up Form</h1>
-          <label>First Name: </label> {/* For User First Name */}
-          <input
-            id="input-box"
-            type="text"
-            name="first_name"
-            onChange={handleChange}
-            required
-          />
+      <div className="mentee-signup-page">
+        <h1 style={{textAlign: "center"}}>Mentee Sign Up</h1>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>First Name: </label> {/* For User First Name */}
+            <input
+              id="input-box"
+              class="form-control"
+              type="text"
+              name="first_name"
+              onChange={handleChange}
+              required
+            />
+          </div>
           <br />
-          <label>Last Name: </label>  {/* For User Last Name */}
-          <input
-            id="input-box"
-            type="text"
-            name="last_name"
-            onChange={handleChange}
-            required
-          />
+          <div>
+            <label>Last Name: </label>  {/* For User Last Name */}
+            <input
+              id="input-box"
+              class="form-control"
+              type="text"
+              name="last_name"
+              onChange={handleChange}
+              required
+            />
+          </div>
           <br />
-          <label>Email Address: </label>  {/* For User Email */}
-          <input
-            id="input-box"
-            type="email"
-            name="email"
-            onChange={handleChange}
-            required
-          />
-          <br />
-          <label>Preferred Skills:</label>  {/* Multiselect input dialogue for preferred Skills */}
+          <div>
+            <label>Email Address: </label>  {/* For User Email */}
+            <input
+              id="input-box"
+              class="form-control"
+              type="email"
+              name="email"
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <br/>
+          <div>
+            <label>Preferred Skills:</label>  
+            {/* Multiselect input dialogue for preferred Skills */}
             <Select
               mode="multiple"
-              style={{ width: '60%', marginLeft: '2rem'}}
+              style={{ width: '66%', marginLeft: '2rem'}}
               placeholder="select 5 skills"
               //defaultValue={['machine learning']}
               onChange={handleChangeSkills}
@@ -128,10 +138,11 @@ function MenteeForm() {
                 </div>
               </Option>
             </Select>
+          </div>
           <br/>
           <button id="mentee-btn">submit</button>
         </form>
-      }
+      </div>
     </div>
   );
 }
