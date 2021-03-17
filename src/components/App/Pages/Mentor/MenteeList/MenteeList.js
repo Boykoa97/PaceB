@@ -3,7 +3,11 @@ import fire from "../../../../firebase";
 import axios from "axios";
 import "./MenteeList.css";
 
-import { List, Avatar } from "antd";
+
+import { List, Avatar } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
+
+
 
 const unmatchedMentees = [
   {
@@ -67,10 +71,10 @@ class MenteeList extends Component {
               renderItem={(item) => (
                 <List.Item>
                   <List.Item.Meta
-                    avatar={
-                      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                    }
-                    title={<a href="">{item.title}</a>}
+
+                    avatar={<Avatar style={{backgroundColor: 'antiquewhite', color: '#9196e4'}} icon={<UserOutlined />} />}
+                    title={<a href="" style={{color: 'antiquewhite'}}>{item.title}</a>}
+
                     description={item.skills}
                   />
                   <button
@@ -101,10 +105,9 @@ class MenteeList extends Component {
               renderItem={(item) => (
                 <List.Item>
                   <List.Item.Meta
-                    avatar={
-                      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                    }
-                    title={<a href="">{item.title}</a>}
+                    avatar={<Avatar style={{backgroundColor: 'white', color: '#9196e4'}} icon={<UserOutlined />} />}
+                    title={<a href="" style={{color: 'white'}}>{item.title}</a>}
+
                     description={item.skills}
                   />
                   <button className="email-mentee">copy email</button>

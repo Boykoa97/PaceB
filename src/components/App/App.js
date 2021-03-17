@@ -4,7 +4,6 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import history from "./History";
 
-import NavBar from "../NavBar/NavBar";
 import Home from "./Pages/Home/Home";
 import Mentor from "./Pages/Mentor/Mentor";
 import MenteeListAccess from "./Pages/Mentor/MenteeList/MenteeListAccess";
@@ -23,7 +22,6 @@ class App extends Component {
     return (
       <div className="App">
         <Router History={history}>
-          {/* <NavBar /> */}
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/create-organization" component={Admin} />

@@ -3,6 +3,7 @@ import { Card } from 'antd';
 
 import Profile from "./Profile/Profile";
 import Calendar from "./Calendar/Calendar";
+import Skills from "./Skills/Skills";
 
 import "./MentorHome.css";
 
@@ -20,6 +21,9 @@ class MentorHome extends React.Component {
                 </Card>
                 <Card id="calendar" style={{ backgroundColor: 'rgb(239, 238, 252)'}}>
                     <Calendar />
+                </Card>
+                <Card id="skills" style={{ backgroundColor: 'rgb(239, 238, 252)'}}>
+                    <Skills />
                 </Card>
             </div>
         )
