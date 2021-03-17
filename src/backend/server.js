@@ -21,7 +21,8 @@ app.post("/getProfile", require("./routes/getProfile"));
 app.post("/getSkills", require("./routes/getSkills"));
 app.post("/mentor", require("./routes/cookies"));
 app.post("/getUserSkills", require("./routes/getUserSkills"));
-
+app.post("/getUnmatchedMentees", require("./routes/getUnmatchedMentees"));
+app.post("/updateList", require("./routes/updateList"));
 // app.use("http://localhost:3000/mentee", require("./routes/sendMail"));
 
 app.listen(port, () => {
