@@ -11,11 +11,12 @@ app.use(express.json());
 
 //mentor post request is unhandled
 app.post("/addUser", require("./routes/addUser"));
-app.post(
-  "/findMatch",
-  require("./routes/findMatch"),
-  require("./routes/sendMail")
-);
+app.post("/findMatch", require("./routes/findMatch"));
+// app.post(
+//   "/findMatch",
+//   require("./routes/findMatch"),
+//   require("./routes/sendMail")
+// );
 //app.post("/findMatch",);
 app.post("/getProfile", require("./routes/getProfile"));
 app.post("/getSkills", require("./routes/getSkills"));

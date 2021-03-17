@@ -3,7 +3,7 @@ import axios from "axios";
 
 import "./MenteeForm.css";
 
-import { Select } from 'antd';
+import { Select, message } from 'antd';
 
 const { Option } = Select;
 class MenteeForm extends Component{
@@ -49,7 +49,9 @@ class MenteeForm extends Component{
       uslist: this.state.uslist,
       utype: 0,
     });
-  }
+    message.success('Form has been Submitted');
+    //window.location.reload();
+  };
   handleChange(e) {
     //saves text box contents into their proper variables
     this.setState({ [e.target.name]: e.target.value });
@@ -63,45 +65,54 @@ class MenteeForm extends Component{
       </Option>
     ));
     return (
-      <div>
-       {
-        /* Mentee Sign Up Form: */
+      <div className="mentee-signup-page">   {/* Mentee Sign Up Form: */}
+        <h1 style={{textAlign: "center"}}>Mentee Sign Up</h1>
         <form onSubmit={this.handleSubmit} className="menteeform">
-          <h1>Mentee Sign Up Form</h1>
-          <label>First Name: </label> {/* For User First Name */}
-          <input
-            id="input-box"
-            type="text"
-            name="fname"
-            value={this.state.fname}
-            onChange={this.handleChange}
-            required
-          />
+          <div>
+            <label>First Name: </label> {/* For User First Name */}
+            <input
+              class="form-control"
+              id="input-box"
+              type="text"
+              name="fname"
+              value={this.state.fname}
+              onChange={this.handleChange}
+              required
+            />
+          </div>
           <br />
-          <label>Last Name: </label>  {/* For User Last Name */}
-          <input
-            id="input-box"
-            type="text"
-            name="lname"
-            value={this.state.lname}
-            onChange={this.handleChange}
-            required
-          />
+          <div>
+            <label>Last Name: </label>  {/* For User Last Name */}
+            <input
+              class="form-control"
+              id="input-box"
+              type="text"
+              name="lname"
+              value={this.state.lname}
+              onChange={this.handleChange}
+              required
+            />
+          </div>
           <br />
-          <label>Email Address: </label>  {/* For User Email */}
-          <input
-            id="input-box"
-            type="email"
-            name="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-            required
-          />
-          <br />
-          <label>Preferred Skills:</label>  {/* Multiselect input dialogue for preferred Skills */}
+          <div>
+            <label>Email Address: </label>  {/* For User Email */}
+            <input
+              class="form-control"
+              id="input-box"
+              type="email"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+              required
+            />
+          </div>
+          <br/>
+          <div>
+            <label>Preferred Skills:</label>  
+            {/* Multiselect input dialogue for preferred Skills */}
             <Select
               mode="multiple"
-              style={{ width: '60%', marginLeft: '2rem'}}
+              style={{ width: '66%', marginLeft: '2rem'}}
               placeholder="select 5 skills"
               //defaultValue={['machine learning']}
               onChange={this.handleChangeSkills}
@@ -109,10 +120,10 @@ class MenteeForm extends Component{
             >
               {optionitems}
             </Select>
+          </div>
           <br/>
           <button id="mentee-btn">submit</button>
         </form>
-        }
       </div>
     );
   }
