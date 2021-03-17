@@ -1,16 +1,14 @@
 import React from "react";
-import history from '../../History';
+import history from "../../History";
 
 import "./Home.css";
 import NavBar from "../../../NavBar/NavBar";
 
 class Home extends React.Component {
-
   constructor(props) {
     super(props);
     console.log("App - Constructor");
   }
-
 
   render() {
     console.log("App - Rendered");
@@ -18,23 +16,24 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <NavBar />
-          <div id="Welcome">
-            <h1>Welcome to Capstone Pace B</h1>
-          </div>
-          <div id="sys-description">
-            <h3>System Description:</h3>
-            <p>
-              Pace B aims to link mentors and mentees together!
-            </p>
-          </div>
-          <form className="home-btns">
-            <button className="home-btn" onClick={() => history.push('/create-organization')}>
-              Create Organization
-            </button>
-            <button className="home-btn" onClick={() => history.push('/mentor')}>
-              Mentor Page
-            </button>
-          </form>
+        <div id="Welcome">
+          <h1>Welcome to Capstone Pace B</h1>
+        </div>
+        <div id="sys-description">
+          <h3>System Description:</h3>
+          <p>Pace B aims to link mentors and mentees together!</p>
+        </div>
+        <form className="home-btns">
+          <button
+            className="home-btn"
+            onClick={() => history.push("/create-organization")}
+          >
+            Create Organization
+          </button>
+          <button className="home-btn" onClick={() => history.push("/mentor")}>
+            Mentor Page
+          </button>
+        </form>
       </div>
     );
   }
@@ -42,7 +41,3 @@ class Home extends React.Component {
 
 //when you call the app component it will use this this as the default app code
 export default Home;
-
-
-
-
