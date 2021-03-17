@@ -60,3 +60,6 @@
 
 **Team Meeting 11(01/03/2021)**:(4:00-6:00);All group members present; Went over what we need to complete for the rest of the project, and our final to do list. reviewed what we need to finish for the peer testing 2 report.
 
+**Team Meeting 12(16/03/2021)**:(10:30-11:30);All group members present; Clarified how we want to add skills, as well as updated where we are, and what we are going to work on next. Going to work on mentee list and finish matching, then start to work on admin and organization functionality.
+
+
