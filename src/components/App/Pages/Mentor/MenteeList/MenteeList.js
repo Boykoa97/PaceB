@@ -6,8 +6,16 @@ import { List, Avatar } from "antd";
 import { text } from "body-parser";
 import { auth } from "firebase-admin";
 import fire from "../../../../firebase";
-
+import { UserOutlined } from '@ant-design/icons';
 class MenteeList extends Component {
+   runMatching = (e) => {
+    e.preventDefault();
+    const user = fire.auth().currentUser;
+    const fid = user.uid;
+    axios.post("/findMatch", {
+      fid: fid,
+    });
+  };
   constructor(props) {
     super(props);
     this.handleAccept = this.handleAccept.bind(this);
@@ -100,7 +108,6 @@ class MenteeList extends Component {
         var uids = [];
         var malist = [];
         console.log(data);
-
         for (i = 0; i < data.length; i++) {
           uids[i] = data[i].uid;
         }
@@ -196,10 +203,9 @@ class MenteeList extends Component {
               renderItem={(item) => (
                 <List.Item>
                   <List.Item.Meta
-                    avatar={
-                      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                    }
-                    title={<a href="">{item.title}</a>}
+                     avatar={<Avatar style={{backgroundColor: 'antiquewhite', color: '#9196e4'}} icon={<UserOutlined />} />}
+                    title={<a href="" style={{color: 'antiquewhite'}}>{item.title}</a>}
+
                     description={item.skills}
                   />
                   <button
@@ -242,10 +248,8 @@ class MenteeList extends Component {
               renderItem={(item) => (
                 <List.Item>
                   <List.Item.Meta
-                    avatar={
-                      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                    }
-                    title={<a href="">{item.title}</a>}
+                    avatar={<Avatar style={{backgroundColor: 'white', color: '#9196e4'}} icon={<UserOutlined />} />}
+                    title={<a href="" style={{color: 'white'}}>{item.title}</a>}
                     description={item.skills}
                   />
                   <button className="email-mentee">copy email</button>
@@ -253,6 +257,9 @@ class MenteeList extends Component {
               )}
             />
           </div>
+        </div>
+        <div>
+          <button onClick={this.runMatching}>submit</button>
         </div>
       </div>
     );
