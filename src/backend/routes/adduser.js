@@ -27,13 +27,13 @@ async function adduser(req, fname, lname, email, utype) {
       var sql =
         "INSERT INTO USERS (fid,admin,oid,fname,lname,email,utype) Values('" +
         fid +
-        "',1,0,?,?,?," +
+        "',1,1,?,?,?," +
         utype +
         ")";
       console.log("mentor is being added");
     } else {
       var sql =
-        "INSERT INTO USERS (admin,oid,fname,lname,email,utype) Values(0,0,?,?,?," +
+        "INSERT INTO USERS (admin,oid,fname,lname,email,utype) Values(0,1,?,?,?," +
         utype +
         ")";
       console.log("mentee is being added");
