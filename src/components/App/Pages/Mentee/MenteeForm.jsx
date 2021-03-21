@@ -41,13 +41,12 @@ class MenteeForm extends Component{
       last_name: this.state.lname,
       uslist: this.state.uslist,
     });*/
-    axios.post("/addUser", {
+    axios.post("/addMentee", {
       //uid, first name, last name and user skills are sent as part of the database request
       fname: this.state.fname,
       lname: this.state.lname,
       email: this.state.email,
       uslist: this.state.uslist,
-      utype: 0,
     });
     message.success('Form has been Submitted');
     //window.location.reload();

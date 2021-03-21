@@ -21,15 +21,7 @@ class SignUp extends Component {
       fname: "",
       lname: "",
       eMessage: "",
-      slist: [],
-      uslist: [],
     };
-    //request to the database that gets the skills for the skill select menu
-    axios.post("/getSkills").then((res) => {
-      var slist = res.data;
-      //returns it and saves in slist
-      this.setState({ slist });
-    });
   }
   componentWillMount() {
     this.mounted = true;
@@ -40,18 +32,17 @@ class SignUp extends Component {
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {
-        message.success('Successfully Signed Up!');
+        message.success("Successfully Signed Up!");
         this.props.history.push("/mentor");
         var uid = u.user.uid;
         //request to send user information to the database
-        axios.post("/addUser", {
+        axios.post("/addMentor", {
           //uid, first name, last name and user skills are sent as part of the database request
           fid: uid,
           fname: this.state.fname,
           lname: this.state.lname,
           email: this.state.email,
           uslist: this.state.uslist,
-          utype: 1,
         });
       })
       .catch((error) => {
@@ -65,19 +56,7 @@ class SignUp extends Component {
     //saves text box contents into their proper variables
     this.setState({ [e.target.name]: e.target.value });
   }
-  handleChangeSkills(value) {
-    //saves the skill array into its proper varliable
-    var uslist = value;
-    this.setState({ uslist });
-  }
   render() {
-    //maps the skill list into option items, where each skill is enclosed by an option tag, and the required values and classname is also added
-    let slist = this.state.slist;
-    let optionitems = slist.map((item) => (
-      <Option value={item.sid} label={item.skills}>
-        <div className="demo-option-label-item">{item.skills}</div>
-      </Option>
-    ));
     return (
       <div>
         <NavBar />
@@ -136,21 +115,6 @@ class SignUp extends Component {
                 required
               />
             </div>
-            {/* <div>
-              {" "}
-              Multiselect input dialogue for preferred Skills 
-              <label>Preferred Skills:</label>
-              <Select
-                mode="multiple"
-                style={{ width: "60%", marginLeft: "2rem" }}
-                placeholder="select 5 skills"
-                //defaultValue={['machine learning']}
-                onChange={this.handleChangeSkills}
-                optionLabelProp="label"
-              >
-                {optionitems}
-              </Select>
-            </div> */}
             <br />
             <button className="create-acc-btn" type="submit" value="submit">
               Create Account
