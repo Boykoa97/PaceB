@@ -46,7 +46,7 @@ class Profile extends React.Component {
     } else {
     }
     return (
-      <div className="mentor-profile">
+      <div className="mentor-profile" style={{textAlign: "left"}}>
         <h1 id="profile-title">User Profile</h1>
         <p>First name: {this.state.fname}</p>
         <p>Last name: {this.state.lname}</p>
