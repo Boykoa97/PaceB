@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './NavBar.css';
-import { NavItems, MentorNavItems } from './NavItems';
+import { NavItems, MentorNavItems, AdminNavItems } from './NavItems';
 import { Link } from 'react-router-dom';
 import fire from "../firebase";
 
@@ -46,7 +46,7 @@ class NavBar extends React.Component{
                 <ul className = 'nav-menu'>  {/* nav menu items */}
                   {
                     this.state.user ? (
-                      MentorNavItems.map((item, index)=> {
+                      MentorNavItems.map((item, index)=> {   // CHANGE BACK
                         return (
                             <li key={index}>
                                 <Link to={item.url} className={item.cName}> 
@@ -74,7 +74,7 @@ class NavBar extends React.Component{
                     Sign Out
                   </button>:
                   <button className='sign_in'>
-                    <Link id="sign_in" to="/mentor">Sign In</Link>
+                    <Link id="sign_in" to="/mentor">Sign In</Link>   {/* CHANGE BACK*/}
                   </button>
                 }
                 </li>

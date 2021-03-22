@@ -6,8 +6,8 @@ export const NavItems = [
     cName: "nav-links",
   },
   {
-    title: "New Organization",
-    url: "/create-organization",
+    title: "Admin",
+    url: "/admin",
     cName: "nav-links",
   },
 ];
@@ -26,6 +26,29 @@ export const MentorNavItems = [
   {
     title: "MenteeForm",
     url: "/iframe-embed",
+    cName: "nav-links",
+  },
+];
+
+export const AdminNavItems = [
+  {
+    title: "Dashboard",
+    url: "/admin",
+    cName: "nav-links",
+  },
+  {
+    title: "Mentees",
+    url: "/admin-mentee-list",
+    cName: "nav-links",
+  },
+  {
+    title: "MenteeForm",
+    url: "/iframe-embed",
+    cName: "nav-links",
+  },
+  {
+    title: "Mentors",
+    url: "/admin-mentor-list",
     cName: "nav-links",
   },
 ];

@@ -1,13 +1,11 @@
-import React from "react";
-import fire from "../../../firebase";
+import React, { Component } from "react";
+import fire from "../../../../firebase";
 
-import Login from "../login.jsx";
-import AdminHome from "./Dashboard/AdminHome";
+import Login from "../../login";
+import MentorList from "./MentorList";
+import NavBar from "../../../../NavBar/NavBar";
 
-import "./Admin.css";
-import NavBar from "../../../NavBar/NavBar";
-
-class Admin extends React.Component {
+class MentorListAccess extends Component {
   constructor(props) {
     super(props);
     console.log("App - Constructor");
@@ -39,24 +37,16 @@ class Admin extends React.Component {
   }
 
   render() {
-    // If user isn't logged in, they are redirected to login page, else they are redirected to admin dashboard
-    const isLoggedIn = this.state.user;
-    if (isLoggedIn) {
-        return (
-          <div className="admin-page">
-            <NavBar />
-            <AdminHome />
-          </div>
-        );
-    } else {
-      return (
-        <div>
-          <NavBar />
-          <Login />
+    return (
+      <div className="admi-page">
+        <NavBar />
+        <div className="admin-login-form">
+          {/* If user isn't logged in, they are redirected to login page, else they are shown mentor list page */}
+          {this.state.user ? <MentorList /> : <Login />}
         </div>
-      );
-    }
+      </div>
+    );
   }
 }
 
-export default Admin;
+export default MentorListAccess;

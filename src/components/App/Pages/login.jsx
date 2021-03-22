@@ -26,11 +26,11 @@ class login extends Component {
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {
         message.success('Successfully Logged In!');
-        this.props.history.push("/mentor");
+        this.props.history.push("/mentor");  // CHANGE BACK
       })
       .then(() => {
         console.log("should be posting to create cookie");
-        axios.post("/mentor", {});
+        axios.post("/mentor", {}); // CHANGE BACK
       })
       .catch((error) => {
         const eMessage = error.message;
