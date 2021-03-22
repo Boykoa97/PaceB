@@ -14,7 +14,6 @@ class SignUp extends Component {
     super(props);
     this.signup = this.signup.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleChangeSkills = this.handleChangeSkills.bind(this);
     this.state = {
       email: "",
       password: "",
