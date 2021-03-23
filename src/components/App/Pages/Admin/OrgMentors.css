@@ -1,8 +1,8 @@
-#mentorl-title {
+#mentor-list-title {
   text-align: center;
 }
 
-.current-mentors {
+.org-mentors {
   background-color: rgb(124, 120, 209);
   width: 45%;
   margin: auto;

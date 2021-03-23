@@ -44,6 +44,9 @@ class NavBar extends React.Component{
             <nav className="navbar">
                 <Link className="navbar-logo" to='/'>pace b <i className='fab fa-angellist'></i></Link> {/* homepage / logo */}
                 <ul className = 'nav-menu'>  {/* nav menu items */}
+                {/* will change below to if-else to add adminitems display 
+                    - add state checker for whether user is mentor or admin
+                */}
                   {
                     this.state.user ? (
                       MentorNavItems.map((item, index)=> {   // CHANGE BACK

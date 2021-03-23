@@ -9,7 +9,7 @@ import Home from "./Pages/Home/Home";
 import Mentor from "./Pages/Mentor/Mentor";
 import MenteeListAccess from "./Pages/Mentor/MenteeList/MenteeListAccess";
 // for admin
-import MentorListAccess from "./Pages/Admin/MentorList/MentorList";
+import OrgMentors from "./Pages/Admin/OrgMentors";
 // signup & login
 import SignUp from "./Pages/SignUp/SignUp";
 import login from "./Pages/login";
@@ -30,7 +30,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/mentor" component={Mentor} />
             <Route exact path="/mentee-list" component={MenteeListAccess} />
-            <Route exact path="/admin-mentor-list" component={MentorListAccess} />
+            <Route exact path="/admin-mentor-list" component={OrgMentors} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/sign-in" component={login} />
             <Route exact path="/mentee-signup" component={Mentee} />
