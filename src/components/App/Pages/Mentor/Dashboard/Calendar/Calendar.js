@@ -18,7 +18,7 @@ class MentorCalendar extends React.Component {
             // </div>
             <div style={{ backgroundColor: 'rgb(116, 111, 218)', padding: '40px 40px'}}>
                 <h1 style={{color: 'antiquewhite'}}>Add Calendar</h1>
-                <div class="form-group">
+                <form class="form-group">
                     <label>add your calendar link to your user profile:</label>
                     <input
                         type="url"
@@ -27,7 +27,7 @@ class MentorCalendar extends React.Component {
                         name="url"
                         required
                     />
-                </div>
+                </form>
                 <br />
                 <button id="submit-btns" type="submit" value="submit">
                     Submit

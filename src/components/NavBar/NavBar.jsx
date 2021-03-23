@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './NavBar.css';
-import { NavItems, MentorNavItems } from './NavItems';
+import { NavItems, MentorNavItems, AdminNavItems } from './NavItems';
 import { Link } from 'react-router-dom';
 import fire from "../firebase";
 
@@ -40,46 +40,81 @@ class NavBar extends React.Component{
       }
 
     render(){
-        return( 
-            <nav className="navbar">
-                <Link className="navbar-logo" to='/'>pace b <i className='fab fa-angellist'></i></Link> {/* homepage / logo */}
-                <ul className = 'nav-menu'>  {/* nav menu items */}
-                  {
-                    this.state.user ? (
-                      MentorNavItems.map((item, index)=> {
-                        return (
-                            <li key={index}>
-                                <Link to={item.url} className={item.cName}> 
-                                    {item.title}
-                                </Link>
-                            </li>
-                        )
-                    })
-                    ) : (
-                      NavItems.map((item, index)=> {
-                        return (
-                            <li key={index}>
-                                <Link to={item.url} className={item.cName}> 
-                                    {item.title}
-                                </Link>
-                            </li>
-                        )
-                    })
-                    )
-                  }
-                </ul>
-                <li className='sign-in'>  {/* login button in top right */}
-                {this.state.user ? 
-                  <button className='sign_in' onClick={this.logout} >
-                    Sign Out
-                  </button>:
-                  <button className='sign_in'>
-                    <Link id="sign_in" to="/mentor">Sign In</Link>
-                  </button>
-                }
-                </li>
-            </nav>
-        );
+      const userType = this.state.user;
+      // ** add state checker for whether user is mentor or admin **
+      let navlist;
+      if (userType) {   // check if user is mentor
+        navlist = MentorNavItems.map((item, index) => {
+          return (
+            <li key={index}>
+              <Link to={item.url} className={item.cName}>
+                {item.title}
+              </Link>
+            </li>
+          )
+        })
+      } /*else if (userType) {  // check if user is admin
+        navlist = AdminNavItems.map((item, index) => {
+          return (
+            <li key={index}>
+              <Link to={item.url} className={item.cName}>
+                {item.title}
+              </Link>
+            </li>
+          )
+        })
+      }*/ else {
+        navlist = NavItems.map((item, index) => {
+          return (
+            <li key={index}>
+              <Link to={item.url} className={item.cName}>
+                {item.title}
+              </Link>
+            </li>
+          )
+        })
+      }
+      return( 
+          <nav className="navbar">
+              <Link className="navbar-logo" to='/'>pace b <i className='fab fa-angellist'></i></Link> {/* homepage / logo */}
+              <ul className = 'nav-menu'>  {/* nav menu items */}
+                {navlist}
+                {/*   ** will delete later **
+                  this.state.user ? (
+                    MentorNavItems.map((item, index)=> {
+                      return (
+                          <li key={index}>
+                              <Link to={item.url} className={item.cName}> 
+                                  {item.title}
+                              </Link>
+                          </li>
+                      )
+                  })
+                  ) : (
+                    NavItems.map((item, index)=> {
+                      return (
+                          <li key={index}>
+                              <Link to={item.url} className={item.cName}> 
+                                  {item.title}
+                              </Link>
+                          </li>
+                      )
+                  })
+                  )
+                */}
+              </ul>
+              <li className='sign-in'>  {/* login button in top right */}
+              {this.state.user ? 
+                <button className='sign_in' onClick={this.logout} >
+                  Sign Out
+                </button>:
+                <button className='sign_in'>
+                  <Link id="sign_in" to="/mentor">Sign In</Link>
+                </button>
+              }
+              </li>
+          </nav>
+      );
     }
 }
 
