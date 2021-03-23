@@ -26,9 +26,9 @@ class Home extends React.Component {
         <form className="home-btns">
           <button
             className="home-btn"
-            onClick={() => history.push("/create-organization")}
+            onClick={() => history.push("/admin")}
           >
-            Create Organization
+            Admin Page
           </button>
           <button className="home-btn" onClick={() => history.push("/mentor")}>
             Mentor Page
