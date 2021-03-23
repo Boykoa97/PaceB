@@ -24,12 +24,6 @@ class Home extends React.Component {
           <p>Pace B aims to link mentors and mentees together!</p>
         </div>
         <form className="home-btns">
-          <button
-            className="home-btn"
-            onClick={() => history.push("/admin")}
-          >
-            Admin Page
-          </button>
           <button className="home-btn" onClick={() => history.push("/mentor")}>
             Mentor Page
           </button>

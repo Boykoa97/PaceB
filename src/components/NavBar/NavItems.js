@@ -33,12 +33,12 @@ export const MentorNavItems = [
 export const AdminNavItems = [
   {
     title: "Dashboard",
-    url: "/admin",
+    url: "/mentor",
     cName: "nav-links",
   },
   {
     title: "Mentees",
-    url: "/admin-mentee-list",
+    url: "/mentee-list",
     cName: "nav-links",
   },
   {
