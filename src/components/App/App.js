@@ -9,9 +9,7 @@ import Home from "./Pages/Home/Home";
 import Mentor from "./Pages/Mentor/Mentor";
 import MenteeListAccess from "./Pages/Mentor/MenteeList/MenteeListAccess";
 // for admin
-import Admin from "./Pages/Admin/Admin";
 import MentorListAccess from "./Pages/Admin/MentorList/MentorList";
-import AdminMenteeListAccess from "./Pages/Admin/MenteeList/AdminMenteeList";
 // signup & login
 import SignUp from "./Pages/SignUp/SignUp";
 import login from "./Pages/login";
@@ -30,11 +28,9 @@ class App extends Component {
         <Router History={history}>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/admin" component={Admin} />
-            <Route exact path="/admin-mentor-list" component={MentorListAccess} />
-            <Route exact path="/admin-mentee-list" component={AdminMenteeListAccess} />
             <Route exact path="/mentor" component={Mentor} />
             <Route exact path="/mentee-list" component={MenteeListAccess} />
+            <Route exact path="/admin-mentor-list" component={MentorListAccess} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/sign-in" component={login} />
             <Route exact path="/mentee-signup" component={Mentee} />
