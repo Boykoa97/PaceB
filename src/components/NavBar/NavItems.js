@@ -6,8 +6,13 @@ export const NavItems = [
     cName: "nav-links",
   },
   {
-    title: "Admin",
-    url: "/admin",
+    title: "Mentee",
+    url: "/mentee-signup",
+    cName: "nav-links",
+  },
+  {
+    title: "Organization",
+    url: "",
     cName: "nav-links",
   },
 ];
