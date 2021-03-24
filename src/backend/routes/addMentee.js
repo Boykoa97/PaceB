@@ -65,22 +65,18 @@ async function addskills(uid, uslist, email) {
     //await is used in order to wait for the uid response, which is needed for the rest of the query
     let res = await getuid(email);
     var uid = res[0].uid;
-    for (i = 0; i < uslist.length; i++) {
-      var sql3 =
-        "INSERT INTO USKILLS (uid, sid) Values('" +
-        uid +
-        "','" +
-        uslist[i] +
-        "')";
-      //query is ran
-      mysqlconnection.query(sql3, (err) => {
-        if (!err) {
-          console.log("user skill added to the database");
-        } else {
-          console.log(err);
-        }
-      });
-    }
+    //array map is used, where each item becomes a uid and skill id pair, done in order to just need one query to insert skills
+    var list = uslist.map((item) => [uid, item]);
+    //query is ran
+    var sql3 = "INSERT INTO USKILLS (uid, sid) Values ?";
+    //query is ran
+    mysqlconnection.query(sql3, [list], (err) => {
+      if (!err) {
+        console.log("user skills added to the database");
+      } else {
+        console.log(err);
+      }
+    });
     resolve();
   }).catch((error) => {
     console.log("hit error");
