@@ -19,11 +19,11 @@ class MentorHome extends React.Component {
                 <Card id="profile" style={{ backgroundColor: 'rgb(239, 238, 252)'}}>
                     <Profile /> 
                 </Card>
-                <Card id="calendar" style={{ backgroundColor: 'rgb(239, 238, 252)'}}>
-                    <Calendar />
-                </Card>
                 <Card id="skills" style={{ backgroundColor: 'rgb(239, 238, 252)'}}>
                     <Skills />
+                </Card>
+                <Card id="calendar" style={{ backgroundColor: 'rgb(239, 238, 252)'}}>
+                    <Calendar />
                 </Card>
             </div>
         )
