@@ -45,7 +45,7 @@ class iFrameEmbed extends Component {
 
   render() {
     return (
-        <div>
+        <div style={{ backgroundColor: 'rgb(239, 238, 252)'}}>
           <NavBar />
             {/* If user isn't logged in, they are redirected to login page, else they are shown iframe embed page */}
             {this.state.user ? 
@@ -58,9 +58,9 @@ class iFrameEmbed extends Component {
                               value = '<iframe src="http://localhost:3000/mentee-form" width="100%" height="520"></iframe>'
                           />
                       </div>
-                      <div id="iframe">
+                      <div id="iframe" height="400">
                           <h2 id="iframe-note">Preview:</h2>
-                          <iframe src="http://localhost:3000/mentee-form" width="100%" height="400"></iframe>
+                          <iframe src="http://localhost:3000/mentee-form" width="100%" height="530"></iframe>
                       </div>
                   </div>
                 </div>

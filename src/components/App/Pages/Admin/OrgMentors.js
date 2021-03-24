@@ -63,7 +63,7 @@ class OrgMentors extends Component {
                 <div>
                     <h1 id="mentor-list-title">Mentor List</h1>
                     <Row style={{height: "100%"}}>
-                        <Col flex={2}>
+                        <Col flex={3}>
                             <div className="add-mentors">
                                 <h2 style={{ textAlign: "center", color: "antiquewhite"}}>Invite A Mentor</h2>
                                 <form class="form-group">
@@ -99,10 +99,9 @@ class OrgMentors extends Component {
                                         <List.Item>
                                             <List.Item.Meta
                                                 avatar={<Avatar style={{backgroundColor: 'antiquewhite', color: '#9196e4'}} icon={<UserOutlined />} />}
-                                                title={<a href="" style={{color: 'antiquewhite'}}>{item.title}</a>}
+                                                title={<a href="" style={{color: 'antiquewhite'}}>{item.title}:</a>}
                                                 description="Mentor in your organization"
                                             />
-                                            <button className="delete-mentor">delete</button>
                                         </List.Item>
                                     )}
                                 />
