@@ -5,6 +5,7 @@
   margin: auto;
   margin-top: 5rem;
   border-style: groove;
+  text-align: left;
 }
 
 .login-btn,

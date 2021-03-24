@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import fire from "../../../firebase";
 
 import Login from "../login.jsx";
-
 import MentorHome from "./Dashboard/MentorHome";
+import AddSkills from "./AddSkills";
 
 import "./Mentor.css";
 import NavBar from "../../../NavBar/NavBar";
+import { logDOM } from "@testing-library/dom";
 
 class Mentor extends Component {
   constructor(props) {
@@ -40,15 +41,34 @@ class Mentor extends Component {
   }
 
   render() {
-    return (
-      <div className="mentor-page">
-        <NavBar />
-        <div className="mentor-login-form">
-          {/* If user isn't logged in, they are redirected to login page, else they are redirected to mentor dashboard */}
-          {this.state.user ? <MentorHome /> : <Login />}
+    // If user isn't logged in, they are redirected to login page, else they are redirected to mentor dashboard
+    const isLoggedIn = this.state.user;
+    // add code to check if user has skills added to profile
+    // const hasSkills = ;
+    if (isLoggedIn) {
+      {/*if (hasSkills) {  // if user has skills in profile, go to dashboard, else go to AddSkills page
+        return (
+          <div className="mentor-page">
+            <NavBar />
+            <AddSkills />
         </div>
-      </div>
-    );
+        );
+      } else {*/
+        return (
+          <div className="mentor-page">
+            <NavBar />
+            <MentorHome />
+          </div>
+        );  
+      }
+    } else {
+      return (
+        <div>
+          <NavBar />
+          <Login />
+        </div>
+      );
+    }
   }
 }
 

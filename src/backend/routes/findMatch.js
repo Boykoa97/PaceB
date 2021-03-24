@@ -121,12 +121,14 @@ async function countMatches(mentorSkillList, menteeID) {
 async function addPotential(mentorID, menteeID, numberMatched) {
   return new Promise(async (resolve) => {
     var sql3 =
-      "INSERT INTO PMATCHES (mentorid, menteeid, skillsMatched) Values('" +
+      "INSERT INTO PMATCHES (mentorid, menteeid, skillsMatched, rmatch) Values('" +
       mentorID +
       "','" +
       menteeID +
       "','" +
       numberMatched +
+      "','" + 
+      "0" +
       "')";
     //query is ran
     mysqlconnection.query(sql3, async (err, info) => {

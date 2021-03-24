@@ -14,12 +14,10 @@ class Profile extends React.Component {
     this.state = {
       email: email,
       fid: fid,
-      uslist: [],
       admin: false,
       oname: "",
       fname: "",
       lname: "",
-      uid: "",
     };
     axios
       .post("/getProfile", {
@@ -28,8 +26,6 @@ class Profile extends React.Component {
       })
       .then((res) => {
         //variables from the response are taken from the json object and are saved into local variables
-        this.setState({ uid: res.data[0].uid });
-        console.log(this.state.uid);
         //checks if user is an admin, and sets the admin variable accordingly
         if (res.data[0].admin == 1) {
           this.setState({ admin: true });
@@ -39,17 +35,6 @@ class Profile extends React.Component {
         this.setState({ oname: res.data[0].oname });
         this.setState({ fname: res.data[0].fname });
         this.setState({ lname: res.data[0].lname });
-        //second embedded query in order to get the skill information of the mentor
-        axios
-          .post("/getUserSkills", {
-            //searches using the uid as a filter, which is given from the previous query
-            uid: this.state.uid,
-          })
-          .then((res) => {
-            //skill information is saved in uslist
-            console.log(res.data);
-            this.setState({ uslist: res.data });
-          });
       });
   }
 
@@ -60,19 +45,13 @@ class Profile extends React.Component {
       admin = <p>You are an administrator.</p>;
     } else {
     }
-    //uslist is edited and made into skill list, where each element is a p tag, with the name each respective skill
-    let uslist = this.state.uslist;
-    let skillList = uslist.map((item) => <p> &emsp; {item.skills}</p>);
-    //account information is displayed
     return (
-      <div className="mentor-profile">
+      <div className="mentor-profile" style={{textAlign: "left"}}>
         <h1 id="profile-title">User Profile</h1>
         <p>First name: {this.state.fname}</p>
         <p>Last name: {this.state.lname}</p>
         <p>Email: {this.state.email}</p>
         <p>User id: {this.state.fid}</p>
-        <p>Skills:</p>
-        {skillList}
         <p>Organization: {this.state.oname}</p>
         {admin}
       </div>
