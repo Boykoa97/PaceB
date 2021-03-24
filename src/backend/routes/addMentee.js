@@ -13,6 +13,8 @@ sendToMeRouter.post("/addMentee", async (req, res, next) => {
   var email = req.body.email;
   await adduser(req, fname, lname, email);
   await addskills(uid, uslist, email);
+  console.log("entering email setup");
+  next();
 });
 
 async function adduser(req, fname, lname, email) {
