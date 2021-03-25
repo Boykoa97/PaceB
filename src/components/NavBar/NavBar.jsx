@@ -4,6 +4,7 @@ import './NavBar.css';
 import { NavItems, MentorNavItems, AdminNavItems } from './NavItems';
 import { Link } from 'react-router-dom';
 import fire from "../firebase";
+import axios from "axios";
 
 class NavBar extends React.Component{
     constructor(props) {
@@ -11,17 +12,32 @@ class NavBar extends React.Component{
         console.log("App - Constructor");
         this.state = {
           user: null,
+          admin:0,
         };
         this.logout = this.logout.bind(this);
         this.authListener = this.authListener.bind(this);
       }
-
+      adminCheck(fid) {
+        // query if the user is an admin
+        axios
+          .post("/getProfile", {
+            //searches using the fid as a filter
+            fid: fid,
+          })
+          .then((res) => {
+            //admin user status is set in admin
+            this.setState({ admin: res.data[0].admin });
+          });
+      }
     authListener() {
         fire.auth().onAuthStateChanged((user) => {
           console.log(user);
           if (user) {
             this.setState({ user });
             localStorage.setItem("user", user.uid);
+            //admin check is run alongside page load, where if a user is logged in, the check is ran, otherwise it is not.
+            this.adminCheck(user.uid);
+
           } else {
             this.setState({ user: null });
             localStorage.removeItem("user");
@@ -41,9 +57,9 @@ class NavBar extends React.Component{
 
     render(){
       const userType = this.state.user;
-      // ** add state checker for whether user is mentor or admin **
+      //if the user has an admin status of zero, and therefore not an admin, the regular nav bar is shown
       let navlist;
-      if (userType) {   // check if user is mentor
+      if (this.state.admin==0) {   // check if user is mentor
         navlist = MentorNavItems.map((item, index) => {
           return (
             <li key={index}>
@@ -53,7 +69,8 @@ class NavBar extends React.Component{
             </li>
           )
         })
-      } /*else if (userType) {  // check if user is admin
+        //otherwise, the admin navbar is shown
+      } else if (this.state.admin==1) {  // check if user is admin
         navlist = AdminNavItems.map((item, index) => {
           return (
             <li key={index}>
@@ -63,7 +80,8 @@ class NavBar extends React.Component{
             </li>
           )
         })
-      }*/ else {
+        //if the user is not logged in, the basic nav bar is shown
+      }else {
         navlist = NavItems.map((item, index) => {
           return (
             <li key={index}>

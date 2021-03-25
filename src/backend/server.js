@@ -27,6 +27,7 @@ app.post("/getMatchedMentees", require("./routes/getMatchedMentees"));
 app.post("/updateList", require("./routes/updateList"));
 app.post("/addMentee", require("./routes/addMentee"));
 app.post("/addMentorSkills", require("./routes/addMentorSkills"));
+app.post("/getOrganizationMentors", require("./routes/getOrganizationMentors"));
 // app.use("http://localhost:3000/mentee", require("./routes/sendMail"));
 
 app.listen(port, () => {
