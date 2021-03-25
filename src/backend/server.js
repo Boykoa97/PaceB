@@ -32,6 +32,9 @@ app.post(
   require("./routes/sendMail")
 );
 app.post("/addMentorSkills", require("./routes/addMentorSkills"));
+app.post("/getOrganizationMentors", require("./routes/getOrganizationMentors"));
+app.post("/inviteMentor", require("./routes/inviteMentor"));
+app.post("/getInvites", require("./routes/getInvites"));
 // app.use("http://localhost:3000/mentee", require("./routes/sendMail"));
 
 app.listen(port, () => {
