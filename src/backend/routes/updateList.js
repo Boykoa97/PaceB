@@ -16,6 +16,7 @@ sendToMeRouter.post("/updateList", (req, res, next) => {
     var menteeid = req.body.menteeid;
     var fid = req.body.fid;
     acceptMentee(res, menteeid, fid);
+    next();
   } else {
     console.log("Error");
   }

@@ -8,10 +8,11 @@ import Home from "./Pages/Home/Home";
 // for mentor
 import Mentor from "./Pages/Mentor/Mentor";
 import MenteeListAccess from "./Pages/Mentor/MenteeList/MenteeListAccess";
+import SignUp from "./Pages/SignUp/SignUp";
 // for admin
 import OrgMentors from "./Pages/Admin/OrgMentors";
-// signup & login
-import SignUp from "./Pages/SignUp/SignUp";
+import AdminSignUp from "./Pages/CreateOrganization/AdminSignUp";
+// login
 import login from "./Pages/login";
 // for mentee
 import Mentee from "./Pages/Mentee/Mentee";
@@ -30,8 +31,9 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/mentor" component={Mentor} />
             <Route exact path="/mentee-list" component={MenteeListAccess} />
-            <Route exact path="/admin-mentor-list" component={OrgMentors} />
             <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/admin-mentor-list" component={OrgMentors} />
+            <Route exact path="/admin-signup" component={AdminSignUp} />
             <Route exact path="/sign-in" component={login} />
             <Route exact path="/mentee-signup" component={Mentee} />
             <Route exact path="/iframe-embed" component={iFrameEmbed} />

@@ -168,82 +168,65 @@ class OrgMentors extends Component {
   }
   render() {
     return (
-      <div>
-        <NavBar />
-        {/* If user isn't logged in, they are redirected to login page, else they are shown the mentor list and mentor invite page */}
-        {this.state.user ? (
-          <div>
-            <h1 id="mentor-list-title">Mentor List</h1>
-            <Row style={{ height: "100%" }}>
-              <Col flex={2}>
-                <div className="add-mentors">
-                  <h2 style={{ textAlign: "center", color: "antiquewhite" }}>
-                    Invite A Mentor
-                  </h2>
-                  <form class="form-group" onSubmit={this.invite}>
-                    <label>mentor email:</label>
-                    <input
-                      value={this.state.email}
-                      onChange={this.handleChange}
-                      type="email"
-                      class="form-control"
-                      id="email"
-                      name="email"
-                      required
-                    />
-                    <br />
-                    <button id="submit-btns" type="submit" value="submit">
-                      Submit
-                    </button>
-                    <p>{this.state.eMessage}</p>
-                  </form>
+        <div>
+          <NavBar />
+            {/* If user isn't logged in, they are redirected to login page, else they are shown iframe embed page */}
+            {this.state.user ? 
+                <div>
+                    <h1 id="mentor-list-title">Mentor List</h1>
+                    <Row style={{height: "100%"}}>
+                        <Col flex={3}>
+                            <div className="add-mentors">
+                                <h2 style={{ textAlign: "center", color: "antiquewhite"}}>Invite A Mentor</h2>
+                                <form class="form-group" onSubmit={this.invite}>
+                                    <label>mentor email:</label>
+                                    <input 
+                                        value={this.state.email}
+                                        onChange={this.handleChange}
+                                        type="email"
+                                        class="form-control"
+                                        id="email"
+                                        name="email"
+                                        required
+                                    />
+                                    <br />
+                                    <button id="submit-btns" type="submit" value="submit">
+                                        Submit
+                                    </button>
+                                    <p>{this.state.eMessage}</p>
+                                </form>
+                            </div>
+                        </Col>
+                        <Col flex={3}>
+                            <div className="org-mentors">
+                                <h2 style={{
+                                    textAlign: "center",
+                                    color: "antiquewhite",
+                                    paddingTop: "20px",
+                                    }}>
+                                    Mentors In Your Organization
+                                </h2>
+                                <List
+                                    style={{ margin: "10px" }}
+                                    itemLayout="horizontal"
+                                    dataSource={this.state.mentorList}
+                                    renderItem={(item) => (
+                                        <List.Item>
+                                            <List.Item.Meta
+                                                avatar={<Avatar style={{backgroundColor: 'antiquewhite', color: '#9196e4'}} icon={<UserOutlined />} />}
+                                                title={<a href="" style={{color: 'antiquewhite'}}>{item.title}:</a>}
+                                                description={item.skills}
+                                            />
+                                        </List.Item>
+                                    )}
+                                />
+                            </div>
+                        </Col>
+                    </Row>
                 </div>
-              </Col>
-              <Col flex={3}>
-                <div className="org-mentors">
-                  <h2
-                    style={{
-                      textAlign: "center",
-                      color: "antiquewhite",
-                      paddingTop: "20px",
-                    }}
-                  >
-                    Mentors In Your Organization
-                  </h2>
-                  <List
-                    style={{ margin: "10px" }}
-                    itemLayout="horizontal"
-                    dataSource={this.state.mentorList}
-                    renderItem={(item) => (
-                      <List.Item>
-                        <List.Item.Meta
-                          avatar={
-                            <Avatar
-                              style={{
-                                backgroundColor: "antiquewhite",
-                                color: "#9196e4",
-                              }}
-                              icon={<UserOutlined />}
-                            />
-                          }
-                          title={
-                            <a href="" style={{ color: "antiquewhite" }}>
-                              {item.title}
-                            </a>
-                          }
-                          description={item.skills}
-                        />
-                        <button className="delete-mentor">delete</button>
-                      </List.Item>
-                    )}
-                  />
-                </div>
-              </Col>
-            </Row>
-          </div>
         ) : (
           <Login />
-        )}
+        }
       </div>
     );
   }
