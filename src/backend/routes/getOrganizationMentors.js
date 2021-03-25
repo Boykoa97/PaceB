@@ -23,7 +23,6 @@ async function getList(res, oid) {
       console.log("info retrieved");
       console.log(sql);
       //response is sent
-      console.log(info);
       res.send(info);
     } else {
       //error is logged if one occurs

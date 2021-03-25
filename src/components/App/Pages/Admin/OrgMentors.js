@@ -16,10 +16,16 @@ class OrgMentors extends Component {
       oid: 0,
       fid: "",
       mentorList: [],
+      inviteList: [],
+      email: "",
+      eMessage: "",
     };
     this.getOid = this.getOid.bind(this);
     this.getMentors = this.getMentors.bind(this);
     this.authListener = this.authListener.bind(this);
+    this.invite = this.invite.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.getInviteList = this.getInviteList.bind(this);
   }
 
   componentDidMount() {
@@ -47,8 +53,11 @@ class OrgMentors extends Component {
     });
   }
   async getMentors(fid) {
-    await this.getOid(fid);
     //oid is retrieved first
+    await this.getOid(fid);
+    //invite list is also retrived for later
+    this.getInviteList(this.state.oid);
+
     axios
       .post("/getOrganizationMentors", {
         //searches using the oid as a filter
@@ -123,7 +132,40 @@ class OrgMentors extends Component {
       }
     });
   }
-
+  handleChange(e) {
+    //saves text box contents into their proper variables
+    this.setState({ [e.target.name]: e.target.value });
+  }
+  invite(e) {
+    //checks if the invite already exists in the returned list in the database, if it does an error shows up, if not the invite is added
+    e.preventDefault();
+    if (this.state.inviteList.indexOf(this.state.email) > -1) {
+      this.setState({
+        eMessage: "An invite to this email has already been sent",
+      });
+    } else {
+      axios.post("/inviteMentor", {
+        //email and oid are sent as part of the database request
+        email: this.state.email,
+        oid: this.state.oid,
+      });
+      this.setState({ eMessage: "Invite sent" });
+    }
+  }
+  getInviteList(oid) {
+    //gets the list of invites based on the organiziation oid
+    axios
+      .post("/getInvites", {
+        //request type and oid are sent as part of the database request
+        reqtype: 0,
+        oid: oid,
+      })
+      .then((res) => {
+        var inviteList = res.data.map((item) => item.email);
+        console.log(inviteList);
+        this.setState({ inviteList });
+      });
+  }
   render() {
     return (
       <div>
@@ -138,9 +180,11 @@ class OrgMentors extends Component {
                   <h2 style={{ textAlign: "center", color: "antiquewhite" }}>
                     Invite A Mentor
                   </h2>
-                  <form class="form-group">
+                  <form class="form-group" onSubmit={this.invite}>
                     <label>mentor email:</label>
                     <input
+                      value={this.state.email}
+                      onChange={this.handleChange}
                       type="email"
                       class="form-control"
                       id="email"
@@ -151,6 +195,7 @@ class OrgMentors extends Component {
                     <button id="submit-btns" type="submit" value="submit">
                       Submit
                     </button>
+                    <p>{this.state.eMessage}</p>
                   </form>
                 </div>
               </Col>
