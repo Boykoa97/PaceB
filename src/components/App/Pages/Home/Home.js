@@ -31,7 +31,7 @@ class Home extends React.Component {
           <Link to="/mentee-signup" className="home-btn">
             Mentee Signup
           </Link>
-          <Link to="" className="home-btn">
+          <Link to="/admin-signup" className="home-btn">
             Create Organization
           </Link>
         </form>
