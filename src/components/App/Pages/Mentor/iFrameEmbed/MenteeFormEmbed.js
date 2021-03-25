@@ -12,7 +12,14 @@ class MenteeFormEmbed extends React.Component {
 
     render() {
         return (
-            <div className="mentee-signup-page">   {/* Mentee Sign Up Form: */}
+            <div style={{ 
+                backgroundColor: 'rgb(116, 111, 218)',
+                padding: '30px',
+                width: '30rem',
+                margin: 'auto',
+                marginTop: '1rem',
+                borderStyle: 'groove'
+            }}>   {/* Mentee Sign Up Form: in iframe preview */}
                 <h1 style={{textAlign: "center"}}>Mentee Sign Up</h1>
                 <form className="menteeform">
                 <div>
