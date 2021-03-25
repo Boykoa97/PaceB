@@ -25,7 +25,12 @@ app.post("/getUserSkills", require("./routes/getUserSkills"));
 app.post("/getUnmatchedMentees", require("./routes/getUnmatchedMentees"));
 app.post("/getMatchedMentees", require("./routes/getMatchedMentees"));
 app.post("/updateList", require("./routes/updateList"));
-app.post("/addMentee", require("./routes/addMentee"));
+app.post(
+  "/addMentee",
+  require("./routes/addMentee"),
+  require("./routes/sendMenteeSignUp"),
+  require("./routes/sendMail")
+);
 app.post("/addMentorSkills", require("./routes/addMentorSkills"));
 app.post("/getOrganizationMentors", require("./routes/getOrganizationMentors"));
 // app.use("http://localhost:3000/mentee", require("./routes/sendMail"));
