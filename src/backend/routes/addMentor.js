@@ -17,11 +17,11 @@ sendToMeRouter.post("/addMentor", async (req, res, next) => {
 
 async function adduser(fid, fname, lname, email, oid) {
   return new Promise(async (resolve, reject) => {
-    //variables needed for the database are added, admin flag is set to a default at the moment
+    //variables needed to add the user to the database are added
     var sql =
       "INSERT INTO USERS (fid,admin,oid,fname,lname,email,utype) Values('" +
       fid +
-      "',1," +
+      "',0," +
       oid +
       ",?,?,?,1)";
     console.log("mentor is being added");
