@@ -16,6 +16,7 @@ class NavBar extends React.Component{
         };
         this.logout = this.logout.bind(this);
         this.authListener = this.authListener.bind(this);
+        this.adminCheck = this.adminCheck.bind(this);
       }
       adminCheck(fid) {
         // query if the user is an admin
@@ -27,6 +28,11 @@ class NavBar extends React.Component{
           .then((res) => {
             //admin user status is set in admin
             this.setState({ admin: res.data[0].admin });
+          })
+          .catch(function (error) {
+            //if the nav bar gets an error by attempting to retrive account information before its added to the database, it logs the error, 
+            //and just displays the defualt nav bar, and updates to a new one on a page refresh
+            console.log(error);
           });
       }
     authListener() {
