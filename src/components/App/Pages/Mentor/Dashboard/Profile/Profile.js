@@ -18,6 +18,7 @@ class Profile extends React.Component {
       oname: "",
       fname: "",
       lname: "",
+      calendar: "",
     };
     axios
       .post("/getProfile", {
@@ -35,6 +36,7 @@ class Profile extends React.Component {
         this.setState({ oname: res.data[0].oname });
         this.setState({ fname: res.data[0].fname });
         this.setState({ lname: res.data[0].lname });
+        this.setState({ calendar: res.data[0].calendar });
       });
   }
 
@@ -46,13 +48,14 @@ class Profile extends React.Component {
     } else {
     }
     return (
-      <div className="mentor-profile" style={{textAlign: "left"}}>
+      <div className="mentor-profile" style={{ textAlign: "left" }}>
         <h1 id="profile-title">User Profile</h1>
         <p>First name: {this.state.fname}</p>
         <p>Last name: {this.state.lname}</p>
         <p>Email: {this.state.email}</p>
         <p>User id: {this.state.fid}</p>
         <p>Organization: {this.state.oname}</p>
+        <p>Calendar link: {this.state.calendar}</p>
         {admin}
       </div>
     );

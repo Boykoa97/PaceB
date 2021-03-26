@@ -12,10 +12,12 @@ class AddSkills extends Component {
     super(props);
     this.submit = this.submit.bind(this);
     this.handleChangeSkills = this.handleChangeSkills.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
       uslist: [],
       slist: [],
       eMessage: "",
+      url: "",
     };
     //request to the database that gets the skills for the skill select menu
     axios.post("/getSkills").then((res) => {
@@ -30,11 +32,8 @@ class AddSkills extends Component {
     this.setState({ uslist });
   }
   submit(e) {
-    //if statement to not allow a mentor to submit the form without selecting any skills, error message shows up if no skills are selected
-    if (this.state.uslist.length == 0) {
-      this.setState({ eMessage: "One or more skills must be selected" });
-      e.preventDefault();
-    } else {
+    //if statement to not allow a mentor to submit the form without selecting any skills or having an empty link, error message shows up if no skills are selected
+    if (this.state.uslist.length > 0 && this.state.url.length > 0) {
       //preventdefualt is ran to allow the query time to run
       e.preventDefault();
       const user = fire.auth().currentUser;
@@ -44,11 +43,24 @@ class AddSkills extends Component {
         //fid and user skills are sent as part of the database request
         fid: fid,
         uslist: this.state.uslist,
+        url: this.state.url,
       });
       //window is reloaded and directed to mentor after the query is finished
       window.location.reload();
       history.push("/mentor");
+    } else if (this.state.uslist.length == 0) {
+      //if the skill list is empty, display the matching error
+      this.setState({ eMessage: "One or more skills must be selected" });
+      e.preventDefault();
+    } else if (this.state.url.length == 0) {
+      //if the calendar url box is empty, display the matching error
+      this.setState({ eMessage: "A calendar url must be entered" });
+      e.preventDefault();
     }
+  }
+  handleChange(e) {
+    //saves text box contents into their proper variables
+    this.setState({ [e.target.name]: e.target.value });
   }
   render() {
     //maps the skill list into option items, where each skill is enclosed by an option tag, and the required values and classname is also added
@@ -94,7 +106,9 @@ class AddSkills extends Component {
               class="form-control"
               id="url"
               name="url"
-              //required
+              onChange={this.handleChange}
+              value={this.state.url}
+              required
             />
           </div>
           <br />
