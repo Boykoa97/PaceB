@@ -5,14 +5,13 @@ const bodyParser = require("body-parser");
 const mysqlconnection = require("../mysqlconnection");
 const app = express();
 sendToMeRouter.post("/getInvites", async (req, res, next) => {
-  //variables are taken from the request and are saved for the sql query, depending on the request type, invites are searched by oid or email
+  //variables are taken from the request and are saved for the sql query, depending on the request type, invites are searched by oid, or all are retrived
   var reqtype = req.body.reqtype;
   if (reqtype == 0) {
     var oid = req.body.oid;
     await getByOid(oid, res);
   } else if (reqtype == 1) {
-    var email = req.body.email;
-    getByEmail(email, res);
+    getAll(res);
   } else {
     console.log("Error");
   }
@@ -37,12 +36,12 @@ async function getByOid(oid, res) {
     });
   });
 }
-async function getByEmail(email, res) {
+async function getAll(res) {
   return new Promise(async (resolve, reject) => {
-    //retrives invites related to a certian email
-    var sql = "SELECT * FROM INVITES WHERE email=?";
+    //retrives invites all invites
+    var sql = "SELECT * FROM INVITES";
     //query is ran
-    mysqlconnection.query(sql, [email], (err, info) => {
+    mysqlconnection.query(sql, (err, info) => {
       if (!err) {
         console.log("invites retrived");
         console.log(sql);
