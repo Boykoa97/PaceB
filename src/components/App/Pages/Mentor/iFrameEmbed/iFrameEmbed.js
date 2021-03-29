@@ -40,33 +40,43 @@ class iFrameEmbed extends Component {
 
   /* Function to copy to clipboard onClick */
   copytoClipboard = () => {
-      navigator.clipboard.writeText('<iframe src="http://localhost:3000/mentee-form" width="100%" height="450"></iframe>');
-  }
+    navigator.clipboard.writeText(
+      '<iframe src="http://localhost:3000/mentee-signup" width="100%" height="450"></iframe>'
+    );
+  };
 
   render() {
     return (
-        <div style={{ backgroundColor: 'rgb(239, 238, 252)'}}>
-          <NavBar />
-            {/* If user isn't logged in, they are redirected to login page, else they are shown iframe embed page */}
-            {this.state.user ? 
-                <div>
-                  <div className="iframe-embed">
-                      <h1 id="ml-title">Mentee Sign Up Form</h1>
-                      <div id="embed">
-                          <button id="embed-btn" onClick={this.copytoClipboard}>Copy Form</button>
-                          <textarea id="iframe-txt"
-                              value = '<iframe src="http://localhost:3000/mentee-form" width="100%" height="520"></iframe>'
-                          />
-                      </div>
-                      <div id="iframe" height="400">
-                          <h2 id="iframe-note">Preview:</h2>
-                          <iframe src="http://localhost:3000/mentee-form" width="100%" height="530"></iframe>
-                      </div>
-                  </div>
-                </div>
-                : <Login />
-            }
-        </div>
+      <div style={{ backgroundColor: "rgb(239, 238, 252)" }}>
+        <NavBar />
+        {/* If user isn't logged in, they are redirected to login page, else they are shown iframe embed page */}
+        {this.state.user ? (
+          <div>
+            <div className="iframe-embed">
+              <h1 id="ml-title">Mentee Sign Up Form</h1>
+              <div id="embed">
+                <button id="embed-btn" onClick={this.copytoClipboard}>
+                  Copy Form
+                </button>
+                <textarea
+                  id="iframe-txt"
+                  value='<iframe src="http://localhost:3000/mentee-signup" width="100%" height="520"></iframe>'
+                />
+              </div>
+              <div id="iframe" height="400">
+                <h2 id="iframe-note">Preview:</h2>
+                <iframe
+                  src="http://localhost:3000/mentee-signup"
+                  width="100%"
+                  height="530"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <Login />
+        )}
+      </div>
     );
   }
 }
