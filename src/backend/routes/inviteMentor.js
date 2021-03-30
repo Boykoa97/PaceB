@@ -9,6 +9,7 @@ sendToMeRouter.post("/inviteMentor", async (req, res, next) => {
   var email = req.body.email;
   var oid = req.body.oid;
   await adduser(email, oid);
+  next();
 });
 
 async function adduser(email, oid) {
