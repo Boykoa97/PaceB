@@ -28,7 +28,7 @@ transporter.verify(function (error, success) {
 sendToMeRouter.use(express.json());
 
 // this is the function the sends mail from the mentees form
-sendToMeRouter.post("/findMatch", (req, res, next) => {
+sendToMeRouter.post("/addMentee", (req, res, next) => {
   //make mailable object
   console.log("i hit the post request");
   console.log(req.body);
@@ -36,22 +36,74 @@ sendToMeRouter.post("/findMatch", (req, res, next) => {
   //   we will need to update this pass information we want to email and also asthetics
   const mail = {
     from: process.env.EMAIL_USER,
-    to: res.locals.mentorEmail,
-    subject: "Potential Mentee",
+    to: res.locals.email,
+    subject: res.locals.subject,
     //update contact so it has the mentors email and not mentees
-    text: `
-      ${req.body.first_name} ${req.body.last_name} would like to be mentored,
+    text: res.locals.body,
+  };
+  // error handling goes here.
+  transporter.sendMail(mail, (err, data) => {
+    console.log("I am sending mail");
+    if (err) {
+      console.log("I failed");
+      console.log(err);
+      res.json({
+        status: "fail",
+      });
+    } else {
+      res.json({
+        status: "success",
+      });
+      console.log("email success");
+    }
+  });
+});
 
-      If you wish to mentor them:
+// this is the function the sends mail from the mentees acceptance
+sendToMeRouter.post("/updateList", (req, res, next) => {
+  //make mailable object
+  console.log("i hit the post request");
+  console.log(req.body);
+  console.log(res.locals);
+  //   we will need to update this pass information we want to email and also asthetics
+  const mail = {
+    from: process.env.EMAIL_USER,
+    to: res.locals.mentee_email,
+    subject: res.locals.subject,
+    //update contact so it has the mentors email and not mentees
+    text: res.locals.body,
+  };
+  // error handling goes here.
+  transporter.sendMail(mail, (err, data) => {
+    console.log("I am sending mail");
+    if (err) {
+      console.log("I failed");
+      console.log(err);
+      res.json({
+        status: "fail",
+      });
+    } else {
+      res.json({
+        status: "success",
+      });
+      console.log("email success");
+    }
+  });
+});
 
-      Your mentees email is: ${req.body.email}. 
-
-      They wish to be mentored in ${req.body.skill1} and ${req.body.skill2} and ${req.body.skill3} and ${req.body.skill4}. 
-      
-      Please email them to communicate further.
-      
-      Best,
-      PaceB`,
+// this is the function the sends mail from the mentees acceptance
+sendToMeRouter.post("/inviteMentor", (req, res, next) => {
+  //make mailable object
+  console.log("i hit the post request");
+  console.log(req.body);
+  console.log(res.locals);
+  //   we will need to update this pass information we want to email and also asthetics
+  const mail = {
+    from: process.env.EMAIL_USER,
+    to: res.locals.email,
+    subject: res.locals.subject,
+    //update contact so it has the mentors email and not mentees
+    text: res.locals.body,
   };
   // error handling goes here.
   transporter.sendMail(mail, (err, data) => {

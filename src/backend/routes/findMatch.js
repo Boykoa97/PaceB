@@ -127,9 +127,7 @@ async function addPotential(mentorID, menteeID, numberMatched) {
       menteeID +
       "','" +
       numberMatched +
-      "','" + 
-      "0" +
-      "')";
+      "',0)";
     //query is ran
     mysqlconnection.query(sql3, async (err, info) => {
       if (!err) {

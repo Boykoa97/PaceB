@@ -45,7 +45,6 @@ async function getskills(fid, res) {
   //query is ran
   mysqlconnection.query(sql, (err, info) => {
     if (!err) {
-      console.log(info);
       console.log(sql);
       //response is sent
       res.send(info);
