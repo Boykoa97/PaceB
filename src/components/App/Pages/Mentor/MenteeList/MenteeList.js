@@ -185,6 +185,9 @@ class MenteeList extends Component {
     return (
       <div>
         <h1 id="ml-title">Mentee List</h1>
+        <div>
+          <button onClick={this.runMatching} className="match-btn">check for matches</button>
+        </div>
         <div style={{ width: "100%" }}>
           <div className="unmatched-mentees">
             <h2
@@ -252,14 +255,11 @@ class MenteeList extends Component {
                     title={<a href="" style={{color: 'white'}}>{item.title}</a>}
                     description={item.skills}
                   />
-                  <button className="email-mentee">copy email</button>
+                  <button className="email-mentee" onClick={navigator.clipboard.writeText(item.email)}>copy email</button>
                 </List.Item>
               )}
             />
           </div>
-        </div>
-        <div>
-          <button onClick={this.runMatching}>submit</button>
         </div>
       </div>
     );

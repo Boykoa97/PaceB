@@ -8,6 +8,7 @@ import AddSkills from "./AddSkills";
 import "./Mentor.css";
 import NavBar from "../../../NavBar/NavBar";
 import { logDOM } from "@testing-library/dom";
+import axios from "axios";
 
 class Mentor extends Component {
   constructor(props) {
@@ -15,8 +16,10 @@ class Mentor extends Component {
     console.log("App - Constructor");
     this.state = {
       user: null,
+      savedList: [],
     };
     this.authListener = this.authListener.bind(this);
+    this.skillcheck = this.skillcheck.bind(this);
   }
 
   componentDidMount() {
@@ -26,13 +29,26 @@ class Mentor extends Component {
     console.log("App - Mounted");
     this.authListener();
   }
-
+  skillcheck(fid) {
+    // query in order check if the mentor has any skills
+    axios
+      .post("/getUserSkills", {
+        //searches using the fid as a filter
+        fid: fid,
+      })
+      .then((res) => {
+        //skill information is saved in savedList
+        this.setState({ savedList: res.data });
+      });
+  }
   authListener() {
     fire.auth().onAuthStateChanged((user) => {
       console.log(user);
       if (user) {
+        //if a user is logged in, save their firebase user information into user, and run the skill list check, using the firebase id
         this.setState({ user });
         localStorage.setItem("user", user.uid);
+        this.skillcheck(user.uid);
       } else {
         this.setState({ user: null });
         localStorage.removeItem("user");
@@ -43,23 +59,24 @@ class Mentor extends Component {
   render() {
     // If user isn't logged in, they are redirected to login page, else they are redirected to mentor dashboard
     const isLoggedIn = this.state.user;
-    // add code to check if user has skills added to profile
-    // const hasSkills = ;
+    //has skills is saved as the returning skill list length, if they have not skills it will display as zero
+    const hasSkills = this.state.savedList.length;
     if (isLoggedIn) {
-      {/*if (hasSkills) {  // if user has skills in profile, go to dashboard, else go to AddSkills page
+      if (hasSkills == 0) {
+        // if user has skills in profile, go to dashboard, else go to AddSkills page
         return (
           <div className="mentor-page">
             <NavBar />
             <AddSkills />
-        </div>
+          </div>
         );
-      } else {*/
+      } else {
         return (
           <div className="mentor-page">
             <NavBar />
             <MentorHome />
           </div>
-        );  
+        );
       }
     } else {
       return (

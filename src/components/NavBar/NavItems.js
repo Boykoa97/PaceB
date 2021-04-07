@@ -28,11 +28,6 @@ export const MentorNavItems = [
     url: "/mentee-list",
     cName: "nav-links",
   },
-  {
-    title: "MenteeForm",
-    url: "/iframe-embed",
-    cName: "nav-links",
-  },
 ];
 
 export const AdminNavItems = [

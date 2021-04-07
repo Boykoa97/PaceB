@@ -7,7 +7,6 @@
   background-color: rgb(124, 120, 209);
   width: 45%;
   margin-left: 3rem;
-  margin-top: 2rem;
   border-style: groove;
 }
 
@@ -46,7 +45,6 @@
   background-color: rgb(104, 100, 194);
   width: 45%;
   margin-right: 3rem;
-  margin-top: 2rem;
   border-style: groove;
 }
 
@@ -62,5 +60,22 @@
   background-color: #9196e4;
   border-radius: 4px;
   transition: all 0.6s ease-out;
+  text-decoration: none;
+}
+
+.match-btn {
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  color: white;
+  background-color: rgb(73, 68, 163);
+  margin: 1rem;
+}
+
+.match-btn:hover {
+  background: #636acf;
+  color: white;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
   text-decoration: none;
 }

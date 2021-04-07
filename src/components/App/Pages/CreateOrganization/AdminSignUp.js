@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import fire from "../../../firebase";
 import axios from "axios";
-import "./SignUp.css";
+import "./AdminSignUp.css";
 
 import NavBar from "../../../NavBar/NavBar";
 
@@ -9,79 +9,53 @@ import { Select, message } from "antd";
 
 const { Option } = Select;
 
-class SignUp extends Component {
+class AdminSignUp extends Component {
   constructor(props) {
     super(props);
-    this.signup = this.signup.bind(this);
+    this.orgsignup = this.orgsignup.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.getInviteList = this.getInviteList.bind(this);
     this.state = {
       email: "",
       password: "",
       fname: "",
       lname: "",
       eMessage: "",
-      emailList: [],
-      inviteList: [],
+      orgname: "",
     };
-    this.getInviteList();
   }
   componentWillMount() {
     this.mounted = true;
   }
-  getInviteList() {
-    //gets the list of invites
-    axios
-      .post("/getInvites", {
-        //request type is sent as part of the database request
-        reqtype: 1,
-      })
-      .then((res) => {
-        var inviteList = res.data;
-        var emailList = res.data.map((item) => item.email);
-        console.log(inviteList);
-        console.log(emailList);
-        this.setState({ inviteList });
-        this.setState({ emailList });
-        //list of valid emails are saved, as well as the database response
-      });
-  }
-  signup(e) {
-    //if account creation needs to be tested without invites comment out the if else statment that checks the invite list
-    //index of the email is checked based on the submitted email, if the email is not in the email list, and error is shown saying that the email is invaild, and has not been invited
-    //if the email is in the list, the emails respective oid is retrived, and the signup process starts
+  orgsignup(e) {
     e.preventDefault();
-    var inviteIndex = this.state.emailList.indexOf(this.state.email);
-    if (inviteIndex > -1) {
-      var oid = this.state.inviteList[inviteIndex].oid;
-      //account is created in firebase using its respective commands
-      fire
-        .auth()
-        .createUserWithEmailAndPassword(this.state.email, this.state.password)
-        .then((u) => {
-          message.success("Successfully Signed Up!");
-          this.props.history.push("/mentor");
-          var uid = u.user.uid;
-          //request to send user information to the database
-          axios.post("/addMentor", {
-            //uid, first name, last name and organization id are sent as part of the database request
+    fire
+      .auth()
+      .createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then((u) => {
+        message.success("Successfully Signed Up!");
+        var uid = u.user.uid;
+        //request to send user information to the database
+        axios
+          .post("/addAdmin", {
+            //uid, first name, last name and organization name are sent as part of the database request
             fid: uid,
             fname: this.state.fname,
             lname: this.state.lname,
             email: this.state.email,
-            oid: oid,
+            orgname: this.state.orgname,
+          })
+          .then((res) => {
+            //when the query is done it saves the result in a temprory value, before the page redirects
+            var done = res.data[0];
+            this.props.history.push("/mentor");
           });
-        })
-        .catch((error) => {
-          //logs an error if one occurs, and displays it to the user
-          const eMessage = error.message;
-          this.setState({ eMessage });
-          console.log(error);
-        });
-    } else {
-      //if the email is not valid, error is displayed
-      this.setState({ eMessage: "Email address is not valid" });
-    }
+      })
+      .catch((error) => {
+        //logs an error if one occurs, and displays it to the user
+        const eMessage = error.message;
+        this.setState({ eMessage });
+        console.log(error);
+      });
   }
   handleChange(e) {
     //saves text box contents into their proper variables
@@ -91,9 +65,25 @@ class SignUp extends Component {
     return (
       <div>
         <NavBar />
-        <div className="signup-page">
-          <h1>Create an Account:</h1>
-          <form onSubmit={this.signup}>
+        <div className="admin-signup-page">
+          <form onSubmit={this.orgsignup}>
+            {" "}
+            {/* For Organization creation */}
+            <h1>Create Your Organization:</h1>
+            <div class="form-group">
+              <label for="fname">Organization Name</label>
+              <input
+                value={this.state.orgname}
+                onChange={this.handleChange}
+                type="text"
+                name="orgname"
+                class="form-control"
+                id="orgname"
+                required
+              />
+            </div>
+            {/* For admin account creation */}
+            <h2>Create Your Admin Account:</h2>
             <div class="form-group">
               {/* For User First Name */}
               <label for="fname">First Name</label>
@@ -147,7 +137,11 @@ class SignUp extends Component {
               />
             </div>
             <br />
-            <button className="create-acc-btn" type="submit" value="submit">
+            <button
+              className="admin-create-acc-btn"
+              type="submit"
+              value="submit"
+            >
               Create Account
             </button>
             <p>{this.state.eMessage}</p>
@@ -157,4 +151,4 @@ class SignUp extends Component {
     );
   }
 }
-export default SignUp;
+export default AdminSignUp;
