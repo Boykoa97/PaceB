@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const mysqlconnection = require("../mysqlconnection");
 const app = express();
 
-sendToMeRouter.post("/getprofile", (req, res, next) => {
+sendToMeRouter.post("/getProfile", (req, res, next) => {
   //gets the user id from the request, and saves it so it can be used in the sql query.
   var fid = req.body.fid;
   //sql query is a combination of the users and organization tables, so the organization name can be displayed in the profile

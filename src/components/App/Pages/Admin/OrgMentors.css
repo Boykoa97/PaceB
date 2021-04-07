@@ -1,0 +1,39 @@
+#mentor-list-title {
+  text-align: center;
+  background-color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+.org-mentors {
+  background-color: rgb(124, 120, 209);
+  width: 70%;
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  border-style: groove;
+}
+
+.add-mentors {
+  background-color: rgb(124, 120, 209);
+  padding: 20px 40px;
+  width: 65%;
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  border-style: groove;
+}
+
+.delete-mentor {
+  color: #f76d6d;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background: #fff;
+}
+.delete-mentor:hover {
+  color: white;
+  background-color: #f76d6d;
+  border-radius: 4px;
+  transition: all 0.6s ease-out;
+  text-decoration: none;
+}

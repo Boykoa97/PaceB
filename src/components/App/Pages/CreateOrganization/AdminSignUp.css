@@ -1,4 +1,13 @@
-.mentee-signup-page {
+.admin-signup-page {
+  background-color: rgb(116, 111, 218);
+  padding: 30px;
+  width: 37rem;
+  margin: auto;
+  margin-top: 5rem;
+  border-style: groove;
+}
+
+.admin-signup-skills {
   background-color: rgb(116, 111, 218);
   padding: 30px;
   width: 30rem;
@@ -7,14 +16,14 @@
   border-style: groove;
 }
 
-#mentee-btn {
+.admin-create-acc-btn {
   text-decoration: none;
   padding: 8px 20px;
   border-radius: 4px;
   background: #fff;
 }
 
-#mentee-btn:hover {
+.admin-create-acc-btn:hover {
   color: white;
   background-color: #9196e4;
   border-radius: 4px;

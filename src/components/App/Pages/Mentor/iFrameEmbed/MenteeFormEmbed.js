@@ -1,69 +1,74 @@
 import React from 'react';
 
+import { Select } from 'antd';
+
+const { Option } = Select;
+
+function handleChangeSkills(value) {
+  console.log(`selected ${value}`);
+}
+
 class MenteeFormEmbed extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{ 
+                backgroundColor: 'rgb(116, 111, 218)',
+                padding: '30px',
+                width: '30rem',
+                margin: 'auto',
+                marginTop: '1rem',
+                borderStyle: 'groove'
+            }}>   {/* Mentee Sign Up Form: in iframe preview */}
+                <h1 style={{textAlign: "center"}}>Mentee Sign Up</h1>
                 <form className="menteeform">
-                    <h1>Mentee Sign Up Form</h1>
-                    <label>First Name: </label>
+                <div>
+                    <label>First Name: </label> {/* For User First Name */}
                     <input
-                        id="input-box"
-                        type="text"
-                        name="first-name"
-                        required
+                    class="form-control"
+                    id="input-box"
+                    type="text"
+                    name="fname"
+                    required
                     />
-                    <br />
-                    <label>Last Name: </label>
+                </div>
+                <br />
+                <div>
+                    <label>Last Name: </label>  {/* For User Last Name */}
                     <input
-                        id="input-box"
-                        type="text"
-                        name="last-name"
-                        required
+                    class="form-control"
+                    id="input-box"
+                    type="text"
+                    name="lname"
+                    required
                     />
-                    <br />
-                    <label>Email Address: </label>
+                </div>
+                <br />
+                <div>
+                    <label>Email Address: </label>  {/* For User Email */}
                     <input
-                        id="input-box"
-                        type="email"
-                        name="email"
-                        required
+                    class="form-control"
+                    id="input-box"
+                    type="email"
+                    name="email"
+                    required
                     />
-                    <br />
-                    <label>Skill #1:</label>
-                    <select className="skills-list">
-                        <option>Machine Learning</option>
-                        <option>Frontend Web Dev</option>
-                        <option>Backend Web Dev</option>
-                        <option>UI / UX</option>
-                    </select>
-                    <label>Skill #2:</label>
-                    <select className="skills-list">
-                        <option>None</option>
-                        <option>Machine Learning</option>
-                        <option>Frontend Web Dev</option>
-                        <option>Backend Web Dev</option>
-                        <option>UI / UX</option>
-                    </select>
-                    <br />
-                    <label>Skill #3:</label>
-                    <select className="skills-list">
-                        <option>None</option>
-                        <option>Machine Learning</option>
-                        <option>Frontend Web Dev</option>
-                        <option>Backend Web Dev</option>
-                        <option>UI / UX</option>
-                    </select>
-                    <label>Skill #4:</label>
-                    <select className="skills-list">
-                        <option>None</option>
-                        <option>Machine Learning</option>
-                        <option>Frontend Web Dev</option>
-                        <option>Backend Web Dev</option>
-                        <option>UI / UX</option>
-                    </select>
-                    <button id="mentee-btn">submit</button>
+                </div>
+                <br/>
+                <div>
+                    <label>Preferred Skills:</label>  
+                    {/* Multiselect input dialogue for preferred Skills */}
+                    <Select
+                    mode="multiple"
+                    style={{ width: '66%', marginLeft: '2rem'}}
+                    placeholder="select 5 skills"
+                    //defaultValue={['machine learning']}
+                    optionLabelProp="label"
+                    >
+                    </Select>
+                </div>
+                <br/>
+                <button id="mentee-btn">submit</button>
                 </form>
             </div>
         )

@@ -22,14 +22,15 @@
   text-decoration: none;
   padding: 8px 20px;
   border-radius: 4px;
+  border-style: groove;
   color: white;
-  background-color: #9196e4;
+  background-color: rgb(116, 111, 218);
   margin: 2.5rem;
 }
 
 .home-btn:hover {
-  background: #afb3e9;
-  color: black;
+  background: #9196e4;
+  color: white;
   border-radius: 4px;
   transition: all 0.2s ease-out;
   text-decoration: none;

@@ -1,19 +1,40 @@
 import React from 'react';
 
-import "./Calendar.css";
+//import { Calendar } from 'antd';
 
-class Calendar extends React.Component {
+// function onPanelChange(value, mode) {
+//   console.log(value, mode);
+// }
+
+class MentorCalendar extends React.Component {
     
     render() {
         return (
-            <div>
-                <div className="mentor-calendar">
-                    <h1>Your Calendar</h1>
-                    <p>*to be implemented*</p>
-                </div>
+            // <div>
+            //     <div className="site-calendar-demo-card" style={{ backgroundColor: 'rgb(116, 111, 218)', padding: '40px 40px'}}>
+            //         <h1 id="calendar-title" style={{color: 'antiquewhite'}}>Calendar</h1>
+            //         <Calendar fullscreen={false} onPanelChange={onPanelChange} />
+            //     </div>
+            // </div>
+            <div style={{ backgroundColor: 'rgb(116, 111, 218)', padding: '40px 40px'}}>
+                <h1 style={{color: 'antiquewhite'}}>Add Calendar</h1>
+                <form class="form-group">
+                    <label>add your calendar link to your user profile:</label>
+                    <input
+                        type="url"
+                        class="form-control"
+                        id="url"
+                        name="url"
+                        required
+                    />
+                </form>
+                <br />
+                <button id="submit-btns" type="submit" value="submit">
+                    Submit
+                </button>
             </div>
         )
     }
 }
 
-export default Calendar;
+export default MentorCalendar;
