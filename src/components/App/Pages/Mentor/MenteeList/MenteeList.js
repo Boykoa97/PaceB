@@ -255,7 +255,7 @@ class MenteeList extends Component {
                     title={<a href="" style={{color: 'white'}}>{item.title}</a>}
                     description={item.skills}
                   />
-                  <button className="email-mentee">copy email</button>
+                  <button className="email-mentee" onClick={navigator.clipboard.writeText(item.email)}>copy email</button>
                 </List.Item>
               )}
             />
