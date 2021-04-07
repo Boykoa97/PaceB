@@ -178,6 +178,7 @@ class MenteeList extends Component {
         this.mulist();
       });
   }
+
   render() {
     //sets the mulist and malists as the proper html elements
     let unmatchedMentees = this.state.mulist;
@@ -255,7 +256,7 @@ class MenteeList extends Component {
                     title={<a href="" style={{color: 'white'}}>{item.title}</a>}
                     description={item.skills}
                   />
-                  <button className="email-mentee">copy email</button>
+                  <button className="email-mentee" onClick={navigator.clipboard.writeText(item.email)}>copy email</button>
                 </List.Item>
               )}
             />
