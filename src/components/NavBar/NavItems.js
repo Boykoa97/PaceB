@@ -12,7 +12,7 @@ export const NavItems = [
   },
   {
     title: "Organization",
-    url: "",
+    url: "/admin-signup",
     cName: "nav-links",
   },
 ];
