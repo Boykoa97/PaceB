@@ -1,4 +1,6 @@
 // For manipulating menu names
+
+// disaplayed when a user isn't logged in
 export const NavItems = [
   {
     title: "Mentor",
@@ -17,6 +19,7 @@ export const NavItems = [
   },
 ];
 
+// displayed when mentor is logged in
 export const MentorNavItems = [
   {
     title: "Dashboard",
@@ -30,6 +33,7 @@ export const MentorNavItems = [
   },
 ];
 
+// displayed when mentor is logged in
 export const AdminNavItems = [
   {
     title: "Dashboard",
