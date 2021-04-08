@@ -1,3 +1,5 @@
+// this page contains code for the mentor signup page and functionality
+
 import React, { Component } from "react";
 import fire from "../../../firebase";
 import axios from "axios";
