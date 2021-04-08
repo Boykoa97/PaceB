@@ -1,3 +1,6 @@
+// this page contains code for creating an organization and the admin account
+// the admin account also has mentor functionality
+
 import React, { Component } from "react";
 import fire from "../../../firebase";
 import axios from "axios";

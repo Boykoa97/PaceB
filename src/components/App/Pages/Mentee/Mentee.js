@@ -1,3 +1,5 @@
+// this page contains code for checking mentee state
+
 import React from "react";
 import fire from "../../../firebase";
 
