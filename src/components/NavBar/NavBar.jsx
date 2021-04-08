@@ -14,7 +14,7 @@ class NavBar extends React.Component{
         console.log("App - Constructor");
         this.state = {
           user: null,
-          admin:0,
+          admin:2,
         };
         this.logout = this.logout.bind(this);
         this.authListener = this.authListener.bind(this);
