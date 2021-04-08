@@ -4,7 +4,6 @@ import React from 'react';
 import { Card } from 'antd';
 
 import Profile from "./Profile/Profile";
-import Calendar from "./Calendar/Calendar";
 import Skills from "./Skills/Skills";
 
 import "./MentorHome.css";
