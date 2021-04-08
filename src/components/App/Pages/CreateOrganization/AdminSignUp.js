@@ -133,6 +133,18 @@ class AdminSignUp extends Component {
                 class="form-control"
                 id="password"
                 name="password"
+                placeholder="length of at least 7 characters"
+                required
+              />
+            </div>
+            <div class="form-group">
+              {/* For User Description */}
+              <label for="description">Description / Profile</label>
+              <textarea rows="3" cols="40" 
+                name="description" 
+                class="form-control" 
+                id="description" 
+                placeholder="Provide a brief description of yourself here" 
                 required
               />
             </div>
