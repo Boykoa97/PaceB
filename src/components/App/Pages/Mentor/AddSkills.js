@@ -1,3 +1,5 @@
+// this page contains code for adding skills to the user profile
+
 import React, { Component } from "react";
 import history from "../../History";
 import fire from "../../../firebase";

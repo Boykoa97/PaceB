@@ -1,3 +1,5 @@
+// this page contains code for the user's skills component
+
 import React from "react";
 import axios from "axios";
 import { Select, message } from "antd";
