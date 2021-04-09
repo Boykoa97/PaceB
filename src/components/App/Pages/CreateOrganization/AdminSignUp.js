@@ -35,20 +35,19 @@ class AdminSignUp extends Component {
         message.success("Successfully Signed Up!");
         var uid = u.user.uid;
         //request to send user information to the database
-        axios
-          .post("/addAdmin", {
-            //uid, first name, last name and organization name are sent as part of the database request
-            fid: uid,
-            fname: this.state.fname,
-            lname: this.state.lname,
-            email: this.state.email,
-            orgname: this.state.orgname,
-          })
-          .then((res) => {
-            //when the query is done it saves the result in a temprory value, before the page redirects
-            var done = res.data[0];
-            this.props.history.push("/mentor");
-          });
+        axios.post("/addAdmin", {
+          //uid, first name, last name and organization name are sent as part of the database request
+          fid: uid,
+          fname: this.state.fname,
+          lname: this.state.lname,
+          email: this.state.email,
+          orgname: this.state.orgname,
+        });
+        //.then((res) => {
+        //when the query is done it saves the result in a temprory value, before the page redirects
+        //var done = res;
+        //});
+        this.props.history.push("/mentor");
       })
       .catch((error) => {
         //logs an error if one occurs, and displays it to the user

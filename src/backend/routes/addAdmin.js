@@ -44,12 +44,12 @@ async function adduser(fid, fname, lname, email, orgname) {
       oid +
       ",?,?,?,1)";
     //query is ran
-    mysqlconnection.query(sql, [fname, lname, email], (err) => {
+    mysqlconnection.query(sql, [fname, lname, email], (err, result) => {
       if (!err) {
         console.log("account added to the database");
         console.log(sql);
         //a response is sent back for the front end to processes, in order to make sure that it waits for the database.
-        resolve("done");
+        resolve(result);
       } else {
         console.log(err);
         reject(err);
