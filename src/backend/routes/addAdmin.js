@@ -48,7 +48,7 @@ async function adduser(fid, fname, lname, email, orgname) {
       if (!err) {
         console.log("account added to the database");
         console.log(sql);
-        //a response is sent back for the front end to processes, in order to make sure that it waits for the database.
+        //when the query is done, the promise is resolved and a result is sent
         resolve(result);
       } else {
         console.log(err);

@@ -43,10 +43,7 @@ class AdminSignUp extends Component {
           email: this.state.email,
           orgname: this.state.orgname,
         });
-        //.then((res) => {
-        //when the query is done it saves the result in a temprory value, before the page redirects
-        //var done = res;
-        //});
+        //after the database call is done, the page redirects
         this.props.history.push("/mentor");
       })
       .catch((error) => {
