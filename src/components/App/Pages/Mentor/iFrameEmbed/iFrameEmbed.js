@@ -2,6 +2,7 @@
 
 import React, { Component } from "react";
 import fire from "../../../../firebase";
+import axios from "axios";
 
 import Login from "../../login";
 
@@ -15,6 +16,9 @@ class iFrameEmbed extends Component {
     console.log("App - Constructor");
     this.state = {
       user: null,
+      oid: null,
+      iframe_url: "http://localhost:3000/mentee-signup",
+      iframe_copy_text: null,
     };
     this.authListener = this.authListener.bind(this);
   }
@@ -27,12 +31,38 @@ class iFrameEmbed extends Component {
     this.authListener();
   }
 
+  setOrgID(fid) {
+    console.log(fid + " is the user id \n\n\n\n");
+    axios
+      .post("/iframe-embed", {
+        fid: fid,
+      })
+      .then((res) => {
+        console.log(res.data[0].oid);
+        var oid = res.data[0].oid;
+        console.log("oid is " + oid);
+        this.setState({ oid });
+      });
+  }
+
+  async createIframeURL(fid) {
+    this.setOrgID(fid);
+    // var iframe_url = this.state.iframe_url + "?orgID=" + this.state.oid;
+    // console.log(iframe_url);
+    // var iframe_copy_text =
+    //   '<iframe src="' + iframe_url + '" width="100%" height="450"></iframe>';
+    //this.setState({ iframe_url });
+    //this.setState({ iframe_copy_text });
+  }
+
   authListener() {
     fire.auth().onAuthStateChanged((user) => {
       console.log(user);
       if (user) {
         this.setState({ user });
         localStorage.setItem("user", user.uid);
+        console.log("User id:" + user.uid + "\n\n\n");
+        this.setOrgID(user.uid);
       } else {
         this.setState({ user: null });
         localStorage.removeItem("user");
@@ -62,7 +92,10 @@ class iFrameEmbed extends Component {
                 </button>
                 <textarea
                   id="iframe-txt"
-                  value='<iframe src="http://localhost:3000/mentee-signup" width="100%" height="520"></iframe>'
+                  value={
+                    '<iframe src="http://localhost:3000/mentee-signup"' +
+                    'width="100%" height="520"></iframe>'
+                  }
                 />
               </div>
               <div id="iframe" height="400">

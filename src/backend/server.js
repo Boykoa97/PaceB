@@ -41,6 +41,8 @@ app.post(
 );
 app.post("/getInvites", require("./routes/getInvites"));
 app.post("/addAdmin", require("./routes/addAdmin"));
+
+app.post("/iframe-embed", require("./routes/getOrgId"));
 // app.use("http://localhost:3000/mentee", require("./routes/sendMail"));
 
 app.listen(port, () => {
