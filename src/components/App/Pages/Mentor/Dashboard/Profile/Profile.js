@@ -1,3 +1,5 @@
+// this page contains code for user's profile component
+
 import React from "react";
 import fire from "../../../../../firebase";
 import axios from "axios";

@@ -1,3 +1,5 @@
+// this page contains code for the mentee signup form
+
 import React, { useState, Component } from "react";
 import axios from "axios";
 

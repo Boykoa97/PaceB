@@ -1,3 +1,5 @@
+// this page contains the code for the navbar
+
 import React from 'react';
 
 import './NavBar.css';
@@ -12,7 +14,7 @@ class NavBar extends React.Component{
         console.log("App - Constructor");
         this.state = {
           user: null,
-          admin:0,
+          admin:2,
         };
         this.logout = this.logout.bind(this);
         this.authListener = this.authListener.bind(this);
@@ -103,29 +105,6 @@ class NavBar extends React.Component{
               <Link className="navbar-logo" to='/'>pace b <i className='fab fa-angellist'></i></Link> {/* homepage / logo */}
               <ul className = 'nav-menu'>  {/* nav menu items */}
                 {navlist}
-                {/*   ** will delete later **
-                  this.state.user ? (
-                    MentorNavItems.map((item, index)=> {
-                      return (
-                          <li key={index}>
-                              <Link to={item.url} className={item.cName}> 
-                                  {item.title}
-                              </Link>
-                          </li>
-                      )
-                  })
-                  ) : (
-                    NavItems.map((item, index)=> {
-                      return (
-                          <li key={index}>
-                              <Link to={item.url} className={item.cName}> 
-                                  {item.title}
-                              </Link>
-                          </li>
-                      )
-                  })
-                  )
-                */}
               </ul>
               <li className='sign-in'>  {/* login button in top right */}
               {this.state.user ? 

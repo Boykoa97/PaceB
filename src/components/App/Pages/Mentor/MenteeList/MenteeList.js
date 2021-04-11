@@ -1,3 +1,5 @@
+// this page contains code for displaying the mentee lists (unaccepted and accepted mentees)
+
 import React, { Component } from "react";
 import axios from "axios";
 import "./MenteeList.css";
@@ -178,6 +180,7 @@ class MenteeList extends Component {
         this.mulist();
       });
   }
+
   render() {
     //sets the mulist and malists as the proper html elements
     let unmatchedMentees = this.state.mulist;
@@ -189,7 +192,7 @@ class MenteeList extends Component {
           <button onClick={this.runMatching} className="match-btn">check for matches</button>
         </div>
         <div style={{ width: "100%" }}>
-          <div className="unmatched-mentees">
+          <div className="unmatched-mentees"> {/* for displaying the unmatched mentees */}
             <h2
               style={{
                 textAlign: "center",
@@ -234,7 +237,7 @@ class MenteeList extends Component {
               )}
             />
           </div>
-          <div className="matched-mentees">
+          <div className="matched-mentees"> {/* for displaying matched mentees */}
             <h2
               style={{
                 textAlign: "center",
