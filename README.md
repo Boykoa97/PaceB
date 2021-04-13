@@ -13,11 +13,11 @@
 
   A mentor will interact with a form similar to the image below. A mentor can only signup using the form, with the email the admin addressed an invite to. The information given from the form will then be used to create the user's mentor account. The mentor has the feature to accept or reject mentees who have signed up for mentorship. Once a mentor accepts a mentee, a confirmation email is sent to the mentee who has just been accepted.
   
-<img src="https://github.com/Boykoa97/PaceB/blob/dev/images/Screen%20Shot%202021-04-13%20at%2012.17.53%20AM.png" alt="mentor form" width="300" height="400">
+<img src="https://github.com/Boykoa97/PaceB/blob/dev/images/Screen%20Shot%202021-04-13%20at%2012.17.53%20AM.png" alt="mentor form" width="320" height="400">
 
 A mentee will interact with a form similar to the image below. The information given from the form will then be sent to the organization for the mentors to see. When a user signs up as a mentee, they are sent a confirmation email. They are also sent a confirmation email when a mentor accepts them for mentorship.
 
-<img src="https://github.com/Boykoa97/PaceB/blob/dev/images/Screen%20Shot%202021-04-13%20at%2012.14.43%20AM.png" alt="mentee form" width="300" height="400">
+<img src="https://github.com/Boykoa97/PaceB/blob/dev/images/Screen%20Shot%202021-04-13%20at%2012.14.43%20AM.png" alt="mentee form" width="400" height="430">
 
 ## Setup
 
