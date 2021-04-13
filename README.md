@@ -3,6 +3,7 @@
 ## Description
 
   Pace B's objective is to create a web application for companies looking to implement a mentorship program, and link mentors and mentees together. The target user groups include the organization(the admin), the mentors and the mentees. The purpose of linking mentors and mentees is to allow more senior employees to pass on their knowledge to newer employees.
+  
   This web application provides the admin and its mentors with the ability to create and access their user accounts. The mentees can not create user accounts, as they sign up for mentorship through a form embedded on their desired company’s website, via an iframe. It will allow mentees to match with mentors using logical checks based on their preferred skills. When a mentor-mentee match is successful, the mentee is sent a confirmation email linking them to their mentor, and further interaction and mentorship occurs externally through email.
 
 ## User Groups and Registration
