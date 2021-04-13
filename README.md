@@ -9,7 +9,7 @@
 
   An admin will interact with a form similar to the image below. The information given from the form will then be used to create the organization, as well as the admin user account. The admin account has the features of a mentor account. It also has added features including the ability to invite mentors to the organization via email, and the ability to embed the mentee form into an external website via an iframe.
   
-![admin form](https://github.com/Boykoa97/PaceB/blob/dev/images/Screen%20Shot%202021-04-13%20at%2012.16.53%20AM.pngs=100)
+![admin form](https://github.com/Boykoa97/PaceB/blob/dev/images/Screen%20Shot%202021-04-13%20at%2012.16.53%20AM.pngs=500)
 
   A mentor will interact with a form similar to the image below. A mentor can only signup using the form, with the email the admin addressed an invite to. The information given from the form will then be used to create the user's mentor account. The mentor has the feature to accept or reject mentees who have signed up for mentorship. Once a mentor accepts a mentee, a confirmation email is sent to the mentee who has just been accepted.
   
