@@ -1,3 +1,5 @@
+// this page contains code for the admin page anad functionality
+
 import React, { Component } from "react";
 import fire from "../../../firebase";
 import Login from "../login";
@@ -184,6 +186,7 @@ class OrgMentors extends Component {
             <Row style={{ height: "100%" }}>
               <Col flex={3}>
                 <div className="add-mentors">
+                  {/* Form to invite mentor to organization */}
                   <h2 style={{ textAlign: "center", color: "antiquewhite" }}>
                     Invite A Mentor
                   </h2>
@@ -208,6 +211,7 @@ class OrgMentors extends Component {
               </Col>
               <Col flex={3}>
                 <div className="org-mentors">
+                  {/* Component to display mentors in organization */}
                   <h2
                     style={{
                       textAlign: "center",

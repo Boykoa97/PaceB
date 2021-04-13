@@ -44,13 +44,7 @@
 
 **Client Meeting 22 (31/03/2021)**: 1 hour; Phil & Christian present; Agenda was address new changes to web app; Discussions included extra feedback to make UI easier to understand and interact with; Set of actions were to add description field to signup, figure out iframe-orgnization, and possibly add "invited mentors" component to mentor list page.
 
-**Meeting 15 (03/02/2021)**: 1 hour; Phil & Anthony present; Agenda was to go over project board, completed functionalities and goals; Discussions included database functionality preferences, as well as prefered software for state retrieval; Set of actions were explore firebase tokens.
-
-**Meeting 16 (10/02/2021)**: 1 hour; Phil present; Agenda was weekly checkin, go over expectations and implementations; Discussions included emphasis on mentor functionality, and iframe implementation plus the ability to copy iframe; Set of actions were to build iframe and ability to copy it, and to implement component libraries in development.
-
-**Meeting 17 (24/02/2021)**: 1 hour; Phil present; Agenda was to address matching compatibility, mentor's ability to select and accept mentees, and to go over updated web app for milestone; Discussions included cleaning up and simplifying code, so it may be used as open source for interested companies, and to consider adding ability to have multiple admins in each company; Set of actions were to run tests to updated code, and fix bugs for milestone.
-
-**Meeting 18 (02/03/2021)**: 1 hour; Phil, Christian & Anthony present; Agenda was to have a full rundown of project expectations and clarify changes for final milestone; Discussions included establishing expected matching algorthm, visualizing functionalities and addressing cookie implementation; Set of actions were to implement these changes step by step, based on mvp priority.
+**Client Meeting 23 (07/04/2021)**: 1 hour; Phil present; Agenda was to address any final questions and present final version of app; Discussions included last feedback on changes to make and submission expectations; Set of actions were to fix issue at hand, and not bother implementing any further features.
 
 # Team Meetings:
 
@@ -77,5 +71,3 @@
 **Team Meeting 11(01/03/2021)**:(4:00-6:00);All group members present; Went over what we need to complete for the rest of the project, and our final to do list. reviewed what we need to finish for the peer testing 2 report.
 
 **Team Meeting 12(16/03/2021)**:(10:30-11:30);All group members present; Clarified how we want to add skills, as well as updated where we are, and what we are going to work on next. Going to work on mentee list and finish matching, then start to work on admin and organization functionality.
-
-

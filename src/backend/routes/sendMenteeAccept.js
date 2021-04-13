@@ -20,6 +20,7 @@ sendToMeRouter.post("/updateList", async (req, res, next) => {
   var mentorFName = mentor[0].fname;
   var mentorLName = mentor[0].lname;
   var mentorEmail = mentor[0].email;
+  var mentorDescription = mentor[0].description;
 
   res.locals.mentee_fname = mentee[0].fname;
   res.locals.mentee_lname = mentee[0].lname;
@@ -35,7 +36,9 @@ sendToMeRouter.post("/updateList", async (req, res, next) => {
     mentorFName +
     " " +
     mentorLName +
-    " and they are experienced in:\n";
+    " and this is a short description about themselves:\n\n" +
+    mentorDescription +
+    "\n\nThey are experienced in:\n";
   for (var i = 0; i < skillList.length; i++) {
     body = body + "  " + skillList[i] + "\n";
   }

@@ -1,3 +1,6 @@
+// this page contains code for creating an organization and the admin account
+// the admin account also has mentor functionality
+
 import React, { Component } from "react";
 import fire from "../../../firebase";
 import axios from "axios";
@@ -35,20 +38,16 @@ class AdminSignUp extends Component {
         message.success("Successfully Signed Up!");
         var uid = u.user.uid;
         //request to send user information to the database
-        axios
-          .post("/addAdmin", {
-            //uid, first name, last name and organization name are sent as part of the database request
-            fid: uid,
-            fname: this.state.fname,
-            lname: this.state.lname,
-            email: this.state.email,
-            orgname: this.state.orgname,
-          })
-          .then((res) => {
-            //when the query is done it saves the result in a temprory value, before the page redirects
-            var done = res.data[0];
-            this.props.history.push("/mentor");
-          });
+        axios.post("/addAdmin", {
+          //uid, first name, last name and organization name are sent as part of the database request
+          fid: uid,
+          fname: this.state.fname,
+          lname: this.state.lname,
+          email: this.state.email,
+          orgname: this.state.orgname,
+        });
+        //after the database call is done, the page redirects
+        this.props.history.push("/mentor");
       })
       .catch((error) => {
         //logs an error if one occurs, and displays it to the user
@@ -133,6 +132,18 @@ class AdminSignUp extends Component {
                 class="form-control"
                 id="password"
                 name="password"
+                placeholder="length of at least 7 characters"
+                required
+              />
+            </div>
+            <div class="form-group">
+              {/* For User Description */}
+              <label for="description">Description / Profile</label>
+              <textarea rows="3" cols="40" 
+                name="description" 
+                class="form-control" 
+                id="description" 
+                placeholder="Provide a brief description of yourself here" 
                 required
               />
             </div>

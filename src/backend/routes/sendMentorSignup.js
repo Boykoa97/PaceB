@@ -17,7 +17,7 @@ sendToMeRouter.post("/inviteMentor", async (req, res, next) => {
     "You are being invited by email to join " +
     orgName +
     " as a mentor for their organization!\n\n" +
-    "Please go to _____host_link_____ to complete your signup\n";
+    "Please go to http://localhost:3000/signup to complete your signup\n";
   body = body + "\nBest, \n" + "Pace B";
 
   res.locals.body = body;

@@ -1,3 +1,5 @@
+// this page contains code for home page
+
 import React from "react";
 import history from "../../History";
 
