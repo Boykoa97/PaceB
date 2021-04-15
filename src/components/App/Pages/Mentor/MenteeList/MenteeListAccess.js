@@ -1,3 +1,5 @@
+// this page contains code for checking if mentor is logged in, and granting access to the menteelist page
+
 import React, { Component } from "react";
 import fire from "../../../../firebase";
 

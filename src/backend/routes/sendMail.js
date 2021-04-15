@@ -91,4 +91,36 @@ sendToMeRouter.post("/updateList", (req, res, next) => {
   });
 });
 
+// this is the function the sends mail from the mentees acceptance
+sendToMeRouter.post("/inviteMentor", (req, res, next) => {
+  //make mailable object
+  console.log("i hit the post request");
+  console.log(req.body);
+  console.log(res.locals);
+  //   we will need to update this pass information we want to email and also asthetics
+  const mail = {
+    from: process.env.EMAIL_USER,
+    to: res.locals.email,
+    subject: res.locals.subject,
+    //update contact so it has the mentors email and not mentees
+    text: res.locals.body,
+  };
+  // error handling goes here.
+  transporter.sendMail(mail, (err, data) => {
+    console.log("I am sending mail");
+    if (err) {
+      console.log("I failed");
+      console.log(err);
+      res.json({
+        status: "fail",
+      });
+    } else {
+      res.json({
+        status: "success",
+      });
+      console.log("email success");
+    }
+  });
+});
+
 module.exports = sendToMeRouter;

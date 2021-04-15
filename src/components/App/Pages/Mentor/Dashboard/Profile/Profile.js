@@ -1,3 +1,5 @@
+// this page contains code for user's profile component
+
 import React from "react";
 import fire from "../../../../../firebase";
 import axios from "axios";
@@ -48,7 +50,7 @@ class Profile extends React.Component {
     } else {
     }
     return (
-      <div className="mentor-profile" style={{ textAlign: "left" }}>
+      <div className="mentor-profile" style={{ textAlign: "left", wordWrap: 'break-word' }}>
         <h1 id="profile-title">User Profile</h1>
         <p>First name: {this.state.fname}</p>
         <p>Last name: {this.state.lname}</p>

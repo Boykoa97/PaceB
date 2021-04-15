@@ -33,9 +33,16 @@ app.post(
 );
 app.post("/addMentorSkills", require("./routes/addMentorSkills"));
 app.post("/getOrganizationMentors", require("./routes/getOrganizationMentors"));
-app.post("/inviteMentor", require("./routes/inviteMentor"));
+app.post(
+  "/inviteMentor",
+  require("./routes/inviteMentor"),
+  require("./routes/sendMentorSignUp"),
+  require("./routes/sendMail")
+);
 app.post("/getInvites", require("./routes/getInvites"));
 app.post("/addAdmin", require("./routes/addAdmin"));
+
+app.post("/iframe-embed", require("./routes/getOrgId"));
 // app.use("http://localhost:3000/mentee", require("./routes/sendMail"));
 
 app.listen(port, () => {

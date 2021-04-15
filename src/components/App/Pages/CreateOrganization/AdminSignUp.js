@@ -1,3 +1,6 @@
+// this page contains code for creating an organization and the admin account
+// the admin account also has mentor functionality
+
 import React, { Component } from "react";
 import fire from "../../../firebase";
 import axios from "axios";
@@ -129,6 +132,18 @@ class AdminSignUp extends Component {
                 class="form-control"
                 id="password"
                 name="password"
+                placeholder="length of at least 7 characters"
+                required
+              />
+            </div>
+            <div class="form-group">
+              {/* For User Description */}
+              <label for="description">Description / Profile</label>
+              <textarea rows="3" cols="40" 
+                name="description" 
+                class="form-control" 
+                id="description" 
+                placeholder="Provide a brief description of yourself here" 
                 required
               />
             </div>

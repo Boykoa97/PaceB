@@ -1,3 +1,5 @@
+// this page contains code for the form shown on embed page
+
 import React from 'react';
 
 import { Select } from 'antd';

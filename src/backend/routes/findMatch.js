@@ -59,6 +59,11 @@ async function getMentorUID(fid) {
         console.log(err);
       }
     });
+  }).catch((error) => {
+    console.log("hit error");
+    const eMessage = error.message;
+    this.setState({ eMessage });
+    console.log(error);
   });
 }
 
@@ -82,6 +87,11 @@ async function getSkills(uid) {
         console.log(err);
       }
     });
+  }).catch((error) => {
+    console.log("hit error");
+    const eMessage = error.message;
+    this.setState({ eMessage });
+    console.log(error);
   });
 }
 
@@ -105,6 +115,11 @@ async function getMenteeUIDS() {
         console.log(err);
       }
     });
+  }).catch((error) => {
+    console.log("hit error");
+    const eMessage = error.message;
+    this.setState({ eMessage });
+    console.log(error);
   });
 }
 
@@ -121,13 +136,13 @@ async function countMatches(mentorSkillList, menteeID) {
 async function addPotential(mentorID, menteeID, numberMatched) {
   return new Promise(async (resolve) => {
     var sql3 =
-      "INSERT INTO PMATCHES (mentorid, menteeid, skillsMatched, rmatch) Values('" +
+      "INSERT INTO PMATCHES (mentorid, menteeid,  rmatch, skillsMatched) Values(" +
       mentorID +
-      "','" +
+      ", " +
       menteeID +
-      "','" +
+      ", 0, " +
       numberMatched +
-      "',0)";
+      ")";
     //query is ran
     mysqlconnection.query(sql3, async (err, info) => {
       if (!err) {
@@ -140,6 +155,11 @@ async function addPotential(mentorID, menteeID, numberMatched) {
       }
     });
     resolve();
+  }).catch((error) => {
+    console.log("hit error");
+    const eMessage = error.message;
+    this.setState({ eMessage });
+    console.log(error);
   });
 }
 

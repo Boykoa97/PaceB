@@ -1,9 +1,11 @@
+// this page contains code for the mentor and admin login page and functionality
+
 import React, { Component } from "react";
 import fire from "../../firebase";
 import history from "../History";
 import axios from "axios";
 
-import { message } from 'antd';
+import { message } from "antd";
 
 import "./login.css";
 
@@ -18,6 +20,8 @@ class login extends Component {
       eMessage: "",
     };
   }
+
+  // method to check if user successfully logs in
   login(e) {
     e.preventDefault();
     console.log("message");
@@ -25,7 +29,7 @@ class login extends Component {
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {
-        message.success('Successfully Logged In!');
+        message.success("Successfully Logged In!");
         this.props.history.push("/mentor");
       })
       .then(() => {
@@ -42,10 +46,12 @@ class login extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
   state = {};
+  
   render() {
     return (
       <div className="login-page">
         <h1>please log in:</h1>
+        {/* form to be filled in */}
         <form onSubmit={this.login}>
           <div class="form-group">
             <label for="email">Email address</label>
