@@ -25,6 +25,7 @@ class SignUp extends Component {
       eMessage: "",
       emailList: [],
       inviteList: [],
+      description: "",
     };
     this.getInviteList();
   }
@@ -66,12 +67,13 @@ class SignUp extends Component {
           var uid = u.user.uid;
           //request to send user information to the database
           axios.post("/addMentor", {
-            //uid, first name, last name and organization id are sent as part of the database request
+            //uid, first name, last name, organization id, and profile description are sent as part of the database request
             fid: uid,
             fname: this.state.fname,
             lname: this.state.lname,
             email: this.state.email,
             oid: oid,
+            description: this.state.description,
           });
         })
         .catch((error) => {
@@ -152,11 +154,15 @@ class SignUp extends Component {
             <div class="form-group">
               {/* For User Description */}
               <label for="description">Description / Profile</label>
-              <textarea rows="3" cols="40" 
-                name="description" 
-                class="form-control" 
-                id="description" 
-                placeholder="Provide a brief description of yourself here" 
+              <textarea
+                rows="3"
+                cols="40"
+                value={this.state.description}
+                onChange={this.handleChange}
+                name="description"
+                class="form-control"
+                id="description"
+                placeholder="Provide a brief description of yourself here"
                 required
               />
             </div>

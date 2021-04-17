@@ -79,7 +79,7 @@ class iFrameEmbed extends Component {
 
   render() {
     return (
-      <div style={{ backgroundColor: "rgb(239, 238, 252)" }}>
+      <div>
         <NavBar />
         {/* If user isn't logged in, they are redirected to login page, else they are shown iframe embed page */}
         {this.state.user ? (

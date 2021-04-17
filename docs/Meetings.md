@@ -44,6 +44,8 @@
 
 **Client Meeting 22 (31/03/2021)**: 1 hour; Phil & Christian present; Agenda was address new changes to web app; Discussions included extra feedback to make UI easier to understand and interact with; Set of actions were to add description field to signup, figure out iframe-orgnization, and possibly add "invited mentors" component to mentor list page.
 
+**Client Meeting 23 (07/04/2021)**: 1 hour; Phil present; Agenda was to address any final questions and present final version of app; Discussions included last feedback on changes to make and submission expectations; Set of actions were to fix issue at hand, and not bother implementing any further features.
+
 # Team Meetings:
 
 **Team Meeting 1(28/09/2020)**:(2:17-3:52);All group members present; Goals were figuring out what to ask the client, setting up the repo, determining when to work on the requirements, and which ones to start working on.
@@ -69,5 +71,3 @@
 **Team Meeting 11(01/03/2021)**:(4:00-6:00);All group members present; Went over what we need to complete for the rest of the project, and our final to do list. reviewed what we need to finish for the peer testing 2 report.
 
 **Team Meeting 12(16/03/2021)**:(10:30-11:30);All group members present; Clarified how we want to add skills, as well as updated where we are, and what we are going to work on next. Going to work on mentee list and finish matching, then start to work on admin and organization functionality.
-
-
