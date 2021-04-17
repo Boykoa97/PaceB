@@ -18,17 +18,28 @@ sendToMeRouter.post("/findMatch", async (req, res, next) => {
   let menteeIds = await getMenteeUIDS();
   console.log(menteeIds);
 
-  if (typeof menteeIds[0] == "undefined") {
+  let alreadyProcessedMentees = await getAlreadyMatchedMentees(mentorUid);
+  console.log(alreadyProcessedMentees);
+
+  //return only the ids that are in menteeIds but not also in alreadyProcessedMentees
+  let currentPotential = menteeIds.filter(
+    (x) => !alreadyProcessedMentees.includes(x)
+  );
+
+  if (typeof currentPotential[0] == "undefined") {
     //do nothing because there are no new matches
   } else {
     //make 2d array for id and number of skills
     var menteeNumbMatches = new Array();
 
     //iterate through each id and update the number of matches
-    for (var i = 0; i < menteeIds.length; i++) {
+    for (var i = 0; i < currentPotential.length; i++) {
       menteeNumbMatches[i] = new Array(2);
-      var numbMatches = await countMatches(mentorSkillList, menteeIds[i]);
-      menteeNumbMatches[i][0] = menteeIds[i];
+      var numbMatches = await countMatches(
+        mentorSkillList,
+        currentPotential[i]
+      );
+      menteeNumbMatches[i][0] = currentPotential[i];
       menteeNumbMatches[i][1] = numbMatches;
     }
 
@@ -58,6 +69,39 @@ async function getMentorUID(fid) {
         //response is sent
         let uid = await info[0].uid;
         resolve(uid);
+      } else {
+        //error is logged if one occurs
+        console.log(err);
+      }
+    });
+  }).catch((error) => {
+    console.log("hit error");
+    const eMessage = error.message;
+    this.setState({ eMessage });
+    console.log(error);
+  });
+}
+
+// returns the ids of all of the currently mentees that exist in potential matches
+//this is to find which ids to filter out so duplicate insertions do not occur
+async function getAlreadyMatchedMentees(mentorId) {
+  return new Promise(async (resolve) => {
+    var sql =
+      "SELECT P.menteeid FROM PMATCHES as P WHERE P.mentorid = " +
+      mentorId +
+      " and P.rmatch = 0";
+    //query is ran
+    mysqlconnection.query(sql, async (err, info) => {
+      if (!err) {
+        console.log("info retrieved");
+        console.log(sql);
+        console.log(info);
+        //response is sent
+        let menteeList = new Array(info.length);
+        for (var i = 0; i < info.length; i++) {
+          menteeList[i] = info[i].menteeid;
+        }
+        resolve(menteeList);
       } else {
         //error is logged if one occurs
         console.log(err);
