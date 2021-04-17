@@ -18,27 +18,31 @@ sendToMeRouter.post("/findMatch", async (req, res, next) => {
   let menteeIds = await getMenteeUIDS();
   console.log(menteeIds);
 
-  //make 2d array for id and number of skills
-  var menteeNumbMatches = new Array();
+  if (typeof menteeIds[0] == "undefined") {
+    //do nothing because there are no new matches
+  } else {
+    //make 2d array for id and number of skills
+    var menteeNumbMatches = new Array();
 
-  //iterate through each id and update the number of matches
-  for (var i = 0; i < menteeIds.length; i++) {
-    menteeNumbMatches[i] = new Array();
-    var numbMatches = await countMatches(mentorSkillList, menteeIds[i]);
-    menteeNumbMatches[i][0] = menteeIds[i];
-    menteeNumbMatches[i][1] = numbMatches;
-  }
+    //iterate through each id and update the number of matches
+    for (var i = 0; i < menteeIds.length; i++) {
+      menteeNumbMatches[i] = new Array(2);
+      var numbMatches = await countMatches(mentorSkillList, menteeIds[i]);
+      menteeNumbMatches[i][0] = menteeIds[i];
+      menteeNumbMatches[i][1] = numbMatches;
+    }
 
-  console.log("number of matches ");
-  console.log(menteeNumbMatches);
-  //add to potential matches
+    console.log("number of matches ");
+    console.log(menteeNumbMatches);
+    //add to potential matches
 
-  for (var i = 0; i < menteeNumbMatches[0].length; i++) {
-    await addPotential(
-      mentorUid,
-      menteeNumbMatches[i][0],
-      menteeNumbMatches[i][1]
-    );
+    for (var i = 0; i < menteeNumbMatches[0].length; i++) {
+      await addPotential(
+        mentorUid,
+        menteeNumbMatches[i][0],
+        menteeNumbMatches[i][1]
+      );
+    }
   }
 });
 
@@ -98,14 +102,16 @@ async function getSkills(uid) {
 //grab the uid of all mentees
 async function getMenteeUIDS() {
   return new Promise(async (resolve) => {
-    var sql = "SELECT uid FROM USERS WHERE USERS.fid IS NULL";
+    var sql =
+      "SELECT U.uid FROM USERS as U WHERE U.fid IS NULL AND U.matchid IS NULL ";
     //query is ran
     mysqlconnection.query(sql, async (err, info) => {
       if (!err) {
         console.log("info retrieved");
         console.log(sql);
+        console.log(info);
         //response is sent
-        let menteeList = [];
+        let menteeList = new Array(info.length);
         for (var i = 0; i < info.length; i++) {
           menteeList[i] = info[i].uid;
         }
