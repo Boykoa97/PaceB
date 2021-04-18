@@ -33,16 +33,28 @@ First to setup firebase you will have to make an account. Currently our project 
 
 Next you need to create a project 
 
+<img src="https://github.com/Boykoa97/PaceB/blob/dev/images/Firebase%20step%201.JPG">
+
 First we will set up authentication by following 
 
+<img src="https://github.com/Boykoa97/PaceB/blob/dev/images/Firebase%20step%202.JPG">
 
 Next to find the information require to create the firebase object look below.
 
+<img src="https://github.com/Boykoa97/PaceB/blob/dev/images/Firebase%20step%203.JPG">
 
 Lastly this is incase there still is a dependency with the admin sdk for firebase create the admin sdk following the instructions below. Treat this like an .env file whereas the firebase api information doesn't need to be kept private this file does. Also this resource is what is required to access information from other users in your firebase project so you may wish to add it anyways. 
 
+<img src="https://github.com/Boykoa97/PaceB/blob/dev/images/Firebase%20step%204.JPG">
 
 The final step is to adjust the .env you setup on your local machine to follow the template of ".env_example"
+
+To test this project on your local machine using two terminal do the following commands 
+
+1. npm run server
+2. npm start
+
+The first command is for hosting the server and the second command is for hosting the frontend locally
 
 ## Hosting Example 
 
