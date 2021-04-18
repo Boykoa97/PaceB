@@ -11,22 +11,23 @@ sendToMeRouter.post("/addMentor", async (req, res, next) => {
   var email = req.body.email;
   var fid = req.body.fid;
   var oid = req.body.oid;
-  adduser(fid, fname, lname, email, oid);
+  var description = req.body.description;
+  adduser(fid, fname, lname, email, oid, description);
   dropInvite(email);
 });
 
-async function adduser(fid, fname, lname, email, oid) {
+async function adduser(fid, fname, lname, email, oid, description) {
   return new Promise(async (resolve, reject) => {
     //variables needed to add the user to the database are added
     var sql =
-      "INSERT INTO USERS (fid,admin,oid,fname,lname,email,utype) Values('" +
+      "INSERT INTO USERS (fid,admin,oid,fname,lname,email,utype,description) Values('" +
       fid +
       "',0," +
       oid +
-      ",?,?,?,1)";
+      ",?,?,?,1,?)";
     console.log("mentor is being added");
     //query is ran
-    mysqlconnection.query(sql, [fname, lname, email], (err) => {
+    mysqlconnection.query(sql, [fname, lname, email, description], (err) => {
       if (!err) {
         console.log("account added to the database");
         console.log(sql);

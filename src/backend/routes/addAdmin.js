@@ -11,7 +11,8 @@ sendToMeRouter.post("/addAdmin", async (req, res, next) => {
   var email = req.body.email;
   var fid = req.body.fid;
   var orgname = req.body.orgname;
-  adduser(fid, fname, lname, email, orgname);
+  var description = req.body.description;
+  adduser(fid, fname, lname, email, orgname, description);
 });
 async function addOrg(orgname) {
   return new Promise(async (resolve, reject) => {
@@ -32,29 +33,33 @@ async function addOrg(orgname) {
     });
   });
 }
-async function adduser(fid, fname, lname, email, orgname) {
+async function adduser(fid, fname, lname, email, orgname, description) {
   return new Promise(async (resolve, reject) => {
     let res = await addOrg(orgname);
     var oid = res;
     //variables needed for the database are added, using the firebase id, and organization id from earlier, along with previous user inputs
     var sql =
-      "INSERT INTO USERS (fid,admin,oid,fname,lname,email,utype) Values('" +
+      "INSERT INTO USERS (fid,admin,oid,fname,lname,email,utype,description) Values('" +
       fid +
       "',1," +
       oid +
-      ",?,?,?,1)";
+      ",?,?,?,1,?)";
     //query is ran
-    mysqlconnection.query(sql, [fname, lname, email], (err, result) => {
-      if (!err) {
-        console.log("account added to the database");
-        console.log(sql);
-        //when the query is done, the promise is resolved and a result is sent
-        resolve(result);
-      } else {
-        console.log(err);
-        reject(err);
+    mysqlconnection.query(
+      sql,
+      [fname, lname, email, description],
+      (err, result) => {
+        if (!err) {
+          console.log("account added to the database");
+          console.log(sql);
+          //when the query is done, the promise is resolved and a result is sent
+          resolve(result);
+        } else {
+          console.log(err);
+          reject(err);
+        }
       }
-    });
+    );
   });
 }
 module.exports = sendToMeRouter;

@@ -24,6 +24,7 @@ class AdminSignUp extends Component {
       lname: "",
       eMessage: "",
       orgname: "",
+      description: "",
     };
   }
   componentWillMount() {
@@ -45,6 +46,7 @@ class AdminSignUp extends Component {
           lname: this.state.lname,
           email: this.state.email,
           orgname: this.state.orgname,
+          description: this.state.description,
         });
         //after the database call is done, the page redirects
         this.props.history.push("/mentor");
@@ -139,11 +141,15 @@ class AdminSignUp extends Component {
             <div class="form-group">
               {/* For User Description */}
               <label for="description">Description / Profile</label>
-              <textarea rows="3" cols="40" 
-                name="description" 
-                class="form-control" 
-                id="description" 
-                placeholder="Provide a brief description of yourself here" 
+              <textarea
+                rows="3"
+                cols="40"
+                value={this.state.description}
+                onChange={this.handleChange}
+                name="description"
+                class="form-control"
+                id="description"
+                placeholder="Provide a brief description of yourself here"
                 required
               />
             </div>
