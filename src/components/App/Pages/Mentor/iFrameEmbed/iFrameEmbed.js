@@ -31,6 +31,7 @@ class iFrameEmbed extends Component {
     this.authListener();
   }
 
+  //grabs the org id from the DB
   setOrgID(fid) {
     console.log(fid + " is the user id \n\n\n\n");
     axios
@@ -45,6 +46,7 @@ class iFrameEmbed extends Component {
       });
   }
 
+  //unfinished part of adding the organization id to the url in the iframe
   async createIframeURL(fid) {
     this.setOrgID(fid);
     // var iframe_url = this.state.iframe_url + "?orgID=" + this.state.oid;

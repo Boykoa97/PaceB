@@ -5,6 +5,10 @@ const bodyParser = require("body-parser");
 const mysqlconnection = require("../mysqlconnection");
 const app = express();
 var uid;
+
+//This is the file that preps the email to send a mentor on sign up.
+//refer to sendMenteeAcceptance if any of the components in:
+//sendToMeRouter.post("/addMentee", async (req, res, next) => {} are unclear
 sendToMeRouter.post("/inviteMentor", async (req, res, next) => {
   //variables are taken from the request and are saved for the sql query
   console.log("in mentor email setup");
@@ -24,6 +28,7 @@ sendToMeRouter.post("/inviteMentor", async (req, res, next) => {
   next();
 });
 
+//retrieves the organization name based off the number stored in the DB
 async function getOrgName(oid) {
   //query function that retrieves a organization name based off the id
   return new Promise((resolve, reject) => {

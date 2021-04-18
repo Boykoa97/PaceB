@@ -19,20 +19,24 @@ app.post("/mentor", require("./routes/cookies"));
 app.post("/getUserSkills", require("./routes/getUserSkills"));
 app.post("/getUnmatchedMentees", require("./routes/getUnmatchedMentees"));
 app.post("/getMatchedMentees", require("./routes/getMatchedMentees"));
+//post request chain for when a mentee is accepted
 app.post(
   "/updateList",
   require("./routes/updateList"),
   require("./routes/sendMenteeAccept"),
   require("./routes/sendMail")
 );
+//post request chain for when a mentee is added and all the email files
 app.post(
   "/addMentee",
   require("./routes/addMentee"),
   require("./routes/sendMenteeSignUp"),
   require("./routes/sendMail")
 );
+
 app.post("/addMentorSkills", require("./routes/addMentorSkills"));
 app.post("/getOrganizationMentors", require("./routes/getOrganizationMentors"));
+//post request chain for when a mentor is invited
 app.post(
   "/inviteMentor",
   require("./routes/inviteMentor"),
