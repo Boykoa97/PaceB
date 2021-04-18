@@ -38,7 +38,8 @@ async function getList(res, fid) {
   var sql =
     "SELECT * FROM PMATCHES P INNER JOIN USERS U ON P.menteeid=U.uid INNER JOIN USKILLS S ON P.menteeid=S.uid INNER JOIN TECHNOLOGIES T ON S.SID=T.SID WHERE P.mentorid=" +
     uid +
-    " AND P.rmatch=0";
+    " AND P.rmatch=0 " +
+    "ORDER BY P.skillsMatched DESC";
   //query is ran
   mysqlconnection.query(sql, (err, info) => {
     if (!err) {
