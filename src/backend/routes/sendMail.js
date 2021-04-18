@@ -5,6 +5,11 @@ const dotenv = require("dotenv");
 const path = require("path");
 dotenv.config({ path: path.resolve(__dirname, "../../../.env") });
 
+//This file is a generic email creation file using nodemailer
+//it is expect to have all the components of the email already formatted before this stage is reached.
+
+//here is where the setup information on the email account is used
+//adjust host, port, secure, etc... if needed
 var transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,

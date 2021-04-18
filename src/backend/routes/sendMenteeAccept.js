@@ -5,6 +5,9 @@ const bodyParser = require("body-parser");
 const mysqlconnection = require("../mysqlconnection");
 const app = express();
 var uid;
+
+//This file formats the information from when a mentee is accepted and creates all the components for the email to be sent.
+
 sendToMeRouter.post("/updateList", async (req, res, next) => {
   //variables are taken from the request and are saved for the sql query
   console.log("in mentee email acceptance");
@@ -17,15 +20,18 @@ sendToMeRouter.post("/updateList", async (req, res, next) => {
   var mentor = await getUser(mentorId);
   console.log(mentee);
 
+  //initialize variables from the post request data
   var mentorFName = mentor[0].fname;
   var mentorLName = mentor[0].lname;
   var mentorEmail = mentor[0].email;
   var mentorDescription = mentor[0].description;
 
+  //set information for the sendmail file so it can access for the email
   res.locals.mentee_fname = mentee[0].fname;
   res.locals.mentee_lname = mentee[0].lname;
   res.locals.mentee_email = mentee[0].email;
 
+  //create the body of the email
   var body =
     "Welcome " +
     res.locals.mentee_fname +
@@ -46,6 +52,7 @@ sendToMeRouter.post("/updateList", async (req, res, next) => {
   body = body + "\nBest, \n" + "Pace B";
 
   res.locals.body = body;
+  //next is the sendMail.js
   next();
 });
 
