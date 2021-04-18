@@ -22,7 +22,31 @@ A mentee will interact with a form similar to the image below. The information g
 
 ## Setup
 
-To integrate this with firebase once you have the project working with npm start, proceed with these instructions. You will need your own firebase account and project to test this. I am not providing the details to my personal account. Once you have a project made for webhosting made. 
+1. clone the directiory from the repo (contains both frontend and server code)
+2. install Node.js v14.15.0. to whichever machine will run the server
+3. npm install 
+4. Install PhpMyAdmin and MySql for the server ( we used latest versions as of feb 2021 )
+5. Aquire email for the mailing features. Note currently nodemailer is using gmail and secure = FALSE. Adjust the code in sendMail.js if needed. Also for instance a gmail account can only send 500 emails a day. So depending on usage switch providers. Gmail accounts are by default set to true for secure. So either change the gmail setting or adjsut the input parameters.
+6. Setting up firebase 
+
+First to setup firebase you will have to make an account. Currently our project using only features from the free "spark" plan. If your usage is larger you may need to ugrade plans here.
+
+Next you need to create a project 
+
+First we will set up authentication by following 
+
+
+Next to find the information require to create the firebase object look below.
+
+
+Lastly this is incase there still is a dependency with the admin sdk for firebase create the admin sdk following the instructions below. Treat this like an .env file whereas the firebase api information doesn't need to be kept private this file does. Also this resource is what is required to access information from other users in your firebase project so you may wish to add it anyways. 
+
+
+The final step is to adjust the .env you setup on your local machine to follow the template of ".env_example"
+
+## Hosting Example 
+
+To integrate this with firebase once you have the project working with npm start, proceed with these instructions. You will need your own firebase account and project to test this. I am not providing the details to my personal account. Once you have a project made for webhosting made. This is if you wish to use firebase for your hosting site as well
 
 Navigate to the directory where this project is stored on the terminal then:
 
@@ -50,8 +74,16 @@ now to test locally in use the command
 
 firebase serve
 
-then in your browser go to the page http://localhost:5000
+then in your browser go to the page http://localhost:5000 for testing the local host with firebase hosting. 
 
+firebase deploy
 
+to make the site go live
 
+make sure you update the server to listen to the url under the 
 
+"proxy": "http://localhost:4444/",
+
+in package.json 
+
+The link above will specify that it will listen to port 4444 of localhost. 
