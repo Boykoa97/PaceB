@@ -5,19 +5,26 @@ const bodyParser = require("body-parser");
 const mysqlconnection = require("../mysqlconnection");
 const app = express();
 
+//This File is the matching algorithm
+//Our matching algorthim quality of a match is based off of the number of shared skills between mentors and mentees
 sendToMeRouter.post("/findMatch", async (req, res, next) => {
   console.log("hit match function");
   console.log(req.body.fid);
 
+  //fid is the firebase id
   var mentorFid = req.body.fid;
+  //use the is to get the local database userid associated with the firebase id
   let mentorUid = await getMentorUID(mentorFid);
   console.log(mentorUid);
+  //using that user id find the skills of the mentor
   let mentorSkillList = await getSkills(mentorUid);
   console.log(mentorSkillList);
 
+  //find all elegible mentees for matching
   let menteeIds = await getMenteeUIDS();
   console.log(menteeIds);
 
+  //find all mentees that have been added to the list that the mentor sees so duplicate inserts do not occur
   let alreadyProcessedMentees = await getAlreadyMatchedMentees(mentorUid);
   console.log(alreadyProcessedMentees);
 
@@ -35,6 +42,7 @@ sendToMeRouter.post("/findMatch", async (req, res, next) => {
     //iterate through each id and update the number of matches
     for (var i = 0; i < currentPotential.length; i++) {
       menteeNumbMatches[i] = new Array(2);
+      //count the number of matched skills for a given mentee and the mentor
       var numbMatches = await countMatches(
         mentorSkillList,
         currentPotential[i]
@@ -47,6 +55,7 @@ sendToMeRouter.post("/findMatch", async (req, res, next) => {
     console.log(menteeNumbMatches);
     //add to potential matches
 
+    //add all the mentees to the potential matches table.
     for (var i = 0; i < menteeNumbMatches[0].length; i++) {
       await addPotential(
         mentorUid,
@@ -173,6 +182,7 @@ async function getMenteeUIDS() {
   });
 }
 
+//counts the number of shared skills between the mentors skill list and a mentee
 async function countMatches(mentorSkillList, menteeID) {
   let menteeSkills = await getSkills(menteeID);
   var skillsMatched = mentorSkillList.filter((skillID) =>
@@ -183,6 +193,7 @@ async function countMatches(mentorSkillList, menteeID) {
   return numbMatches;
 }
 
+//addes a given mentee and mentor alongside the number of matched skills to the database
 async function addPotential(mentorID, menteeID, numberMatched) {
   return new Promise(async (resolve) => {
     var sql3 =

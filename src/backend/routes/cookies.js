@@ -8,6 +8,10 @@ const cookiesRouter = express.Router();
 
 cookiesRouter.use(express.json());
 
+///************************************************/
+// This file is something that was never finished so it shouldn't be used anywhere. However it is still here incase of an uncaught dependency
+//************************************************/
+
 cookiesRouter.use(
   cookieSession({
     name: "session",

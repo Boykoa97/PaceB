@@ -5,6 +5,10 @@ const bodyParser = require("body-parser");
 const mysqlconnection = require("../mysqlconnection");
 const app = express();
 var uid;
+
+//This is the file that preps the email to send a mentee on sign up.
+//refer to sendMenteeAcceptance if any of the components in:
+//sendToMeRouter.post("/addMentee", async (req, res, next) => {} are unclear
 sendToMeRouter.post("/addMentee", async (req, res, next) => {
   //variables are taken from the request and are saved for the sql query
   console.log("in mentee email setup");
